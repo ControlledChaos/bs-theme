@@ -1,0 +1,66 @@
+/**
+ * Blocks on front end
+ *
+ * This describes classes set by colors args in the functions file.
+ *
+ * @see functions.php/setup
+ */
+@import '_variables';
+
+// Block editor background color classes.
+.has-bst-text-background-color {
+	background-color: $text;
+}
+
+.has-bst-light-gray-background-color {
+	background-color: $light_gray;
+}
+
+.has-bst-pale-gray-background-color {
+	background-color: $pale_gray;
+}
+
+.has-bst-white-background-color {
+	background-color: $white;
+}
+
+.has-bst-error-background-color {
+	background-color: $error;
+}
+
+.has-bst-warning-background-color {
+	background-color: $warning;
+}
+
+.has-bst-success-background-color {
+	background-color: $success;
+}
+
+// Block editor text color classes.
+.has-bst-text-color {
+	color: $text;
+}
+
+.has-bst-light-gray-color {
+	color: $light_gray;
+}
+
+.has-bst-pale-gray-color {
+	color: $pale_gray;
+}
+
+.has-bst-white-color {
+	color: $white;
+}
+
+.has-bst-error-color {
+	color: $error;
+}
+
+.has-bst-warning-color {
+	color: $warning;
+}
+
+.has-bst-success-color {
+	color: $success;
+}
