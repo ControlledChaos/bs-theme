@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 /**
- * Sequoia Riverfront Cabins functions class
+ * BS Theme functions class
  *
  * @since  1.0.0
  * @access public
