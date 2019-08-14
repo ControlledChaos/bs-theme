@@ -14,7 +14,7 @@
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header>
 
-	<?php BS_Theme\Includes\bst_theme_post_thumbnail(); ?>
+	<?php BS_Theme\Tags\post_thumbnail(); ?>
 
 	<div class="entry-content" itemprop="articleBody">
 		<?php

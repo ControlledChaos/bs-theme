@@ -22,14 +22,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				BS_Theme\Includes\bst_theme_posted_on();
-				BS_Theme\Includes\bst_theme_posted_by();
+				BS_Theme\Tags\posted_on();
+				BS_Theme\Tags\posted_by();
 				?>
 			</div>
 		<?php endif; ?>
 	</header>
 
-	<?php BS_Theme\Includes\bst_theme_post_thumbnail(); ?>
+	<?php BS_Theme\Tags\post_thumbnail(); ?>
 
 	<div class="entry-content" itemprop="articleBody">
 		<?php
@@ -53,6 +53,6 @@
 	</div>
 
 	<footer class="entry-footer">
-		<?php BS_Theme\Includes\bst_theme_entry_footer(); ?>
+		<?php BS_Theme\Tags\entry_footer(); ?>
 	</footer>
 </article>
