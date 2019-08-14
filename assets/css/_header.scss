@@ -5,8 +5,8 @@
 	/* Match <p> tag to <h1> tag on front page */
 	font-size: 2em;
 	font-weight: bold;
-}
 
-.site-title a {
-	text-decoration: none;
+	& a {
+		text-decoration: none;
+	}
 }

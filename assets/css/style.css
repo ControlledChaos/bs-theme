@@ -588,7 +588,7 @@ h2 + .search-form {
   left: 100%;
 }
 
-.main-navigation ul ul a {
+.main-navigation ul a {
   width: 200px;
 }
 
@@ -668,6 +668,40 @@ img {
   /* alt text */
 }
 
+img .alignright,
+figure .alignright {
+  margin: 1em 0 0 1em;
+}
+
+img .alignleft,
+figure .alignleft {
+  margin: 1em 1em 0 0;
+}
+
+img .aligncenter,
+figure .aligncenter {
+  display: block;
+  margin: 1em auto;
+}
+
+img .alignfull,
+figure .alignfull {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  clear: both;
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 1em 0 0;
+}
+
+img .alignnone,
+figure .alignnone {
+  margin: 0;
+}
+
 .size-auto,
 .size-full,
 .size-large,
@@ -681,41 +715,13 @@ img {
   float: left;
 }
 
-img.alignleft,
-figure.alignleft {
-  margin: 1em 1em 0 0;
-}
-
 .alignright {
   float: right;
 }
 
-img.alignright,
-figure.alignright {
-  margin: 1em 0 0 1em;
-}
-
-.aligncenter,
-figure.aligncenter {
+.aligncenter {
   display: block;
   margin: 1em auto;
-}
-
-figure.alignfull {
-  position: relative;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  clear: both;
-  width: 100vw;
-  max-width: 100vw;
-  overflow-x: hidden;
-  margin: 1em 0 0;
-}
-
-img.alignnone,
-figure.alignnone {
-  margin: 0;
 }
 
 .blog .post-thumbnail,
@@ -723,15 +729,15 @@ figure.alignnone {
   margin-top: 1em;
 }
 
-.entry-content p img.alignleft {
+.entry-content p img .alignleft {
   margin: 0 1em 1em 0;
 }
 
-.entry-content p img.alignright {
+.entry-content p img .alignright {
   margin: 0 0 1em 1em;
 }
 
-.entry-content p img.aligncenter {
+.entry-content p img .aligncenter {
   margin: 2em auto;
 }
 
@@ -739,7 +745,7 @@ figure.alignnone {
   display: block;
 }
 
-.wp-caption-text {
+.wp-caption .wp-caption-text {
   margin-top: 0.25em;
   font-size: 0.85em;
   line-height: 1.3;
@@ -757,12 +763,12 @@ figure.alignnone {
   /*for galleries as list elements */
 }
 
-.gallery-item {
+.gallery .gallery-item {
   width: 33.33325%;
   width: calc(100% / 3);
 }
 
-.gallery-item img {
+.gallery .gallery-item img {
   border-color: transparent !important;
 }
 
