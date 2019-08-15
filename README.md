@@ -18,7 +18,7 @@ Some sample block editor styles are loaded and some functions are provided to ch
 
 ## Requirements
 
-* This plugin was written in a WordPress 5.0+ environment with no concern for backwards compatitbility.
-* This plugin was written on a local server running PHP 7.2
+* This theme was written in a WordPress 5.0+ environment with no concern for backwards compatitbility.
+* This theme was written on a local server running PHP 7.2
 * The short array syntax ( `[]` rather than `array()` ) requires PHP 5.4+
 * Function files are namespaced and must be called accordingly in template parts.
