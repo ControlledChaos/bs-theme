@@ -9,3 +9,16 @@ A basic starter theme for WordPress and ClassicPress.
 ![Gutenberg Ready](https://img.shields.io/badge/Gutenberg-ready-00a0d2.svg?style=flat-square)
 
 ![](https://raw.githubusercontent.com/ControlledChaos/bs-theme/master/screenshot.jpg)
+
+## Nothing Fancy
+
+This theme began life as a copy of the [_s (Underscores)](https://underscores.me/) starter theme. We have added scheme attributes and slightly modified the CSS files.
+
+Some sample block editor styles are loaded and some functions are provided to check for Advanced Custom Fields and for ClassicPress.
+
+## Requirements
+
+* This plugin was written in a WordPress 5.0+ environment with no concern for backwards compatitbility.
+* This plugin was written on a local server running PHP 7.2
+* The short array syntax ( `[]` rather than `array()` ) requires PHP 5.4+
+* Function files are namespaced and must be called accordingly in template parts.
