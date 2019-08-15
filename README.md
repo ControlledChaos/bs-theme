@@ -12,7 +12,7 @@ A basic starter theme for WordPress and ClassicPress.
 
 ## Nothing Fancy
 
-This theme began life as a copy of the [_s (Underscores)](https://underscores.me/) starter theme. We have added scheme attributes and slightly modified the CSS files.
+This theme began life as a copy of the [_s (Underscores)](https://underscores.me/) starter theme. We have added schema attributes and slightly modified the CSS files.
 
 Some sample block editor styles are loaded and some functions are provided to check for Advanced Custom Fields and for ClassicPress.
 
