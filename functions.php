@@ -31,7 +31,7 @@
  */
 
 /**
- * Renaming & rebranding the theme
+ * Renaming, rebranding, & defaults
  *
  * Following is a list of strings to find and replace in all theme files.
  *
@@ -51,7 +51,11 @@
  *    Replace the default image file `default-header.jpg`.
  *    @see assets/images/
  *
- * Finally, remove these renaming instructions.
+ * Activation and deactivation
+ *    Check the activation and deactivation classes for sample methods.
+ *    Remove or modify the samples as needed.
+ *    @see includes/class-activate
+ *    @see includes/class-deactivate
  */
 
 // Namespace specificity for theme functions & filters.
@@ -88,6 +92,9 @@ final class Functions {
 
 			$instance = new self;
 
+			// Theme activation & deactivation.
+			$instance->activation();
+
 			// Theme dependencies.
 			$instance->dependencies();
 
@@ -95,6 +102,23 @@ final class Functions {
 
 		return $instance;
 	}
+
+	/**
+	 * Theme activation & deactivation functions
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	private function activation() {
+
+		// Require theme activation functions.
+		require_once get_theme_file_path( '/includes/class-activate.php' );
+
+		// Require theme deactivation functions.
+		require_once get_theme_file_path( '/includes/class-deactivate.php' );
+
+	 }
 
 	/**
 	 * Constructor magic method
@@ -359,6 +383,10 @@ final class Functions {
 
 	/**
 	 * Style the header image and text
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string Returns an HTML style block.
 	 *
 	 */
 	public function header_style() {

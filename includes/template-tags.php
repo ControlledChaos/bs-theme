@@ -10,6 +10,11 @@
 // Namespace specificity for theme functions & filters.
 namespace BS_Theme\Tags;
 
+// Restrict direct access.
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /**
  * Check if WordPress is 5.0 or greater.
  *
