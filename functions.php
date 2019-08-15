@@ -2,15 +2,59 @@
 /**
  * BS Theme functions
  *
+ * A basic starter theme for WordPress and ClassicPress.
+ *
  * @package    WordPress/ClassicPress
  * @subpackage BS_Theme
- * @author     Greg Sweet <greg@ccdzine.com>
- * @copyright  Copyright (c) Greg Sweet
+ * @author     Controlled Chaos Design <greg@ccdzine.com>
+ * @copyright  Copyright (c) Controlled Chaos Design
  * @link       https://github.com/ControlledChaos/bs-theme
  * @license    http://www.gnu.org/licenses/gpl-3.0.html
  * @since      1.0.0
  */
 
+/**
+ * License & Warranty
+ *
+ * BS Theme is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 2 of the License, or
+ * any later version.
+ *
+ * BS Theme is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with BS Theme. If not, see {URI to Plugin License}.
+ */
+
+/**
+ * Renaming & rebranding the theme
+ *
+ * Following is a list of strings to find and replace in all theme files.
+ *
+ * 1. Plugin name
+ *    Find `BS_Theme` and replace with your theme name, include
+ *    underscores between words. This will change the namespace and the package
+ *    name in file headers.
+ *
+ * 2. Text domain
+ *    Find bs-theme and replace with the text domain of your theme.
+ *
+ * 3. Author
+ *    Find `Controlled Chaos Design <greg@ccdzine.com>` and replace with your name and
+ *    email address or those of your organization.
+ *
+ * 4. Header image
+ *    Replace the default image file `default-header.jpg`.
+ *    @see assets/images/
+ *
+ * Finally, remove these renaming instructions.
+ */
+
+// Namespace specificity for theme functions & filters.
 namespace BS_Theme\Functions;
 
 // Restrict direct access.
@@ -247,18 +291,17 @@ final class Functions {
 		 * Custom header for the front page.
 		 */
 		add_theme_support( 'custom-header', apply_filters( 'bst_custom_header_args', [
-			'default-image'      => get_parent_theme_file_uri( '/assets/images/header.jpg' ),
 			'width'              => 2048,
 			'height'             => 878,
 			'flex-height'        => true,
 			'video'              => false,
-			'wp-head-callback'   => null
+			'wp-head-callback'   => [ $this, 'header_style' ]
 		] ) );
 
 		register_default_headers( [
 			'default-image' => [
-				'url'           => '%s/assets/images/header.jpg',
-				'thumbnail_url' => '%s/assets/images/header.jpg',
+				'url'           => '%s/assets/images/default-header.jpg',
+				'thumbnail_url' => '%s/assets/images/default-header.jpg',
 				'description'   => __( 'Default Header Image', 'bs-theme' ),
 			],
 		] );
@@ -312,6 +355,47 @@ final class Functions {
 		 */
 		add_editor_style( '/assets/css/editor.min.css', [ 'bst-admin' ], '', 'screen' );
 
+	}
+
+	/**
+	 * Style the header image and text
+	 *
+	 */
+	public function header_style() {
+
+		$header_text_color = get_header_textcolor();
+
+		/*
+		 * If no custom options for text are set, let's bail.
+		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
+		 */
+		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
+			return;
+		}
+
+		// If we get this far, we have custom styles.
+		if ( ! display_header_text() ) {
+			$style = sprintf(
+				'<style type="text/css">%1s</style>',
+				'.site-title,
+				 .site-title a,
+				 .site-description {
+					position: absolute;
+					clip: rect(1px, 1px, 1px, 1px);
+				}'
+			);
+		} else {
+			$style = sprintf(
+				'<style type="text/css">%1s</style>',
+				'.site-title,
+				 .site-title a,
+				 .site-description {
+					color: #' . esc_attr( $header_text_color ) . ';
+				}'
+			);
+		}
+
+		echo $style;
 	}
 
 	/**
@@ -456,7 +540,6 @@ final class Functions {
 	 */
 	private function dependencies() {
 
-		require get_theme_file_path( '/includes/custom-header.php' );
 		require get_theme_file_path( '/includes/template-tags.php' );
 		require get_theme_file_path( '/includes/template-functions.php' );
 		require get_theme_file_path( '/includes/customizer.php' );
