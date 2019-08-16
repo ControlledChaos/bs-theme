@@ -7,6 +7,8 @@
  * @package    WordPress/ClassicPress
  * @subpackage BS_Theme
  * @since      1.0.0
+ *
+ * @todo       Add hooks for nav above or below header.
  */
 
 if ( is_home() && ! is_front_page() ) {
@@ -45,6 +47,16 @@ if ( is_home() && ! is_front_page() ) {
 <div id="page" class="site" itemscope="itemscope" itemtype="<?php BS_Theme\Tags\site_schema(); ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bs-theme' ); ?></a>
 
+	<nav id="site-navigation" class="main-navigation" role="directory" itemscope itemtype="http://schema.org/SiteNavigationElement">
+		<button class="menu-toggle" aria-controls="main-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'bs-theme' ); ?></button>
+		<?php
+		wp_nav_menu( array(
+			'theme_location' => 'main',
+			'menu_id'        => 'main-menu',
+		) );
+		?>
+	</nav>
+
 	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
 		<div class="site-branding">
 			<?php
@@ -74,16 +86,6 @@ if ( is_home() && ! is_front_page() ) {
 				</figure>
 			</div>
 		</div>
-
-		<nav id="site-navigation" class="main-navigation" role="directory" itemscope itemtype="http://schema.org/SiteNavigationElement">
-			<button class="menu-toggle" aria-controls="main-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'bs-theme' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'main',
-				'menu_id'        => 'main-menu',
-			) );
-			?>
-		</nav>
 	</header>
 
 	<div id="content" class="site-content">
