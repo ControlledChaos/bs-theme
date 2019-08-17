@@ -69,6 +69,18 @@ input[type="image"] {
 		height: 24px;
 		fill: currentColor;
 	}
+
+	&.menu-toggle {
+		background: none;
+		border: none;
+		color: inherit;
+
+		svg {
+			width: 1rem;
+			height: 1rem;
+			fill: currentColor;
+		}
+	}
 }
 
 input[type="number"] {

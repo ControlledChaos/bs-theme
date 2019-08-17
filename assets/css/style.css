@@ -478,6 +478,28 @@ input[type="image"] svg {
   fill: currentColor;
 }
 
+button.menu-toggle,
+button[type="submit"].menu-toggle,
+input[type="submit"].menu-toggle,
+input[type="button"].menu-toggle,
+input[type="reset"].menu-toggle,
+input[type="image"].menu-toggle {
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+button.menu-toggle svg,
+button[type="submit"].menu-toggle svg,
+input[type="submit"].menu-toggle svg,
+input[type="button"].menu-toggle svg,
+input[type="reset"].menu-toggle svg,
+input[type="image"].menu-toggle svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
 input[type="number"] {
   width: auto;
   padding: 0.6em 1em;
@@ -632,6 +654,7 @@ h2 + .search-form {
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
+  font-size: 1.25em;
 }
 
 @media screen and (min-width: 37.5em) {
