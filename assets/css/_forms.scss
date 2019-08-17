@@ -30,6 +30,8 @@ form button {
 
 label + input:not([type="checkbox"]):not([type="radio"]),
 label ~ input:not([type="checkbox"]):not([type="radio"]),
+label + button,
+label ~ button,
 label + textarea,
 label ~ textarea,
 label + select,
@@ -54,12 +56,19 @@ input[type="checkbox"] {
 }
 
 button,
+button[type="submit"],
 input[type="submit"],
 input[type="button"],
 input[type="reset"],
 input[type="image"] {
 	width: auto;
 	cursor: pointer;
+
+	svg {
+		width: 24px;
+		height: 24px;
+		fill: currentColor;
+	}
 }
 
 input[type="number"] {
