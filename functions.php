@@ -169,6 +169,9 @@ final class Functions {
 		// Remove WooCommerce styles.
 		add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
+		// Theme options page.
+		add_action( 'admin_menu', [ $this, 'theme_options' ] );
+
 	}
 
 	/**
@@ -573,6 +576,111 @@ final class Functions {
 		require get_theme_file_path( '/includes/customizer.php' );
 
 	}
+
+	/**
+	 * Theme options page
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function theme_options() {
+
+		// Add a submenu page under Themes.
+		$this->help_theme_options = add_submenu_page(
+			'themes.php',
+			__( 'Theme Options', 'bs-theme' ),
+			__( 'Theme Options', 'bs-theme' ),
+			'manage_options',
+			'bs-theme-options',
+			[ $this, 'theme_options_output' ]
+		);
+
+		// Add sample help tab.
+		add_action( 'load-' . $this->help_theme_options, [ $this, 'help_theme_options' ] );
+
+	}
+
+	/**
+     * Get output of the theme options page.
+     *
+     * @since  1.0.0
+	 * @access public
+	 * @return void
+     */
+    public function theme_options_output() {
+
+        require get_parent_theme_file_path( '/includes/theme-options-page.php' );
+
+	}
+
+	/**
+     * Add tabs to the about page contextual help section.
+	 *
+	 * @since      1.0.0
+     */
+    public function help_theme_options() {
+
+		// Add to the about page.
+		$screen = get_current_screen();
+		if ( $screen->id != $this->help_theme_options ) {
+			return;
+		}
+
+		// More information tab.
+		$screen->add_help_tab( [
+			'id'       => 'help_theme_options_info',
+			'title'    => __( 'More Information', 'bs-theme' ),
+			'content'  => null,
+			'callback' => [ $this, 'help_theme_options_info' ]
+		] );
+
+        // Add a help sidebar.
+		$screen->set_help_sidebar(
+			$this->help_theme_options_sidebar()
+		);
+
+	}
+
+	/**
+     * Get convert plugin help tab content.
+	 *
+	 * @since      1.0.0
+     */
+	public function help_theme_options_info() {
+
+		include_once get_theme_file_path( 'includes/partials/help-theme-options-info.php' );
+
+    }
+
+    /**
+     * The about page contextual tab sidebar content.
+	 *
+	 * @since      1.0.0
+     */
+    public function help_theme_options_sidebar() {
+
+        $html  = sprintf( '<h4>%1s</h4>', __( 'Author Credits', 'bs-theme' ) );
+        $html .= sprintf(
+            '<p>%1s %2s.</p>',
+            __( 'This theme was created by', 'bs-theme' ),
+            'Your Name'
+        );
+        $html .= sprintf(
+            '<p>%1s <br /><a href="%2s" target="_blank">%3s</a> <br />%4s</p>',
+            __( 'Visit', 'bs-theme' ),
+            'https://example.com/',
+            'Example Site',
+            __( 'for more details.', 'bs-theme' )
+        );
+        $html .= sprintf(
+            '<p>%1s</p>',
+            __( 'Change this sidebar to give yourself credit for the hard work you did customizing this theme.', 'bs-theme' )
+         );
+
+		return $html;
+
+    }
 
 }
 
