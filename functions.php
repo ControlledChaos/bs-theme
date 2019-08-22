@@ -550,7 +550,11 @@ final class Functions {
 	 * @access public
 	 * @return void
 	 */
-	public function admin_styles() {}
+	public function admin_styles() {
+
+		wp_enqueue_style( 'bs-theme-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '' );
+
+	}
 
 	/**
 	 * Login styles
