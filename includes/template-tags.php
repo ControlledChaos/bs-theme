@@ -295,3 +295,28 @@ function post_thumbnail() {
 	<?php
 	endif;
 }
+
+/**
+ * Open template tags.
+ *
+ * Following are template tags for further development
+ * by the theme author, child themes, or plugins.
+ *
+ * These are primarily provided as examples.
+ *
+ * @todo Possibly add more open tags but perhaps not,
+ *       as this is a starter theme.
+ *
+ * @since  1.0.0
+ * @access public
+ */
+
+// Fires after opening `body` and before `#page`.
+function before_page() {
+	do_action( 'before_page' );
+}
+
+// Fires after `#page` and before `wp_footer`.
+function after_page() {
+	do_action( 'after_page' );
+}

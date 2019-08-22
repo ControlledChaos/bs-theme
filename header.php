@@ -40,10 +40,13 @@ if ( is_home() && ! is_front_page() ) {
 	<link rel='dns-prefetch' href='//fonts.adobe.com'/>
 	<link rel='dns-prefetch' href='//fonts.google.com'/>
 
+	<?php do_action( 'before_wp_head' ); ?>
 	<?php wp_head(); ?>
+	<?php do_action( 'after_wp_head' ); ?>
 </head>
 
 <body <?php body_class(); ?>>
+<?php BS_Theme\Tags\before_page(); ?>
 <div id="page" class="site" itemscope="itemscope" itemtype="<?php BS_Theme\Tags\site_schema(); ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bs-theme' ); ?></a>
 
