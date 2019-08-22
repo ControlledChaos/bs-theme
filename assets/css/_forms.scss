@@ -23,7 +23,7 @@ select,
 form button {
 	width: 100%;
 	max-width: 640px;
-	padding: 0.5em 1em;
+	padding: 1rem;
 	font: inherit;
 	background: #fff;
 }
@@ -63,11 +63,23 @@ input[type="reset"],
 input[type="image"] {
 	width: auto;
 	cursor: pointer;
+	background: $light_gray;
+	color: $white;
 
 	svg {
 		width: 24px;
 		height: 24px;
+		vertical-align: middle;
 		fill: currentColor;
+	}
+
+	&:hover,
+	&:focus {
+		background: $pale_gray;
+
+		svg {
+			fill: $light_gray;
+		}
 	}
 
 	&.menu-toggle {

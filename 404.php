@@ -14,7 +14,7 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'bs-theme' ); ?></h1>
+					<h1 class="page-title"><?php esc_html_e( 'That page can\'t be found.', 'bs-theme' ); ?></h1>
 				</header>
 
 				<div class="page-content">
@@ -30,21 +30,23 @@ get_header(); ?>
 						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'bs-theme' ); ?></h2>
 						<ul>
 							<?php
-							wp_list_categories( array(
+							wp_list_categories( [
 								'orderby'    => 'count',
 								'order'      => 'DESC',
 								'show_count' => 1,
 								'title_li'   => '',
 								'number'     => 10,
-							) );
+							] );
 							?>
 						</ul>
 					</div>
 
 					<?php
-					/* translators: %1$s: smiley */
-					$bst_theme_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'bs-theme' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$bst_theme_archive_content" );
+					$archive_content = sprintf(
+						'<p>%1s</p>',
+						esc_html__( 'Try looking in the monthly archives.', 'bs-theme' )
+					);
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 
 					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>

@@ -434,7 +434,7 @@ select,
 form button {
   width: 100%;
   max-width: 640px;
-  padding: 0.5em 1em;
+  padding: 1rem;
   font: inherit;
   background: #fff;
 }
@@ -465,6 +465,8 @@ input[type="reset"],
 input[type="image"] {
   width: auto;
   cursor: pointer;
+  background: #888888;
+  color: #ffffff;
 }
 
 button svg,
@@ -475,7 +477,36 @@ input[type="reset"] svg,
 input[type="image"] svg {
   width: 24px;
   height: 24px;
+  vertical-align: middle;
   fill: currentColor;
+}
+
+button:hover, button:focus,
+button[type="submit"]:hover,
+button[type="submit"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="image"]:hover,
+input[type="image"]:focus {
+  background: #cccccc;
+}
+
+button:hover svg, button:focus svg,
+button[type="submit"]:hover svg,
+button[type="submit"]:focus svg,
+input[type="submit"]:hover svg,
+input[type="submit"]:focus svg,
+input[type="button"]:hover svg,
+input[type="button"]:focus svg,
+input[type="reset"]:hover svg,
+input[type="reset"]:focus svg,
+input[type="image"]:hover svg,
+input[type="image"]:focus svg {
+  fill: #888888;
 }
 
 button.menu-toggle,
