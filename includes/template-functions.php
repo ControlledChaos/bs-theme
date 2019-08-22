@@ -16,10 +16,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Body classes
+ *
  * Adds custom classes to the array of body classes.
  *
- * @param array $classes Classes for the body element.
- * @return array
+ * @since  1.0.0
+ * @access public
+ * @param  array $classes Classes for the body element.
+ * @return array Returns the array of body classes.
  */
 function body_classes( $classes ) {
 
@@ -39,7 +43,13 @@ function body_classes( $classes ) {
 add_filter( 'body_class', 'BS_Theme\Includes\body_classes' );
 
 /**
+ * Pingback header
+ *
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return string Returns the link element in '<head>`.
  */
 function pingback_header() {
 

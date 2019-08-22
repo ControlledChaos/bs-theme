@@ -107,7 +107,13 @@ function theme_acf_options() {
 }
 
 /**
+ * Site Schema
+ *
  * Conditional Schema attributes for `<div id="page"`.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return string Returns the relevant itemtype.
  */
 function site_schema() {
 
@@ -135,7 +141,13 @@ function site_schema() {
 }
 
 /**
+ * Posted on
+ *
  * Prints HTML with meta information for the current post-date/time.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return string Returns the date posted.
  */
 function posted_on() {
 
@@ -162,7 +174,13 @@ function posted_on() {
 }
 
 /**
+ * Posted by
+ *
  * Prints HTML with meta information for the current author.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return string Returns the author name.
  */
 function posted_by() {
 
@@ -176,7 +194,13 @@ function posted_by() {
 }
 
 /**
+ * Entry footer
+ *
  * Prints HTML with meta information for the categories, tags and comments.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return string Returns various post-related links.
  */
 function entry_footer() {
 
@@ -234,10 +258,14 @@ function entry_footer() {
 }
 
 /**
- * Displays an optional post thumbnail.
+ * Post thumbnail
  *
  * Wraps the post thumbnail in an anchor element on index views, or a div
  * element when on single views.
+ *
+ * @since  1.0.0
+ * @access public
+ * @return string Returns HTML for the post thumbnail.
  */
 function post_thumbnail() {
 
