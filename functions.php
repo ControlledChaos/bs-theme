@@ -568,8 +568,8 @@ final class Functions {
 	 */
 	private function dependencies() {
 
-		require get_theme_file_path( '/includes/template-tags.php' );
 		require get_theme_file_path( '/includes/template-functions.php' );
+		require get_theme_file_path( '/includes/template-tags.php' );
 		require get_theme_file_path( '/includes/customizer.php' );
 
 	}
