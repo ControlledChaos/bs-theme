@@ -27,8 +27,9 @@ $description = sprintf(
 	__( 'This is a starter/example page. Use it or remove it.', 'bs-theme' )
 );
 
+// Begin page output.
 ?>
-<!-- Default WordPress/ClassicPress page wrapper -->
+
 <div class="wrap bs-theme-options-page">
 	<?php echo $title; ?>
 	<?php echo $description; ?>

@@ -172,6 +172,9 @@ final class Functions {
 		// Theme options page.
 		add_action( 'admin_menu', [ $this, 'theme_options' ] );
 
+		// Theme info page.
+		add_action( 'admin_menu', [ $this, 'theme_info' ] );
+
 	}
 
 	/**
@@ -602,7 +605,7 @@ final class Functions {
 	}
 
 	/**
-     * Get output of the theme options page.
+     * Get output of the theme options page
      *
      * @since  1.0.0
 	 * @access public
@@ -615,9 +618,11 @@ final class Functions {
 	}
 
 	/**
-     * Add tabs to the about page contextual help section.
+     * Add tabs to the about page contextual help section
 	 *
-	 * @since      1.0.0
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
      */
     public function help_theme_options() {
 
@@ -643,9 +648,11 @@ final class Functions {
 	}
 
 	/**
-     * Get convert plugin help tab content.
+     * Get convert plugin help tab content
 	 *
-	 * @since      1.0.0
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
      */
 	public function help_theme_options_info() {
 
@@ -654,9 +661,11 @@ final class Functions {
     }
 
     /**
-     * The about page contextual tab sidebar content.
+     * The about page contextual tab sidebar content
 	 *
-	 * @since      1.0.0
+	 * @since  1.0.0
+	 * @access public
+	 * @return string Returns the HTML of the sidebar content.
      */
     public function help_theme_options_sidebar() {
 
@@ -680,7 +689,41 @@ final class Functions {
 
 		return $html;
 
-    }
+	}
+
+	/**
+	 * Theme info page
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function theme_info() {
+
+		// Add a submenu page under Themes.
+		add_submenu_page(
+			'themes.php',
+			__( 'Theme Info', 'bs-theme' ),
+			__( 'Theme Info', 'bs-theme' ),
+			'manage_options',
+			'bs-theme-info',
+			[ $this, 'theme_info_output' ]
+		);
+
+	}
+
+	/**
+     * Get output of the theme info page
+     *
+     * @since  1.0.0
+	 * @access public
+	 * @return void
+     */
+    public function theme_info_output() {
+
+        require get_parent_theme_file_path( '/includes/theme-info-page.php' );
+
+	}
 
 }
 
