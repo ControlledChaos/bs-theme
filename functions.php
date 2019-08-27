@@ -527,7 +527,7 @@ final class Functions {
 	public function frontend_styles() {
 
 		// Google fonts.
-		// wp_enqueue_style( 'bst-google-fonts', 'add-url-here', [], '', 'screen' );
+		// wp_enqueue_style( 'bs-theme-google-fonts', 'add-url-here', [], '', 'screen' );
 
 		/**
 		 * Theme sylesheet
@@ -741,13 +741,13 @@ final class Functions {
  * @access public
  * @return object
  */
-function bst_theme() {
+function bs_theme() {
 
-	$bst_theme = Functions::get_instance();
+	$bs_theme = Functions::get_instance();
 
-	return $bst_theme;
+	return $bs_theme;
 
 }
 
 // Run the Functions class.
-bst_theme();
+bs_theme();
