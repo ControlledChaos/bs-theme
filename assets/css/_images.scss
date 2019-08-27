@@ -8,20 +8,20 @@
 img,
 figure {
 
-	& .alignright {
+	&.alignright {
 		margin: 1em 0 0 1em;
 	}
 
-	& .alignleft {
+	&.alignleft {
 		margin: 1em 1em 0 0;
 	}
 
-	& .aligncenter {
+	&.aligncenter {
 		display: block;
 		margin: 1em auto;
 	}
 
-	& .alignfull {
+	&.alignfull {
 		position: relative;
 		left: 50%;
 		-webkit-transform: translateX(-50%);
@@ -33,7 +33,7 @@ figure {
 		margin: 1em 0 0;
 	}
 
-	& .alignnone {
+	&.alignnone {
 		margin: 0;
 	}
 }
@@ -67,15 +67,15 @@ figure {
 
 .entry-content p img {
 
-	& .alignleft {
+	&.alignleft {
 		margin: 0 1em 1em 0;
 	}
 
-	& .alignright {
+	&.alignright {
 		margin: 0 0 1em 1em;
 	}
 
-	& .aligncenter {
+	&.aligncenter {
 		margin: 2em auto;
 	}
 }
@@ -86,7 +86,7 @@ figure {
 		display: block;
 	}
 
-	& .wp-caption-text {
+	&.wp-caption-text {
 		margin-top: 0.25em;
 		font-size: 0.85em;
 		line-height: 1.3;
