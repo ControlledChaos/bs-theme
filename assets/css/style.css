@@ -634,6 +634,7 @@ h2 + .search-form {
   float: left;
   width: 100%;
   margin-top: 1em;
+  background: #fff;
 }
 
 .main-navigation ul {
@@ -641,16 +642,17 @@ h2 + .search-form {
   list-style: none;
   margin: 0;
   padding-left: 0;
+  background: inherit;
 }
 
 .main-navigation ul ul {
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  float: left;
   position: absolute;
   top: 100%;
   left: -999em;
   z-index: 99999;
+  background: inherit;
 }
 
 .main-navigation ul ul ul {
@@ -664,7 +666,7 @@ h2 + .search-form {
 }
 
 .main-navigation ul ul a {
-  width: 200px;
+  width: 100%;
 }
 
 .main-navigation ul li:hover > ul,
