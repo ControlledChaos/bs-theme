@@ -8,7 +8,7 @@ A basic starter theme for WordPress and ClassicPress.
 ![ACF Pro Ready](https://img.shields.io/badge/ACF%20Pro-ready-00d3ae.svg?style=flat-square)
 ![Gutenberg Ready](https://img.shields.io/badge/Gutenberg-ready-00a0d2.svg?style=flat-square)
 
-![](https://raw.githubusercontent.com/ControlledChaos/bs-theme/master/screenshot.jpg)
+![BS Theme Screenshot](https://raw.githubusercontent.com/ControlledChaos/bs-theme/master/screenshot.jpg)
 
 ## Nothing Fancy
 
