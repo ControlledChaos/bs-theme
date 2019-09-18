@@ -242,7 +242,7 @@ function entry_footer() {
 	edit_post_link(
 		sprintf(
 			wp_kses(
-				__( 'Edit <span class="screen-reader-text">%s</span>', 'bs-theme' ),
+				__( ' Edit <span class="screen-reader-text">%s</span>', 'bs-theme' ),
 				array(
 					'span' => array(
 						'class' => array(),
