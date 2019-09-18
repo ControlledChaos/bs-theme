@@ -725,7 +725,7 @@ final class Functions {
      */
     public function theme_info_output() {
 
-        require get_parent_theme_file_path( '/includes/theme-info-page.php' );
+        require get_theme_file_path( '/includes/theme-info-page.php' );
 
 	}
 
