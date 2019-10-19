@@ -234,11 +234,12 @@ final class Functions {
 		 ] );
 
 		/**
-		 * Color arguments
+		 * Block editor colors
 		 *
 		 * Match the following HEX codes with SASS color variables.
-		 *
 		 * @see assets/css/_variables.scss
+		 *
+		 * @since 1.0.0
 		 */
 		$color_args = [
 			[
@@ -281,25 +282,46 @@ final class Functions {
 		// Apply a filter to editor arguments.
 		$colors = apply_filters( 'bst_editor_colors', $color_args );
 
-		// Add color support.
+		// Add theme color support.
 		add_theme_support( 'editor-color-palette', $colors );
 
-		add_theme_support( 'align-wide' );
-
 		/**
-		 * Add theme support.
+		 * Set default image sizes
+		 *
+		 * Define the dimensions and the crop options.
 		 *
 		 * @since 1.0.0
 		 */
-
-		// Customizer widget refresh support.
-		add_theme_support( 'customize-selective-refresh-widgets' );
-
 		// Featured image support.
 		add_theme_support( 'post-thumbnails' );
 
+		// Thumbnail size.
+		update_option( 'thumbnail_size_w', 160 );
+		update_option( 'thumbnail_size_h', 160 );
+		update_option( 'thumbnail_crop', 1 );
+
+		// Medium size.
+		update_option( 'medium_size_w', 320 );
+		update_option( 'medium_size_h', 240 );
+		update_option( 'medium_crop', 1 );
+
+		// Medium-large size.
+		update_option( 'medium_large_size_w', 480 );
+		update_option( 'medium_large_size_h', 360 );
+
+		// Large size.
+		update_option( 'large_size_w', 640 );
+		update_option( 'large_size_h', 480 );
+		update_option( 'large_crop', 1 );
+
+		// Set the post thumbnail size, 16:9 HD Video.
+		set_post_thumbnail_size( 1280, 720, [ 'center', 'center' ] );
+
+		// Add wide image support for the block editor.
+		add_theme_support( 'align-wide' );
+
 		/**
-		 * Add image sizes.
+		 * Add image sizes
 		 *
 		 * Three sizes per aspect ratio so that WordPress
 		 * will use srcset for responsive images.
@@ -307,18 +329,22 @@ final class Functions {
 		 * @since 1.0.0
 		 */
 
+		 // 1:1 square.
+		add_image_size( __( 'large-thumbnail', 'beeline-theme' ), 240, 240, true );
+		add_image_size( __( 'xlarge-thumbnail', 'beeline-theme' ), 320, 320, true );
+
 		// 16:9 HD Video.
-		add_image_size( __( 'video', 'bs-theme' ), 1280, 720, true );
-		add_image_size( __( 'video-md', 'bs-theme' ), 960, 540, true );
-		add_image_size( __( 'video-sm', 'bs-theme' ), 640, 360, true );
+		add_image_size( __( 'large-video', 'bs-theme' ), 1280, 720, true );
+		add_image_size( __( 'medium-video', 'bs-theme' ), 960, 540, true );
+		add_image_size( __( 'small-video', 'bs-theme' ), 640, 360, true );
 
 		// 21:9 Cinemascope.
-		add_image_size( __( 'banner', 'bs-theme' ), 1280, 549, true );
-		add_image_size( __( 'banner-md', 'bs-theme' ), 960, 411, true );
-		add_image_size( __( 'banner-sm', 'bs-theme' ), 640, 274, true );
+		add_image_size( __( 'large-banner', 'bs-theme' ), 1280, 549, true );
+		add_image_size( __( 'medium-banner', 'bs-theme' ), 960, 411, true );
+		add_image_size( __( 'small-banner', 'bs-theme' ), 640, 274, true );
 
 		/**
-		 * Custom header for the front page.
+		 * Custom header
 		 */
 		add_theme_support( 'custom-header', apply_filters( 'bst_custom_header_args', [
 			'width'              => 2048,
@@ -337,7 +363,7 @@ final class Functions {
 		] );
 
 		/**
-		 * Custom logo support
+		 * Custom logo
 		 *
 		 * @since 1.0.0
 		 */
@@ -366,6 +392,10 @@ final class Functions {
 		if ( ! isset( $content_width ) ) {
 			$content_width = $bs_content_width;
 		}
+
+		// Embed sizes.
+		update_option( 'embed_size_w', 1280 );
+		update_option( 'embed_size_h', 720 );
 
 		/**
 		 * Register theme menus.
@@ -441,6 +471,10 @@ final class Functions {
 	 */
 	public function widgets() {
 
+		// Add customizer widget refresh support.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// Register sidebar widget area.
 		register_sidebar( [
 			'name'          => esc_html__( 'Sidebar', 'bs-theme' ),
 			'id'            => 'sidebar',
