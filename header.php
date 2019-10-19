@@ -81,12 +81,14 @@ if ( is_home() && ! is_front_page() ) {
 				<figure>
 					<?php
 					if ( has_header_image() ) {
-						the_header_image_tag();
+						$attributes = [
+							'alt'  => ''
+						];
+						the_header_image_tag( $attributes );
 					} else {
 						echo sprintf(
-							'<img src="%1s" alt="%2s" width="2048" height="878" />',
-							get_theme_file_uri( '/assets/images/default-header.jpg' ),
-							get_bloginfo( 'name' ) . __( 'header image', 'bs-theme' )
+							'<img src="%1s" alt="" width="2048" height="878" />',
+							get_theme_file_uri( '/assets/images/default-header.jpg' )
 						);
 					} ?>
 				</figure>
