@@ -160,6 +160,10 @@ final class Functions {
 		 */
 		add_action( 'admin_enqueue_scripts', [ $this, 'admin_styles' ], 99 );
 
+		// Toolbar styles.
+		add_action( 'wp_enqueue_scripts', [ $this, 'toolbar_styles' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'toolbar_styles' ], 99 );
+
 		// Login styles.
 		add_action( 'login_enqueue_scripts', [ $this, 'login_styles' ] );
 
@@ -174,6 +178,9 @@ final class Functions {
 
 		// Theme info page.
 		add_action( 'admin_menu', [ $this, 'theme_info' ] );
+
+		// User color scheme classes.
+		add_filter( 'body_class', [ $this, 'color_scheme_classes' ] );
 
 	}
 
@@ -585,7 +592,24 @@ final class Functions {
 	 */
 	public function admin_styles() {
 
-		wp_enqueue_style( 'bs-theme-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '' );
+		wp_enqueue_style( 'bs-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '' );
+
+	}
+
+	/**
+	 * Toolbar styles
+	 *
+	 * Enqueues if user is logged in and admin bar is showing.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function toolbar_styles() {
+
+		if ( is_user_logged_in() && is_admin_bar_showing() ) {
+			wp_enqueue_style( 'bs-toolbar', get_theme_file_uri( '/assets/css/toolbar.min.css' ), [], '' );
+		}
 
 	}
 
@@ -759,6 +783,63 @@ final class Functions {
     public function theme_info_output() {
 
         require get_theme_file_path( '/includes/theme-info-page.php' );
+
+	}
+
+	/**
+     * User color scheme classes
+	 *
+	 * Add a class to the body element according to
+	 * the user's admin color scheme preference.
+     *
+     * @since  1.0.0
+	 * @access public
+	 * @return array Returns a modified array of body classes.
+     */
+	public function color_scheme_classes( $classes ) {
+
+		// Stop here if user is not logged in and admin bar is not showing.
+		if ( ! is_user_logged_in() && ! is_admin_bar_showing() ) {
+			return;
+		}
+
+		// Get the user color scheme option.
+		$color = get_user_option( 'admin_color' );
+
+		// Light.
+		if ( 'light' == $color ) {
+			$classes = array_merge( $classes, array( 'admin-color-light' ) );
+
+		// Blue.
+		} elseif ( 'blue' == $color ) {
+			$classes = array_merge( $classes, array( 'admin-color-blue' ) );
+
+		// Coffee.
+		} elseif ( 'coffee' == $color ) {
+			$classes = array_merge( $classes, array( 'admin-color-coffee' ) );
+
+		// Ectoplasm.
+		} elseif ( 'ectoplasm' == $color ) {
+			$classes = array_merge( $classes, array( 'admin-color-ectoplasm' ) );
+
+		// Midnight.
+		} elseif ( 'midnight' == $color ) {
+			$classes = array_merge( $classes, array( 'admin-color-midnight' ) );
+
+		// Ocean.
+		} elseif ( 'ocean' == $color ) {
+			$classes = array_merge( $classes, array( 'admin-color-ocean' ) );
+
+		// Sunrise.
+		} elseif ( 'sunrise' == $color ) {
+			$classes = array_merge( $classes, array( 'admin-color-sunrise' ) );
+
+		// Fresh (default).
+		} else {
+			$classes = array_merge( $classes, array( 'admin-color-fresh' ) );
+		}
+
+		return $classes;
 
 	}
 

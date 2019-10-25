@@ -1,0 +1,34 @@
+/**
+ * User toolbar
+ *
+ * For reference, following is a list of body classes
+ * applied by the user color schemes.
+ *
+ * * Fresh (default): `.admin-color-fresh`
+ * * Light: `.admin-color-light`
+ * * Blue: `.admin-color-blue`
+ * * Coffee: `.admin-color-coffee`
+ * * Ectoplasm: `.admin-color-ectoplasm`
+ * * Midnight: `.admin-color-midnight`
+ * * Ocean: `.admin-color-ocean`
+ * * Sunrise: `.admin-color-sunrise`
+ */
+ @import '_variables';
+
+#wpadminbar {}
+
+body {
+
+	// Backend styles.
+	&.wp-admin {
+
+		// Admin theme: Fresh (default)
+		&.admin-color-fresh {}
+
+		// Admin theme: Light
+		&.admin-color-light {}
+	}
+
+	// Frontend styles.
+	&:not(.wp-admin) {}
+}
