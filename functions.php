@@ -798,47 +798,17 @@ final class Functions {
      */
 	public function color_scheme_classes( $classes ) {
 
-		// Stop here if user is not logged in and admin bar is not showing.
-		if ( ! is_user_logged_in() && ! is_admin_bar_showing() ) {
-			return;
+		// Add a class if user is logged in and admin bar is showing.
+		if ( is_user_logged_in() && is_admin_bar_showing() ) {
+
+			// Get the user color scheme option.
+			$scheme = get_user_option( 'admin_color' );
+
+			// Return body classes with `user-color-$scheme`.
+			return array_merge( $classes, array( 'user-color-' . $scheme ) );
 		}
 
-		// Get the user color scheme option.
-		$color = get_user_option( 'admin_color' );
-
-		// Light.
-		if ( 'light' == $color ) {
-			$classes = array_merge( $classes, array( 'admin-color-light' ) );
-
-		// Blue.
-		} elseif ( 'blue' == $color ) {
-			$classes = array_merge( $classes, array( 'admin-color-blue' ) );
-
-		// Coffee.
-		} elseif ( 'coffee' == $color ) {
-			$classes = array_merge( $classes, array( 'admin-color-coffee' ) );
-
-		// Ectoplasm.
-		} elseif ( 'ectoplasm' == $color ) {
-			$classes = array_merge( $classes, array( 'admin-color-ectoplasm' ) );
-
-		// Midnight.
-		} elseif ( 'midnight' == $color ) {
-			$classes = array_merge( $classes, array( 'admin-color-midnight' ) );
-
-		// Ocean.
-		} elseif ( 'ocean' == $color ) {
-			$classes = array_merge( $classes, array( 'admin-color-ocean' ) );
-
-		// Sunrise.
-		} elseif ( 'sunrise' == $color ) {
-			$classes = array_merge( $classes, array( 'admin-color-sunrise' ) );
-
-		// Fresh (default).
-		} else {
-			$classes = array_merge( $classes, array( 'admin-color-fresh' ) );
-		}
-
+		// Return the unfiltered classes if user is not logged in.
 		return $classes;
 
 	}
