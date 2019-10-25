@@ -27,10 +27,10 @@
 		<?php
 		the_content();
 
-		wp_link_pages( array(
+		wp_link_pages( [
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bs-theme' ),
 			'after'  => '</div>',
-		) );
+		] );
 		?>
 	</div>
 
@@ -41,11 +41,11 @@
 				sprintf(
 					wp_kses(
 						__( 'Edit <span class="screen-reader-text">%s</span>', 'bs-theme' ),
-						array(
-							'span' => array(
-								'class' => array(),
-							),
-						)
+						[
+							'span' => [
+								'class' => [],
+							],
+						]
 					),
 					get_the_title()
 				),

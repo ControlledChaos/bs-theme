@@ -56,10 +56,10 @@ if ( is_home() && ! is_front_page() ) {
 			<?php esc_html_e( 'Menu', 'bs-theme' ); ?>
 		</button>
 		<?php
-		wp_nav_menu( array(
+		wp_nav_menu( [
 			'theme_location' => 'main',
 			'menu_id'        => 'main-menu',
-		) );
+		] );
 		?>
 	</nav>
 

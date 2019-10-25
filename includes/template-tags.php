@@ -227,11 +227,11 @@ function entry_footer() {
 			sprintf(
 				wp_kses(
 					__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'bs-theme' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
+					[
+						'span' => [
+							'class' => [],
+						],
+					]
 				),
 				get_the_title()
 			)
@@ -243,11 +243,11 @@ function entry_footer() {
 		sprintf(
 			wp_kses(
 				__( ' Edit <span class="screen-reader-text">%s</span>', 'bs-theme' ),
-				array(
-					'span' => array(
-						'class' => array(),
-					),
-				)
+				[
+					'span' => [
+						'class' => [],
+					],
+				]
 			),
 			get_the_title()
 		),
@@ -278,10 +278,10 @@ function post_thumbnail() {
 
 		<div class="post-thumbnail">
 		<?php
-		the_post_thumbnail( 'post-thumbnail', array(
+		the_post_thumbnail( 'post-thumbnail', [
 			'alt'  => '',
 			'role' => 'presentation'
-		) );
+		] );
 		?>
 		</div>
 
@@ -289,10 +289,10 @@ function post_thumbnail() {
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 		<?php
-		the_post_thumbnail( 'post-thumbnail', array(
+		the_post_thumbnail( 'post-thumbnail', [
 			'alt'  => '',
 			'role' => 'presentation'
-		) );
+		] );
 		?>
 	</a>
 
