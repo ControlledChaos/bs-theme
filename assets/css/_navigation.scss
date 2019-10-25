@@ -1,56 +1,66 @@
 /**
  * Navigation
  */
- .main-navigation {
+.main-navigation {
 	clear: both;
 	display: block;
-	float: left;
 	width: 100%;
 	margin-top: 1em;
-	background: #fff;
 
-	& ul {
+	ul {
 		display: none;
 		list-style: none;
 		margin: 0;
 		padding-left: 0;
-		background: inherit;
+		background-color: inherit;
 
-		& ul {
-			-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-			        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+		ul {
 			position: absolute;
 			top: 100%;
 			left: -999em;
 			z-index: 99999;
-			background: inherit;
+			width: 100%;
+			min-width: 160px;
+			background-color: #fff;
+			-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+					box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 
-			& ul {
+			ul {
 				left: -999em;
 				top: 0;
 			}
 
-			& li:hover > ul,
-			& li.focus > ul {
-				left: 100%;
+			li:hover > ul,
+			li.focus > ul {
+				left: 0;
 			}
 
-			& a {
-				width: 100%;
-			}
-		}
+			li {
 
-		& li:hover > ul,
-		& li.focus > ul {
-			left: auto;
+				a {
+					width: 100%;
+					padding: 0.25em 0.75em;
+
+					&:hover,
+					&:focus {
+						background: $pale_gray;
+					}
+				}
+			}
 		}
 	}
 
-	& li {
-		position: relative;
+	li {
+		overflow: visible;
+
+		&:hover > ul,
+		&:focus > ul,
+		&.focus > ul {
+			left: 0;
+		}
 	}
 
-	& a {
+	a {
 		display: inline-block;
 		text-decoration: none;
 	}
@@ -61,22 +71,6 @@
 .main-navigation.toggled ul {
 	display: block;
 	font-size: 1.25em;
-}
-
-@media screen and (min-width: 37.5em) {
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: block;
-	}
-
-	.main-navigation div > ul > li {
-		display: inline;
-		position: relative;
-		margin-right: 1em;
-	}
 }
 
 .site-main .comment-navigation, .site-main
@@ -99,4 +93,30 @@
 	float: right;
 	text-align: right;
 	width: 50%;
+}
+
+// Non-mobile menu.
+@media screen and (min-width: 37.5em) {
+	.menu-toggle {
+		display: none;
+	}
+
+	.main-navigation {
+
+		ul {
+			display: flex;
+
+			& > li {
+				position: relative;
+
+				&:not(:last-of-type) {
+					margin-right: 1em;
+				}
+			}
+
+			ul {
+				display: block;
+			}
+		}
+	}
 }
