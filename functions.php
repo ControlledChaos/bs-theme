@@ -535,7 +535,8 @@ final class Functions {
 	 */
 	public function frontend_scripts() {
 
-		// wp_enqueue_script( 'jquery' );
+		// Enqueue jQuery.
+		wp_enqueue_script( 'jquery' );
 
 		wp_enqueue_script( 'test-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), [], null, true );
 
