@@ -538,9 +538,15 @@ final class Functions {
 		// Enqueue jQuery.
 		wp_enqueue_script( 'jquery' );
 
+		// Navigation toggle and dropdown.
 		wp_enqueue_script( 'test-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), [], null, true );
 
+		// Skip link focus, for accessibility.
 		wp_enqueue_script( 'bs-theme-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.min.js' ), [], null, true );
+
+		// FitVids for responsive video embeds.
+		wp_enqueue_script( 'fitvids', get_theme_file_uri( '/assets/js/jquery.fitvids.min.js' ), [ 'jquery' ], null, true );
+		wp_add_inline_script( 'fitvids', 'jQuery(document).ready(function($){ $( ".entry-content" ).fitVids(); });', true );
 
 		// Comments scripts.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
