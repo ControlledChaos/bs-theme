@@ -586,7 +586,7 @@ final class Functions {
 		wp_enqueue_style( 'bs-theme', get_theme_file_uri( '/assets/css/style.min.css' ), [], '' );
 
 		// Block styles.
-		if ( function_exists( has_blocks() ) ) {
+		if ( function_exists( 'has_blocks' ) ) {
 			if ( has_blocks() ) {
 				wp_enqueue_style( 'bs-blocks', get_theme_file_uri( '/assets/css/blocks.min.css' ), [ 'bs-theme' ], '' );
 			}
