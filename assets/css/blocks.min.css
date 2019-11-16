@@ -1,1 +1,85 @@
-.has-bst-text-background-color{background-color:#333}.has-bst-light-gray-background-color{background-color:#888}.has-bst-pale-gray-background-color{background-color:#ccc}.has-bst-white-background-color{background-color:#fff}.has-bst-error-background-color{background-color:#dc3232}.has-bst-warning-background-color{background-color:#ffb900}.has-bst-success-background-color{background-color:#46b450}.has-bst-text-color{color:#333}.has-bst-light-gray-color{color:#888}.has-bst-pale-gray-color{color:#ccc}.has-bst-white-color{color:#fff}.has-bst-error-color{color:#dc3232}.has-bst-warning-color{color:#ffb900}.has-bst-success-color{color:#46b450}
+/**
+ * Blocks on front end
+ *
+ * This describes classes set by colors args in the functions file.
+ *
+ * @see functions.php/setup
+ */
+/**
+ * SASS/SCSS variables
+ *
+ * The following variables are used in other .scss files.
+ * Make sure that this files is called early in style,scss.
+ *
+ * @link https://sass-lang.com/documentation/variables
+ */
+/**
+ * Colors
+ *
+ * Some variables use colors set by args in the functions file.
+ *
+ * @see functions.php/setup
+ */
+/**
+ * Font sizes
+ *
+ * The font size variables presume a browser default of 16px,
+ * in which case the variable number is equivelent to a px number.
+ *
+ * SASS compiler may not like variables beginning with a numeral.
+ */
+.has-bst-text-background-color {
+  background-color: #333333;
+}
+
+.has-bst-light-gray-background-color {
+  background-color: #888888;
+}
+
+.has-bst-pale-gray-background-color {
+  background-color: #cccccc;
+}
+
+.has-bst-white-background-color {
+  background-color: #ffffff;
+}
+
+.has-bst-error-background-color {
+  background-color: #dc3232;
+}
+
+.has-bst-warning-background-color {
+  background-color: #ffb900;
+}
+
+.has-bst-success-background-color {
+  background-color: #46b450;
+}
+
+.has-bst-text-color {
+  color: #333333;
+}
+
+.has-bst-light-gray-color {
+  color: #888888;
+}
+
+.has-bst-pale-gray-color {
+  color: #cccccc;
+}
+
+.has-bst-white-color {
+  color: #ffffff;
+}
+
+.has-bst-error-color {
+  color: #dc3232;
+}
+
+.has-bst-warning-color {
+  color: #ffb900;
+}
+
+.has-bst-success-color {
+  color: #46b450;
+}
