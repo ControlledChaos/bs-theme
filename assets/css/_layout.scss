@@ -4,6 +4,17 @@
 	padding: 2em;
 }
 
+.site-content {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+
+	.content-area {
+		width: 100%;
+	}
+}
+
 main article {
 	clear: both;
 }
