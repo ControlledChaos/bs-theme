@@ -406,6 +406,16 @@ a:visited {
   padding: 2em;
 }
 
+.site-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.site-content .content-area {
+  width: 100%;
+}
+
 main article {
   clear: both;
 }
@@ -789,14 +799,17 @@ h2 + .search-form {
     display: -ms-flexbox;
     display: flex;
   }
-  .main-navigation ul > li {
+  .main-navigation ul li {
     position: relative;
   }
-  .main-navigation ul > li:not(:last-of-type) {
+  .main-navigation ul li:not(:last-of-type) {
     margin-right: 1em;
   }
   .main-navigation ul ul {
     display: block;
+  }
+  .main-navigation ul ul li:not(:last-of-type) {
+    margin-right: 0;
   }
 }
 
