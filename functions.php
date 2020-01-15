@@ -66,7 +66,20 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-// Get plugins path to check for active plugins.
+/**
+ * Get plugins path
+ *
+ * Used to check for active plugins with the `is_plugin_active` function.
+ *
+ * @link https://developer.wordpress.org/reference/functions/is_plugin_active/
+ *
+ * @example The following would check for the Advanced Custom Fields plugin:
+ *          ```
+ *          if ( is_plugin_active( 'advanced-custom-fields/acf.php' ) ) {
+ *          	// Do stuff.
+ *           }
+ *          ```
+ */
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 /**
@@ -357,12 +370,13 @@ final class Functions {
 			'width'              => 2048,
 			'height'             => 878,
 			'flex-height'        => true,
+			'default-image'      => 'default_image',
 			'video'              => false,
 			'wp-head-callback'   => [ $this, 'header_style' ]
 		] ) );
 
 		register_default_headers( [
-			'default-image' => [
+			'default_image' => [
 				'url'           => '%s/assets/images/default-header.jpg',
 				'thumbnail_url' => '%s/assets/images/default-header.jpg',
 				'description'   => __( 'Default Header Image', 'bs-theme' ),
