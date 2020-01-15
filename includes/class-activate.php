@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Theme deactivation class
+ * Theme activation class
  *
  * @since  1.0.0
  * @access public
