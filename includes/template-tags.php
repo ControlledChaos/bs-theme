@@ -109,20 +109,15 @@ function theme_acf_options() {
 /**
  * Additional hook for scripts & styles
  *
- * Added for backwards compatibility to support
- * pre 5.2.0 WordPress versions.
- *
  * Triggered after the opening `<body>` tag.
  *
  * @link https://make.wordpress.org/themes/2019/03/29/addition-of-new-wp_body_open-hook/
  * @link https://developer.wordpress.org/reference/functions/wp_body_open/
  */
-if ( ! function_exists( 'wp_body_open' ) ) :
-
-	function wp_body_open() {
-		do_action( 'wp_body_open' );
-	}
-endif;
+function body_open() {
+	do_action( 'wp_body_open' );
+	do_action( 'bs_body_open' );
+}
 
 /**
  * Site Schema
