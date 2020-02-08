@@ -349,9 +349,9 @@ final class Functions {
 		 * @since 1.0.0
 		 */
 
-		 // 1:1 square.
-		add_image_size( __( 'large-thumbnail', 'beeline-theme' ), 240, 240, true );
-		add_image_size( __( 'xlarge-thumbnail', 'beeline-theme' ), 320, 320, true );
+		// 1:1 square.
+		add_image_size( __( 'large-thumbnail', 'bs-theme' ), 240, 240, true );
+		add_image_size( __( 'xlarge-thumbnail', 'bs-theme' ), 320, 320, true );
 
 		// 16:9 HD Video.
 		add_image_size( __( 'large-video', 'bs-theme' ), 1280, 720, true );
