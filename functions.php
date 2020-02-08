@@ -559,8 +559,8 @@ final class Functions {
 		wp_enqueue_script( 'bs-theme-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.min.js' ), [], null, true );
 
 		// FitVids for responsive video embeds.
-		wp_enqueue_script( 'bs-fitvids', get_theme_file_uri( '/assets/js/jquery.fitvids.min.js' ), [ 'jquery' ], null, true );
-		wp_add_inline_script( 'bs-fitvids', 'jQuery(document).ready(function($){ $( ".entry-content" ).fitVids(); });', true );
+		wp_enqueue_script( 'bs-theme-fitvids', get_theme_file_uri( '/assets/js/jquery.fitvids.min.js' ), [ 'jquery' ], null, true );
+		wp_add_inline_script( 'bs-theme-fitvids', 'jQuery(document).ready(function($){ $( ".entry-content" ).fitVids(); });', true );
 
 		// Comments scripts.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -602,12 +602,12 @@ final class Functions {
 		// Block styles.
 		if ( function_exists( 'has_blocks' ) ) {
 			if ( has_blocks() ) {
-				wp_enqueue_style( 'bs-blocks', get_theme_file_uri( '/assets/css/blocks.min.css' ), [ 'bs-theme' ], '' );
+				wp_enqueue_style( 'bs-theme-blocks', get_theme_file_uri( '/assets/css/blocks.min.css' ), [ 'bs-theme' ], '' );
 			}
 		}
 
 		// Print styles.
-		wp_enqueue_style( 'bs-print', get_theme_file_uri( '/assets/css/print.min.css' ), [], '', 'print' );
+		wp_enqueue_style( 'bs-theme-print', get_theme_file_uri( '/assets/css/print.min.css' ), [], '', 'print' );
 
 	}
 
@@ -620,7 +620,7 @@ final class Functions {
 	 */
 	public function admin_styles() {
 
-		wp_enqueue_style( 'bs-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '' );
+		wp_enqueue_style( 'bs-theme-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '' );
 
 	}
 
@@ -636,7 +636,7 @@ final class Functions {
 	public function toolbar_styles() {
 
 		if ( is_user_logged_in() && is_admin_bar_showing() ) {
-			wp_enqueue_style( 'bs-toolbar', get_theme_file_uri( '/assets/css/toolbar.min.css' ), [], '' );
+			wp_enqueue_style( 'bs-theme-toolbar', get_theme_file_uri( '/assets/css/toolbar.min.css' ), [], '' );
 		}
 
 	}
