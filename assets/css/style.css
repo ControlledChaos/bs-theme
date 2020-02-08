@@ -1015,3 +1015,7 @@ figure.alignnone {
   font-size: 0.825em;
   text-align: center;
 }
+
+/**
+ * Styles for when JavaScript is disabled
+ */
