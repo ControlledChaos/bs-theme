@@ -366,22 +366,22 @@ final class Functions {
 		/**
 		 * Custom header
 		 */
+		$default_image = register_default_headers( [
+			'default_image' => [
+				'url'           => '%s/assets/images/default-header.jpg',
+				'thumbnail_url' => '%s/assets/images/default-header.jpg',
+				'description'   => __( 'Default Header Image', 'affp-theme' ),
+			],
+		] );
+
 		add_theme_support( 'custom-header', apply_filters( 'bst_custom_header_args', [
 			'width'              => 2048,
 			'height'             => 878,
 			'flex-height'        => true,
-			'default-image'      => 'default_image',
+			'default-image'      => $default_image,
 			'video'              => false,
 			'wp-head-callback'   => [ $this, 'header_style' ]
 		] ) );
-
-		register_default_headers( [
-			'default_image' => [
-				'url'           => '%s/assets/images/default-header.jpg',
-				'thumbnail_url' => '%s/assets/images/default-header.jpg',
-				'description'   => __( 'Default Header Image', 'bs-theme' ),
-			],
-		] );
 
 		/**
 		 * Custom logo
