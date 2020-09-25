@@ -391,8 +391,8 @@ final class Functions {
 
 		// Logo arguments.
 		$logo_args = [
-			'width'       => 180,
-			'height'      => 180,
+			'width'       => 160,
+			'height'      => 160,
 			'flex-width'  => true,
 			'flex-height' => true
 		];
