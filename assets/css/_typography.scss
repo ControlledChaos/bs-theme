@@ -64,9 +64,9 @@ a:visited {
 	color: $visited;
 }
 
-.entry-content ul,
+ul:not([class]),
 .sidebar-widgets ul,
-.entry-content ol,
+ol:not([class]),
 .sidebar-widgets ol {
 	padding-left: 1em;
 }

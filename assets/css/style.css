@@ -353,9 +353,9 @@ a:visited {
   color: #551a8b;
 }
 
-.entry-content ul,
+ul:not([class]),
 .sidebar-widgets ul,
-.entry-content ol,
+ol:not([class]),
 .sidebar-widgets ol {
   padding-left: 1em;
 }
@@ -962,7 +962,7 @@ figure.alignnone {
   text-align: center;
 }
 
-.gallery {
+article .gallery {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -970,15 +970,10 @@ figure.alignnone {
   flex-wrap: wrap;
   margin-top: 1em;
   list-style: none;
-  /*for galleries as list elements */
+  /* for galleries as list elements */
 }
 
-.gallery .gallery-item {
-  width: 33.33325%;
-  width: calc(100% / 3);
-}
-
-.gallery .gallery-item img {
+article .gallery .gallery-item img {
   border-color: transparent !important;
 }
 
@@ -993,6 +988,8 @@ figure.alignnone {
   margin-right: 0.5em;
 }
 
+/* When CSS Grid is not supported */
+/* When CSS Flexbox is not supported */
 /**
  * Comments
  */
