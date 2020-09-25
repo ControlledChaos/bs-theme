@@ -23,7 +23,7 @@ jQuery( document ).ready( function ($) {
 	// Switch theme and store in local storage.
 	$( button ).click( function() {
 
-		if ( $ ( 'body' ).hasClass( 'light-mode') ) {
+		if ( $( 'body' ).hasClass( 'light-mode') ) {
 			$( 'body' ).removeClass( 'light-mode' ).addClass( 'dark-mode' );
 			$( button ).text( 'Light Theme' );
 			localStorage.theme = 'dark-mode';
