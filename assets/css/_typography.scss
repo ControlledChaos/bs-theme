@@ -64,10 +64,8 @@ a:visited {
 	color: $visited;
 }
 
-ul:not([class]),
-.sidebar-widgets ul,
-ol:not([class]),
-.sidebar-widgets ol {
+#secondary ul,
+#secondary ol {
 	padding-left: 1em;
 }
 
