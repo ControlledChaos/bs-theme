@@ -126,10 +126,10 @@ final class Functions {
 	private function activation() {
 
 		// Require theme activation functions.
-		require_once get_theme_file_path( '/includes/class-activate.php' );
+		require_once get_theme_file_path( '/includes/classes/class-activate.php' );
 
 		// Require theme deactivation functions.
-		require_once get_theme_file_path( '/includes/class-deactivate.php' );
+		require_once get_theme_file_path( '/includes/classes/class-deactivate.php' );
 	 }
 
 	/**
