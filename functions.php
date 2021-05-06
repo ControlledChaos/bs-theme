@@ -130,7 +130,6 @@ final class Functions {
 
 		// Require theme deactivation functions.
 		require_once get_theme_file_path( '/includes/class-deactivate.php' );
-
 	 }
 
 	/**
@@ -194,7 +193,6 @@ final class Functions {
 
 		// User color scheme classes.
 		add_filter( 'body_class', [ $this, 'color_scheme_classes' ] );
-
 	}
 
 	/**
@@ -208,9 +206,7 @@ final class Functions {
 	 * @return string
 	 */
 	public function js_detect() {
-
 		echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
-
 	}
 
 	/**
@@ -435,7 +431,6 @@ final class Functions {
 		 * @since 1.0.0
 		 */
 		add_editor_style( '/assets/css/editor.min.css', [ 'bst-admin' ], '', 'screen' );
-
 	}
 
 	/**
@@ -505,7 +500,6 @@ final class Functions {
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		] );
-
 	}
 
 	/**
@@ -523,7 +517,6 @@ final class Functions {
 		$custom_colors = apply_filters( 'bst_editor_custom_colors', '__return_false' );
 
 		return $custom_colors;
-
 	}
 
 	/**
@@ -534,7 +527,6 @@ final class Functions {
 	 * @return void
 	 */
 	public function head_cleanup() {
-
 		remove_action( 'wp_head', 'rsd_link' );
 		remove_action( 'wp_head', 'wlwmanifest_link' );
 		remove_action( 'wp_head', 'wp_generator' );
@@ -566,7 +558,6 @@ final class Functions {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
-
 	}
 
 	/**
@@ -608,7 +599,6 @@ final class Functions {
 
 		// Print styles.
 		wp_enqueue_style( 'bs-theme-print', get_theme_file_uri( '/assets/css/print.min.css' ), [], '', 'print' );
-
 	}
 
 	/**
@@ -619,9 +609,7 @@ final class Functions {
 	 * @return void
 	 */
 	public function admin_styles() {
-
 		wp_enqueue_style( 'bs-theme-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], '' );
-
 	}
 
 	/**
@@ -638,7 +626,6 @@ final class Functions {
 		if ( is_user_logged_in() && is_admin_bar_showing() ) {
 			wp_enqueue_style( 'bs-theme-toolbar', get_theme_file_uri( '/assets/css/toolbar.min.css' ), [], '' );
 		}
-
 	}
 
 	/**
@@ -649,9 +636,7 @@ final class Functions {
 	 * @return void
 	 */
 	public function login_styles() {
-
 		wp_enqueue_style( 'custom-login', get_theme_file_uri( '/assets/css/login.css' ), [], '', 'screen' );
-
 	}
 
 	/**
@@ -662,11 +647,9 @@ final class Functions {
 	 * @return void
 	 */
 	private function dependencies() {
-
 		require get_theme_file_path( '/includes/template-functions.php' );
 		require get_theme_file_path( '/includes/template-tags.php' );
 		require get_theme_file_path( '/includes/customizer.php' );
-
 	}
 
 	/**
@@ -681,16 +664,16 @@ final class Functions {
 		// Add a submenu page under Themes.
 		$this->help_theme_options = add_submenu_page(
 			'themes.php',
-			__( 'Theme Options', 'bs-theme' ),
-			__( 'Theme Options', 'bs-theme' ),
+			__( 'Display Options', 'bs-theme' ),
+			__( 'Display Options', 'bs-theme' ),
 			'manage_options',
-			'bs-theme-options',
-			[ $this, 'theme_options_output' ]
+			'frontend-display-options',
+			[ $this, 'theme_options_output' ],
+			-1
 		);
 
 		// Add sample help tab.
 		add_action( 'load-' . $this->help_theme_options, [ $this, 'help_theme_options' ] );
-
 	}
 
 	/**
@@ -701,9 +684,7 @@ final class Functions {
 	 * @return void
      */
     public function theme_options_output() {
-
         require get_parent_theme_file_path( '/includes/theme-options-page.php' );
-
 	}
 
 	/**
@@ -733,7 +714,6 @@ final class Functions {
 		$screen->set_help_sidebar(
 			$this->help_theme_options_sidebar()
 		);
-
 	}
 
 	/**
@@ -744,9 +724,7 @@ final class Functions {
 	 * @return void
      */
 	public function help_theme_options_info() {
-
 		include_once get_theme_file_path( 'includes/partials/help-theme-options-info.php' );
-
     }
 
     /**
@@ -777,7 +755,6 @@ final class Functions {
          );
 
 		return $html;
-
 	}
 
 	/**
@@ -798,7 +775,6 @@ final class Functions {
 			'bs-theme-info',
 			[ $this, 'theme_info_output' ]
 		);
-
 	}
 
 	/**
@@ -809,9 +785,7 @@ final class Functions {
 	 * @return void
      */
     public function theme_info_output() {
-
         require get_theme_file_path( '/includes/theme-info-page.php' );
-
 	}
 
 	/**
@@ -838,9 +812,7 @@ final class Functions {
 
 		// Return the unfiltered classes if user is not logged in.
 		return $classes;
-
 	}
-
 }
 
 /**
@@ -854,11 +826,7 @@ final class Functions {
  * @return object
  */
 function bs_theme() {
-
-	$bs_theme = Functions::get_instance();
-
-	return $bs_theme;
-
+	return Functions::get_instance();
 }
 
 // Run the Functions class.
