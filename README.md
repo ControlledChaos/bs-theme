@@ -29,3 +29,28 @@ Some sample block editor styles are loaded, some functions are provided to check
 
 * Has a sample theme options page ready to begin developing.
 * Has a the info page as an example for getting theme data.
+
+## Renaming, Rebranding, and Defaults
+
+Following is a list of strings to find and replace in all theme files.
+
+1. Plugin name  
+   Find `BS_Theme` and replace with your theme name, include underscores between words. This will change the namespace and the package name in file headers.
+
+2. Text domain  
+   Find `bs-theme` and replace with the text domain of your theme.
+
+3. Constant prefix  
+   Find `BST` and replace with the uppercase prefix of your theme.
+
+4. Author  
+   Find `Controlled Chaos Design <greg@ccdzine.com>` and replace with your name and email address or those of your organization.
+
+5. Header image  
+   Find the default header image file, `default-header.jpg`, in the `assets/images/` directory and replace with your default image.
+
+6. Activation and deactivation  
+   Check the activation and deactivation classes, `includes/class-activate` and `includes/class-deactivate`, for sample methods. Remove or modify the samples as needed.
+
+7. README file  
+   Whether or not your theme will be kept in a version control repository, edit the content of the README file in the theme's root directory or delete it if it is not necessary.
