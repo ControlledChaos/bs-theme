@@ -31,7 +31,7 @@
  */
 
 /**
- * Renaming, rebranding, & defaults
+ * Renaming, rebranding, and defaults
  *
  * Following is a list of strings to find and replace in all theme files.
  *
@@ -41,30 +41,69 @@
  *    name in file headers.
  *
  * 2. Text domain
- *    Find bs-theme and replace with the text domain of your theme.
+ *    Find `bs-theme` and replace with the text domain of your theme.
  *
- * 3. Author
+ * 3. Constant prefix
+ *    Find `BST` and replace with the uppercase prefix of your theme.
+ *
+ * 4. Author
  *    Find `Controlled Chaos Design <greg@ccdzine.com>` and replace with your name and
  *    email address or those of your organization.
  *
- * 4. Header image
+ * 5. Header image
  *    Replace the default image file `default-header.jpg`.
  *    @see assets/images/
  *
- * Activation and deactivation
+ * 6. Activation and deactivation
  *    Check the activation and deactivation classes for sample methods.
  *    Remove or modify the samples as needed.
  *    @see includes/class-activate
  *    @see includes/class-deactivate
+ *
+ * 7. README file
+ *    Whether or not your theme will be kept in a version control repository,
+ *    edit the content of the README file in the theme's root directory or
+ *    delete it if it is not necessary.
  */
 
 // Namespace specificity for theme functions & filters.
-namespace BS_Theme\Functions;
+namespace BS_Theme;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
+
+// Get the PHP version class.
+require_once get_parent_theme_file_path( '/includes/classes/class-php-version.php' );
+
+/**
+ * PHP version check
+ *
+ * Disables theme front end if the minimum PHP version is not met.
+ * Prevents breaking sites running older PHP versions.
+ *
+ * @since  1.0.0
+ * @return void
+ */
+if ( ! Classes\php()->version() && ! is_admin() ) {
+
+	// Get the conditional message.
+	$die = Classes\php()->frontend_message();
+
+	// Print the die message.
+	die( $die );
+}
+
+// Get plugin configuration file.
+require get_parent_theme_file_path( '/config.php' );
+
+// Define the theme path.
+$theme_path = get_stylesheet_directory();
+define( 'BST_PATH', $theme_path );
+
+// Autoload class files.
+require BST_PATH . '/includes/autoloader.php';
 
 /**
  * Get plugins path
