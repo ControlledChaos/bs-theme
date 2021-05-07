@@ -43,24 +43,30 @@
  * 2. Text domain
  *    Find `bs-theme` and replace with the text domain of your theme.
  *
- * 3. Constant prefix
- *    Find `BST` and replace with the uppercase prefix of your theme.
+ * 3. Theme prefix
+ *    Find `bst` and replace with the unique, lowercase theme prefix.
+ *    This prefix is used for applied filters, stylesheet IDs, and
+ *    admin page URIs, so the prefix may be followed by an underscore
+ *    or a dash. Search for `bst_` and `bst-` to find the difference.
  *
- * 4. Author
+ * 4. Constant prefix
+ *    Find `BST` and replace with the unique, uppercase prefix of your theme.
+ *
+ * 5. Author
  *    Find `Controlled Chaos Design <greg@ccdzine.com>` and replace with your name and
  *    email address or those of your organization.
  *
- * 5. Header image
+ * 6. Header image
  *    Replace the default image file `default-header.jpg`.
  *    @see assets/images/
  *
- * 6. Activation and deactivation
+ * 7. Activation and deactivation
  *    Check the activation and deactivation classes for sample methods.
  *    Remove or modify the samples as needed.
  *    @see includes/class-activate
  *    @see includes/class-deactivate
  *
- * 7. README file
+ * 8. README file
  *    Whether or not your theme will be kept in a version control repository,
  *    edit the content of the README file in the theme's root directory or
  *    delete it if it is not necessary.
@@ -723,7 +729,7 @@ final class Functions {
 	 * @return void
      */
     public function theme_options_output() {
-        require get_parent_theme_file_path( '/includes/theme-options-page.php' );
+        require get_parent_theme_file_path( '/template-parts/theme-options-page.php' );
 	}
 
 	/**
@@ -763,7 +769,7 @@ final class Functions {
 	 * @return void
      */
 	public function help_theme_options_info() {
-		include_once get_theme_file_path( 'includes/partials/help-theme-options-info.php' );
+		include_once get_theme_file_path( 'template-parts/partials/help-theme-options-info.php' );
     }
 
     /**
@@ -824,7 +830,16 @@ final class Functions {
 	 * @return void
      */
     public function theme_info_output() {
-        require get_theme_file_path( '/includes/theme-info-page.php' );
+
+		$output = get_theme_file_path( '/template-parts/theme-info-page.php' );
+        if ( file_exists( $output ) ) {
+			include $output;
+		} else { ?>
+			<div class="wrap theme-info-page">
+				<h1><?php _e( 'Template Error', 'bs-theme' ); ?></h1>
+				<p class="description"><?php _e( 'The template file for this page was not located.' ); ?></p>
+			</div>
+		<?php }
 	}
 
 	/**
