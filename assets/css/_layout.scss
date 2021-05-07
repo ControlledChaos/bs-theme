@@ -12,6 +12,7 @@
 
 	.content-area {
 		width: 100%;
+		margin-right: 2em;
 	}
 }
 
@@ -48,4 +49,15 @@ main article {
 .site-content:after,
 .site-footer:after {
 	clear: both;
+}
+
+.rtl {
+
+	.site-content {
+
+		.content-area {
+			margin-right: auto;
+			margin-left: 2em;
+		}
+	}
 }
