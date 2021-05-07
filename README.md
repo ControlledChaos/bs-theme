@@ -40,17 +40,20 @@ Following is a list of strings to find and replace in all theme files.
 2. Text domain  
    Find `bs-theme` and replace with the text domain of your theme.
 
-3. Constant prefix  
+3. Theme prefix
+   Find `bst` and replace with the unique, lowercase theme prefix. This prefix is used for applied filters, stylesheet IDs, and admin page URIs, so the prefix may be followed by an underscore or a dash. Search for `bst_` and `bst-` to find the difference.
+
+4. Constant prefix  
    Find `BST` and replace with the uppercase prefix of your theme.
 
-4. Author  
+5. Author  
    Find `Controlled Chaos Design <greg@ccdzine.com>` and replace with your name and email address or those of your organization.
 
-5. Header image  
+6. Header image  
    Find the default header image file, `default-header.jpg`, in the `assets/images/` directory and replace with your default image.
 
-6. Activation and deactivation  
+7. Activation and deactivation  
    Check the activation and deactivation classes, `includes/class-activate` and `includes/class-deactivate`, for sample methods. Remove or modify the samples as needed.
 
-7. README file  
+8. README file  
    Whether or not your theme will be kept in a version control repository, edit the content of the README file in the theme's root directory or delete it if it is not necessary.
