@@ -8,6 +8,11 @@
  * @since      1.0.0
  */
 
+namespace BS_Theme;
+
+// Alias namespaces.
+use BS_Theme\Classes\Front as Front;
+
 ?>
 <h3><?php _e( 'Search','bs-theme' ); ?></h3>
 

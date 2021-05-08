@@ -8,6 +8,11 @@
  * @since      1.0.0
  */
 
+namespace BS_Theme;
+
+// Alias namespaces.
+use BS_Theme\Classes\Front as Front;
+
 // Get the default header file.
 get_header();
 

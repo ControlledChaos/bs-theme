@@ -26,20 +26,17 @@ class Setup {
 	 */
 	public function __construct() {
 
-		// Swap html 'no-js' class with 'js'.
-		add_action( 'wp_head', [ $this, 'js_detect' ], 0 );
-
 		// Theme setup.
 		add_action( 'after_setup_theme', [ $this, 'setup' ] );
+
+		// Body element classes.
+		add_filter( 'body_class', [ $this, 'body_classes' ] );
 
 		// Register widgets.
         add_action( 'widgets_init', [ $this, 'widgets' ] );
 
 		// Disable custom colors in the editor.
 		add_action( 'after_setup_theme', [ $this, 'editor_custom_color' ] );
-
-		// Remove unpopular meta tags.
-		add_action( 'init', [ $this, 'head_cleanup' ] );
 
 		// Frontend scripts.
 		add_action( 'wp_enqueue_scripts', [ $this, 'frontend_scripts' ] );
@@ -78,20 +75,6 @@ class Setup {
 
 		// User color scheme classes.
 		add_filter( 'body_class', [ $this, 'color_scheme_classes' ] );
-	}
-
-	/**
-	 * JS Replace
-	 *
-	 * Replaces 'no-js' class with 'js' in the <html> element
-	 * when JavaScript is detected.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return string
-	 */
-	public function js_detect() {
-		echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 	}
 
 	/**
@@ -289,10 +272,10 @@ class Setup {
 		 *
 		 * @since 1.0.0
 		 */
-		$bs_content_width = apply_filters( 'bst_content_width', 1280 );
+		$bst_content_width = apply_filters( 'bst_content_width', 1280 );
 
 		if ( ! isset( $content_width ) ) {
-			$content_width = $bs_content_width;
+			$content_width = $bst_content_width;
 		}
 
 		// Embed sizes.
@@ -319,6 +302,35 @@ class Setup {
 	}
 
 	/**
+	 * Body classes
+	 *
+	 * Adds custom classes to the array of body classes.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  array $classes Classes for the body element.
+	 * @return array Returns the array of body classes.
+	 */
+	public function body_classes( $classes ) {
+
+		// Adds a class of hfeed to non-singular pages.
+		if ( ! is_singular() ) {
+			$classes[] = 'hfeed';
+		}
+
+		// Adds a class of no-sidebar when there is no default sidebar present.
+		if (
+			! is_active_sidebar( 'sidebar-default' ) ||
+			is_page_template( [ 'page-templates/no-sidebar.php' ] )
+		) {
+			$classes[] = 'no-sidebar';
+		}
+
+		// Return the modified array of body classes.
+		return $classes;
+	}
+
+	/**
 	 * Style the header image and text
 	 *
 	 * @since  1.0.0
@@ -331,14 +343,14 @@ class Setup {
 		$header_text_color = get_header_textcolor();
 
 		/*
-		 * If no custom options for text are set, let's bail.
-		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
+		 * Stop if no custom options for text are set.
+		 * get_header_textcolor() options: Any hex value, 'blank' to hide text.
+		 * Default: add_theme_support( 'custom-header' ).
 		 */
 		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 			return;
 		}
 
-		// If we get this far, we have custom styles.
 		if ( ! display_header_text() ) {
 			$style = sprintf(
 				'<style type="text/css">%1s</style>',
@@ -349,6 +361,7 @@ class Setup {
 					clip: rect(1px, 1px, 1px, 1px);
 				}'
 			);
+
 		} else {
 			$style = sprintf(
 				'<style type="text/css">%1s</style>',
@@ -360,6 +373,7 @@ class Setup {
 			);
 		}
 
+		// Print the style block.
 		echo $style;
 	}
 
@@ -377,8 +391,8 @@ class Setup {
 
 		// Register sidebar widget area.
 		register_sidebar( [
-			'name'          => esc_html__( 'Sidebar', 'bs-theme' ),
-			'id'            => 'sidebar',
+			'name'          => esc_html__( 'Default Sidebar', 'bs-theme' ),
+			'id'            => 'sidebar-default',
 			'description'   => esc_html__( 'Add widgets here.', 'bs-theme' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
@@ -402,19 +416,6 @@ class Setup {
 		$custom_colors = apply_filters( 'bst_editor_custom_colors', '__return_false' );
 
 		return $custom_colors;
-	}
-
-	/**
-	 * Clean up meta tags from the <head>
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function head_cleanup() {
-		remove_action( 'wp_head', 'rsd_link' );
-		remove_action( 'wp_head', 'wlwmanifest_link' );
-		remove_action( 'wp_head', 'wp_generator' );
 	}
 
 	/**

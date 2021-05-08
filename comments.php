@@ -11,6 +11,11 @@
  * @since      1.0.0
  */
 
+namespace BS_Theme;
+
+// Alias namespaces.
+use BS_Theme\Classes\Front as Front;
+
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will

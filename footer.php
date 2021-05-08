@@ -8,6 +8,11 @@
  * @since      1.0.0
  */
 
+namespace BS_Theme;
+
+// Alias namespaces.
+use BS_Theme\Classes\Front as Front;
+
 // Copyright HTML.
 $copyright = sprintf(
 	'<p class="copyright-text" itemscope="itemscope" itemtype="http://schema.org/CreativeWork">&copy; <span class="screen-reader-text">%1s</span><span itemprop="copyrightYear">%2s</span> <span itemprop="copyrightHolder">%3s.</span> %4s.</p>',
@@ -28,7 +33,7 @@ $copyright = sprintf(
 
 </div><!-- #page -->
 
-<?php BS_Theme\Tags\after_page(); ?>
+<?php Front\tags()->after_page(); ?>
 <?php wp_footer(); ?>
 
 </body>

@@ -8,9 +8,13 @@
  * @since      1.0.0
  */
 
-?>
+namespace BS_Theme;
 
-<section class="no-results not-found">
+// Alias namespaces.
+use BS_Theme\Classes\Front as Front;
+
+?>
+<div class="no-results not-found">
 
 	<header class="page-header">
 		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'bs-theme' ); ?></h1>
@@ -46,4 +50,4 @@
 		endif; ?>
 	</div>
 
-</section>
+</div>

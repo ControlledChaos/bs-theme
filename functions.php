@@ -78,6 +78,7 @@ namespace BS_Theme;
 use BS_Theme\Classes as General,
     BS_Theme\Classes\Activate as Activate,
     BS_Theme\Classes\Core as Core,
+	BS_Theme\Classes\Front as Front,
 	BS_Theme\Classes\Customize as Customize;
 
 // Restrict direct access.
@@ -129,27 +130,26 @@ require_once BST_PATH . 'includes/autoloader.php';
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 /**
- * Core theme function
+ * Instantiate theme classes
  *
- * Runs initial setup classes.
- *
- * @since  1.0.0
- * @access public
- * @return void
+ * @since 1.0.0
+ * @see   `includes/autoloader.php`
  */
-function theme_setup() {
 
-	// Activation classes.
-	new Classes\Activate\Activate;
-	new Classes\Activate\Deactivate;
+// Activation classes.
+new Classes\Activate\Activate;
+new Classes\Activate\Deactivate;
 
-	// Theme setup.
-	new Classes\Setup;
+// Theme setup.
+new Classes\Setup;
 
-	require get_theme_file_path( '/includes/template-functions.php' );
-	require get_theme_file_path( '/includes/template-tags.php' );
+// Frontend classes.
+if ( ! is_admin() ) {
+	new Front\Head;
+	new Front\Template_Tags;
+}
 
-	// Customizer.
+// Customizer classes.
+if ( is_customize_preview() ) {
 	new Customize\Customizer;
 }
-theme_setup();

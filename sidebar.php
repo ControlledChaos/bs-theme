@@ -8,11 +8,15 @@
  * @since      1.0.0
  */
 
-?>
+namespace BS_Theme;
 
+// Alias namespaces.
+use BS_Theme\Classes\Front as Front;
+
+?>
 <aside id="secondary" class="widget-area">
 
-	<p><?php BS_Theme\Includes\theme_mode(); ?></p>
+	<p><?php Front\tags()->theme_mode(); ?></p>
 
 	<?php
 		if ( is_active_sidebar( 'sidebar' ) ) :

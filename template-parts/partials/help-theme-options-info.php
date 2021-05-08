@@ -8,7 +8,7 @@
  * @since      1.0.0
  */
 
-namespace BS_Theme\Includes\Options;
+namespace BS_Theme;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

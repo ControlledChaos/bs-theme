@@ -12,6 +12,11 @@
  * @todo Add hooks for nav above or below header.
  */
 
+namespace BS_Theme;
+
+// Alias namespaces.
+use BS_Theme\Classes\Front as Front;
+
 if ( is_home() && ! is_front_page() ) {
     $canonical = get_permalink( get_option( 'page_for_posts' ) );
 } elseif ( is_archive() ) {
@@ -47,9 +52,9 @@ if ( is_home() && ! is_front_page() ) {
 </head>
 
 <body <?php body_class(); ?>>
-<?php BS_Theme\Tags\body_open(); ?>
-<?php BS_Theme\Tags\before_page(); ?>
-<div id="page" class="site" itemscope="itemscope" itemtype="<?php BS_Theme\Tags\site_schema(); ?>">
+<?php Front\tags()->body_open(); ?>
+<?php Front\tags()->before_page(); ?>
+<div id="page" class="site" itemscope="itemscope" itemtype="<?php Front\tags()->site_schema(); ?>">
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bs-theme' ); ?></a>
 

@@ -8,8 +8,12 @@
  * @since      1.0.0
  */
 
-?>
+namespace BS_Theme;
 
+// Alias namespaces.
+use BS_Theme\Classes\Front as Front;
+
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 
 	<header class="entry-header">
@@ -24,14 +28,14 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				BS_Theme\Tags\posted_on();
-				BS_Theme\Tags\posted_by();
+				 Front\tags()->posted_on();
+				 Front\tags()->posted_by();
 				?>
 			</div>
 		<?php endif; ?>
 	</header>
 
-	<?php BS_Theme\Tags\post_thumbnail(); ?>
+	<?php  Front\tags()->post_thumbnail(); ?>
 
 	<div class="entry-content" itemprop="articleBody">
 		<?php
@@ -55,7 +59,7 @@
 	</div>
 
 	<footer class="entry-footer">
-		<?php BS_Theme\Tags\entry_footer(); ?>
+		<?php  Front\tags()->entry_footer(); ?>
 	</footer>
 
 </article>

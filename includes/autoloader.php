@@ -71,8 +71,11 @@ define( 'BST_CLASSES', [
 	// Media classes.
 	// Users classes.
 	// Vendor classes.
-	// Backend/admin classes,
+	// Backend/admin classes.
+
 	// Frontend classes.
+	BST_CLASS_NS . '\Front\Head'          => BST_CLASS['front'] . 'head.php',
+	BST_CLASS_NS . '\Front\Template_Tags' => BST_CLASS['front'] . 'template-tags.php',
 
 	// Customizer classes.
 	BST_CLASS_NS . '\Customize\Customizer' => BST_CLASS['customize'] . 'customizer.php',
