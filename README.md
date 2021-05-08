@@ -14,14 +14,12 @@ See [BS Plugin](https://github.com/ControlledChaos/bs-plugin) for a basic WordPr
 
 ## Nothing Fancy
 
-This theme began life as a copy of the [_s (Underscores)](https://underscores.me/) starter theme. We have added schema attributes and slightly modified the CSS files.
-
-Some sample block editor styles are loaded, some functions are provided to check for Advanced Custom Fields and for ClassicPress.
+This is just a starter theme. However, files are namespaced and all functions are in autoloaded class files.
 
 ## Requirements
 
-* This theme was written in a WordPress 5.0+ environment with no concern for backwards compatitbility.
-* This theme was written on a local server running PHP 7.2
+* This theme was written in a WordPress 5.0+ environment with no concern for backwards compatibility.
+* This theme was written on a local server running PHP 7.4
 * The short array syntax ( `[]` rather than `array()` ) requires PHP 5.4+
 * Function files are namespaced and must be called accordingly in template parts.
 
