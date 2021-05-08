@@ -59,10 +59,8 @@ define( 'BST_CLASS_NS', __NAMESPACE__ . '\Classes' );
  */
 define( 'BST_CLASSES', [
 
-	// General/miscellaneous classes.
-	BST_CLASS_NS . '\Activate\Activate'   => BST_CLASS['general'] . 'activate.php',
-	BST_CLASS_NS . '\Activate\Deactivate' => BST_CLASS['general'] . 'deactivate.php',
-	BST_CLASS_NS . '\Setup' => BST_CLASS['general'] . 'setup.php',
+	// Core classes.
+	BST_CLASS_NS . '\Core\Setup' => BST_CLASS['core'] . 'setup.php',
 
 	// Widgets classes.
 	BST_CLASS_NS . '\Widgets\Register' => BST_CLASS['widgets'] . 'register.php',
@@ -73,6 +71,10 @@ define( 'BST_CLASSES', [
 
 	// Customizer classes.
 	BST_CLASS_NS . '\Customize\Customizer' => BST_CLASS['customize'] . 'customizer.php',
+
+	// General/miscellaneous classes.
+	BST_CLASS_NS . '\Activate\Activate'   => BST_CLASS['general'] . 'activate.php',
+	BST_CLASS_NS . '\Activate\Deactivate' => BST_CLASS['general'] . 'deactivate.php',
 
 ] );
 

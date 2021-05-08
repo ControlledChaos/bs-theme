@@ -142,7 +142,7 @@ new Classes\Activate\Activate;
 new Classes\Activate\Deactivate;
 
 // Theme setup.
-new Classes\Setup;
+new Core\Setup;
 new Widgets\Register;
 
 // Frontend classes.

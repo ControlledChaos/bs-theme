@@ -8,7 +8,7 @@
  * @since      1.0.0
  */
 
-namespace BS_Theme\Classes;
+namespace BS_Theme\Classes\Core;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
