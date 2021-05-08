@@ -424,6 +424,10 @@ main article {
   outline: 0;
 }
 
+#secondary {
+  min-width: 240px;
+}
+
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -895,6 +899,16 @@ figure.aligncenter {
 
 img.alignfull,
 figure.alignfull {
+  margin: 1em 0 0;
+}
+
+img.alignnone,
+figure.alignnone {
+  margin: 0;
+}
+
+body.no-sidebar img.alignfull,
+body.no-sidebar figure.alignfull {
   position: relative;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -903,12 +917,6 @@ figure.alignfull {
   width: 100vw;
   max-width: 100vw;
   overflow-x: hidden;
-  margin: 1em 0 0;
-}
-
-img.alignnone,
-figure.alignnone {
-  margin: 0;
 }
 
 .size-auto,
