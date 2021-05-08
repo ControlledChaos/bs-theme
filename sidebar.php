@@ -16,12 +16,10 @@ use BS_Theme\Classes\Front as Front;
 ?>
 <aside id="secondary" class="widget-area">
 
-	<p><?php Front\tags()->theme_mode(); ?></p>
-
 	<?php
-		if ( is_active_sidebar( 'sidebar' ) ) :
+		if ( is_active_sidebar( 'sidebar-default' ) ) :
 
-		dynamic_sidebar( 'sidebar' );
+		dynamic_sidebar( 'sidebar-default' );
 
 		else : ?>
 
