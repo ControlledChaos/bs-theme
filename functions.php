@@ -80,6 +80,7 @@ use BS_Theme\Classes as General,
     BS_Theme\Classes\Core as Core,
 	BS_Theme\Classes\Front as Front,
 	BS_Theme\Classes\Widgets as Widgets,
+	BS_Theme\Classes\Admin as Admin,
 	BS_Theme\Classes\Customize as Customize;
 
 // Restrict direct access.
@@ -149,6 +150,11 @@ new Widgets\Register;
 if ( ! is_admin() ) {
 	new Front\Head;
 	new Front\Template_Tags;
+}
+
+// Backend classes.
+if ( is_admin() ) {
+	new Admin\Admin_Pages;
 }
 
 // Customizer classes.
