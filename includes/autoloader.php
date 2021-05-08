@@ -64,7 +64,8 @@ define( 'BST_CLASSES', [
 	BST_CLASS_NS . '\Core\Setup'  => BST_CLASS['core'] . 'setup.php',
 
 	// Widgets classes.
-	BST_CLASS_NS . '\Widgets\Register' => BST_CLASS['widgets'] . 'register.php',
+	BST_CLASS_NS . '\Widgets\Register'   => BST_CLASS['widgets'] . 'register.php',
+	BST_CLASS_NS . '\Widgets\Theme_Mode' => BST_CLASS['widgets'] . 'theme-mode.php',
 
 	// Frontend classes.
 	BST_CLASS_NS . '\Front\Head'          => BST_CLASS['front'] . 'head.php',

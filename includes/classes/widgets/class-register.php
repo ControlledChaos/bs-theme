@@ -26,6 +26,11 @@ class Register {
 	 */
 	public function __construct() {
 
+		// Register the theme mode widget.
+		add_action( 'widgets_init', function() {
+			register_widget( __NAMESPACE__ . '\Theme_Mode' );
+		} );
+
 		// Register widget areas.
         add_action( 'widgets_init', [ $this, 'widgets' ] );
 	}
