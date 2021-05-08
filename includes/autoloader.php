@@ -70,6 +70,7 @@ define( 'BST_CLASSES', [
 	BST_CLASS_NS . '\Front\Template_Tags' => BST_CLASS['front'] . 'template-tags.php',
 
 	// Backend classes.
+	BST_CLASS_NS . '\Admin\Admin'       => BST_CLASS['admin'] . 'admin.php',
 	BST_CLASS_NS . '\Admin\Admin_Pages' => BST_CLASS['admin'] . 'admin-pages.php',
 
 	// Customizer classes.

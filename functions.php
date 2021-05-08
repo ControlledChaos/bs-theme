@@ -154,6 +154,7 @@ if ( ! is_admin() ) {
 
 // Backend classes.
 if ( is_admin() ) {
+	new Admin\Admin;
 	new Admin\Admin_Pages;
 }
 

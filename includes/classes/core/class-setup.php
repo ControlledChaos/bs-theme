@@ -44,13 +44,6 @@ class Setup {
 		// Frontend styles.
 		add_action( 'wp_enqueue_scripts', [ $this, 'frontend_styles' ] );
 
-		/**
-		 * Admin styles.
-		 *
-		 * Call late to override plugin styles.
-		 */
-		add_action( 'admin_enqueue_scripts', [ $this, 'admin_styles' ], 99 );
-
 		// Toolbar styles.
 		add_action( 'wp_enqueue_scripts', [ $this, 'toolbar_styles' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'toolbar_styles' ], 99 );
@@ -435,7 +428,7 @@ class Setup {
 	public function frontend_styles() {
 
 		// Google fonts.
-		// wp_enqueue_style( 'bs-theme-google-fonts', 'add-url-here', [], '', 'screen' );
+		// wp_enqueue_style( 'bs-theme-google-fonts', 'add-url-here', [], 'BST_VERSION, 'screen' );
 
 		/**
 		 * Theme stylesheet
@@ -444,34 +437,23 @@ class Setup {
 		 * The main stylesheet, in the root directory, only contains the theme header but
 		 * it is necessary for theme activation. DO NOT delete the main stylesheet!
 		 */
-		wp_enqueue_style( 'bs-theme', get_theme_file_uri( '/assets/css/style.min.css' ), [], BST_VERSION, 'all' );
+		wp_enqueue_style( 'bst-theme', get_theme_file_uri( '/assets/css/style.min.css' ), [], BST_VERSION, 'all' );
 
 		// Block styles.
 		if ( function_exists( 'has_blocks' ) ) {
 			if ( has_blocks() ) {
-				wp_enqueue_style( 'bs-theme-blocks', get_theme_file_uri( '/assets/css/blocks.min.css' ), [ 'bs-theme' ], BST_VERSION );
+				wp_enqueue_style( 'bst-blocks', get_theme_file_uri( '/assets/css/blocks.min.css' ), [ 'bst-theme' ], BST_VERSION );
 			}
 		}
 
 		// Print styles.
-		wp_enqueue_style( 'bs-theme-print', get_theme_file_uri( '/assets/css/print.min.css' ), [], BST_VERSION, 'print' );
-	}
-
-	/**
-	 * Admin styles
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function admin_styles() {
-		wp_enqueue_style( 'bs-theme-admin', get_theme_file_uri( '/assets/css/admin.min.css' ), [], BST_VERSION, 'all' );
+		wp_enqueue_style( 'bst-print', get_theme_file_uri( '/assets/css/print.min.css' ), [], BST_VERSION, 'print' );
 	}
 
 	/**
 	 * Toolbar styles
 	 *
-	 * Enqueues if user is logged in and admin bar is showing.
+	 * Enqueues if user is logged in and user toolbar is showing.
 	 *
 	 * @since  1.0.0
 	 * @access public
@@ -480,7 +462,7 @@ class Setup {
 	public function toolbar_styles() {
 
 		if ( is_user_logged_in() && is_admin_bar_showing() ) {
-			wp_enqueue_style( 'bs-theme-toolbar', get_theme_file_uri( '/assets/css/toolbar.min.css' ), [], BST_VERSION, 'screen' );
+			wp_enqueue_style( 'bst-toolbar', get_theme_file_uri( '/assets/css/toolbar.min.css' ), [], BST_VERSION, 'screen' );
 		}
 	}
 
@@ -492,7 +474,7 @@ class Setup {
 	 * @return void
 	 */
 	public function login_styles() {
-		wp_enqueue_style( 'custom-login', get_theme_file_uri( '/assets/css/login.css' ), [], BST_VERSION, 'screen' );
+		wp_enqueue_style( 'bst-login', get_theme_file_uri( '/assets/css/login.css' ), [], BST_VERSION, 'screen' );
 	}
 
 	/**
