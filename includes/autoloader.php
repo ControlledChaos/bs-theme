@@ -76,6 +76,10 @@ define( 'BST_CLASSES', [
 	// Customizer classes.
 	BST_CLASS_NS . '\Customize\Customizer' => BST_CLASS['customize'] . 'customizer.php',
 
+	// Vendor classes.
+	BST_CLASS_NS . '\Vendor\Plugin' => BST_CLASS['vendor'] . 'plugin.php',
+	BST_CLASS_NS . '\Vendor\ACF'    => BST_CLASS['vendor'] . 'acf.php',
+
 	// General/miscellaneous classes.
 	BST_CLASS_NS . '\Activate\Activate'   => BST_CLASS['general'] . 'activate.php',
 	BST_CLASS_NS . '\Activate\Deactivate' => BST_CLASS['general'] . 'deactivate.php',

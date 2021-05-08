@@ -81,7 +81,8 @@ use BS_Theme\Classes as General,
 	BS_Theme\Classes\Front as Front,
 	BS_Theme\Classes\Widgets as Widgets,
 	BS_Theme\Classes\Admin as Admin,
-	BS_Theme\Classes\Customize as Customize;
+	BS_Theme\Classes\Customize as Customize,
+	BS_Theme\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -145,6 +146,9 @@ new Classes\Activate\Deactivate;
 // Theme setup.
 new Core\Setup;
 new Widgets\Register;
+
+// Vendor (plugin) classes.
+new Vendor\ACF;
 
 // Frontend classes.
 if ( ! is_admin() ) {
