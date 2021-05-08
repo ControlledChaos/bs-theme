@@ -98,9 +98,6 @@ class ACF extends Plugin {
 
 		// Hide/show the ACF admin menu item.
 		add_filter( 'acf/settings/show_admin', [ $this, 'acf_settings_show_admin' ] );
-
-		// Admin columns for ACF fields.
-		$this->acf_columns();
 	}
 
 	/**
@@ -178,21 +175,5 @@ class ACF extends Plugin {
 		unset( $paths[0] );
 		$paths[] = BST_PATH . 'includes/settings/acf-json';
 		return $paths;
-	}
-
-	/**
-	 * Admin columns for ACF fields
-	 *
-	 * Adds options in the edit field interface to add the field to
-	 * list pages, such as "All Posts".
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function acf_columns() {
-		if ( class_exists( 'ACF_Columns' ) && is_admin() ) {
-			return new ACF_Columns;
-		}
 	}
 }
