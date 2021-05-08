@@ -133,6 +133,48 @@ class Template_Tags {
 	}
 
 	/**
+	 * Site logo
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return mixed Returns the logo markup or null.
+	 */
+	public function site_logo( $html = null ) {
+
+		// Get the custom logo URL.
+		$logo = get_theme_mod( 'custom_logo' );
+		$src  = wp_get_attachment_image_src( $logo , 'full' );
+
+		// Markup if a logo has been set.
+		if ( has_custom_logo( get_current_blog_id() ) ) {
+
+			$html = '<div class="site-logo">';
+
+			// Do not link if on the front page.
+			if ( is_front_page() ) {
+
+				$html .= sprintf(
+					'<img src="%s" />',
+					esc_attr( esc_url( $src[0] ) )
+				);
+
+			// Linked markup.
+			} else {
+
+				$html .= sprintf(
+					'<a href="%s"><img src="%s" /></a>',
+					esc_attr( esc_url( get_bloginfo( 'url' ) ) ),
+					esc_attr( esc_url( $src[0] ) )
+				);
+			}
+			$html .= '</div>';
+		}
+
+		// Return the logo markup or null.
+		return $html;
+	}
+
+	/**
 	 * Posted on
 	 *
 	 * Prints HTML with meta information for the current post-date/time.
