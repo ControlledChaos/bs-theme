@@ -60,7 +60,8 @@ define( 'BST_CLASS_NS', __NAMESPACE__ . '\Classes' );
 define( 'BST_CLASSES', [
 
 	// Core classes.
-	BST_CLASS_NS . '\Core\Setup' => BST_CLASS['core'] . 'setup.php',
+	BST_CLASS_NS . '\Core\Assets' => BST_CLASS['core'] . 'assets.php',
+	BST_CLASS_NS . '\Core\Setup'  => BST_CLASS['core'] . 'setup.php',
 
 	// Widgets classes.
 	BST_CLASS_NS . '\Widgets\Register' => BST_CLASS['widgets'] . 'register.php',

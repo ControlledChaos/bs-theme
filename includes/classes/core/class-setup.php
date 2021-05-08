@@ -10,6 +10,9 @@
 
 namespace BS_Theme\Classes\Core;
 
+// Alias namespaces.
+use  BS_Theme\Classes\Core as Core;
+
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -37,9 +40,6 @@ class Setup {
 
 		// Frontend scripts.
 		add_action( 'wp_enqueue_scripts', [ $this, 'frontend_scripts' ] );
-
-		// Admin scripts.
-		add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ] );
 
 		// Frontend styles.
 		add_action( 'wp_enqueue_scripts', [ $this, 'frontend_styles' ] );
@@ -390,17 +390,20 @@ class Setup {
 	 */
 	public function frontend_scripts() {
 
+		// Instantiate the Assets class.
+		$assets = new Core\Assets;
+
 		// Enqueue jQuery.
 		wp_enqueue_script( 'jquery' );
 
 		// Navigation toggle and dropdown.
-		wp_enqueue_script( 'test-navigation', get_theme_file_uri( '/assets/js/navigation.min.js' ), [], BST_VERSION, true );
+		wp_enqueue_script( 'test-navigation', get_theme_file_uri( '/assets/js/navigation' . $assets->suffix() . '.js' ), [], BST_VERSION, true );
 
 		// Skip link focus, for accessibility.
-		wp_enqueue_script( 'bs-theme-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.min.js' ), [], BST_VERSION, true );
+		wp_enqueue_script( 'bs-theme-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix' . $assets->suffix() . '.js' ), [], BST_VERSION, true );
 
 		// FitVids for responsive video embeds.
-		wp_enqueue_script( 'bs-theme-fitvids', get_theme_file_uri( '/assets/js/jquery.fitvids.min.js' ), [ 'jquery' ], BST_VERSION, true );
+		wp_enqueue_script( 'bs-theme-fitvids', get_theme_file_uri( '/assets/js/jquery.fitvids' . $assets->suffix() . '.js' ), [ 'jquery' ], BST_VERSION, true );
 		wp_add_inline_script( 'bs-theme-fitvids', 'jQuery(document).ready(function($){ $( ".entry-content" ).fitVids(); });', true );
 
 		// Comments scripts.
@@ -410,15 +413,6 @@ class Setup {
 	}
 
 	/**
-	 * Admin scripts
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function admin_scripts() {}
-
-	/**
 	 * Frontend styles
 	 *
 	 * @since  1.0.0
@@ -426,6 +420,9 @@ class Setup {
 	 * @return void
 	 */
 	public function frontend_styles() {
+
+		// Instantiate the Assets class.
+		$assets = new Core\Assets;
 
 		// Google fonts.
 		// wp_enqueue_style( 'bs-theme-google-fonts', 'add-url-here', [], 'BST_VERSION, 'screen' );
@@ -437,17 +434,17 @@ class Setup {
 		 * The main stylesheet, in the root directory, only contains the theme header but
 		 * it is necessary for theme activation. DO NOT delete the main stylesheet!
 		 */
-		wp_enqueue_style( 'bst-theme', get_theme_file_uri( '/assets/css/style.min.css' ), [], BST_VERSION, 'all' );
+		wp_enqueue_style( 'bst-theme', get_theme_file_uri( '/assets/css/style' . $assets->suffix() . '.css' ), [], BST_VERSION, 'all' );
 
 		// Block styles.
 		if ( function_exists( 'has_blocks' ) ) {
 			if ( has_blocks() ) {
-				wp_enqueue_style( 'bst-blocks', get_theme_file_uri( '/assets/css/blocks.min.css' ), [ 'bst-theme' ], BST_VERSION );
+				wp_enqueue_style( 'bst-blocks', get_theme_file_uri( '/assets/css/blocks' . $assets->suffix() . '.css' ), [ 'bst-theme' ], BST_VERSION );
 			}
 		}
 
 		// Print styles.
-		wp_enqueue_style( 'bst-print', get_theme_file_uri( '/assets/css/print.min.css' ), [], BST_VERSION, 'print' );
+		wp_enqueue_style( 'bst-print', get_theme_file_uri( '/assets/css/print' . $assets->suffix() . '.css' ), [], BST_VERSION, 'print' );
 	}
 
 	/**
@@ -461,8 +458,11 @@ class Setup {
 	 */
 	public function toolbar_styles() {
 
+		// Instantiate the Assets class.
+		$assets = new Core\Assets;
+
 		if ( is_user_logged_in() && is_admin_bar_showing() ) {
-			wp_enqueue_style( 'bst-toolbar', get_theme_file_uri( '/assets/css/toolbar.min.css' ), [], BST_VERSION, 'screen' );
+			wp_enqueue_style( 'bst-toolbar', get_theme_file_uri( '/assets/css/toolbar' . $assets->suffix() . '.css' ), [], BST_VERSION, 'screen' );
 		}
 	}
 
@@ -474,7 +474,11 @@ class Setup {
 	 * @return void
 	 */
 	public function login_styles() {
-		wp_enqueue_style( 'bst-login', get_theme_file_uri( '/assets/css/login.css' ), [], BST_VERSION, 'screen' );
+
+		// Instantiate the Assets class.
+		$assets = new Core\Assets;
+
+		wp_enqueue_style( 'bst-login', get_theme_file_uri( '/assets/css/login' . $assets->suffix() . '.css' ), [], BST_VERSION, 'screen' );
 	}
 
 	/**
