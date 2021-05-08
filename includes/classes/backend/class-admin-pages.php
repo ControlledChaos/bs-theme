@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme setup
+ * Admin pages
  *
  * @package    BS_Theme
  * @subpackage Classes
