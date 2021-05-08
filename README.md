@@ -37,6 +37,8 @@ The theme is ready to bundle a copy of Advanced Custom Fields basic or Pro. Simp
 If the `includes/vendor/acf` directory is not used as the root directory of the plugin then change the directory name, and core filename, if changed, in the ACF class file properties:  
 `@see includes/classes/vendor/class-acf.php`.
 
+An ACF JSON directory is ready to use, filters added in the ACF class.
+
 ## Renaming, Rebranding, and Defaults
 
 Following is a list of strings to find and replace in all theme files.
