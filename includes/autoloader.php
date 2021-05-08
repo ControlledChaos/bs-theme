@@ -59,7 +59,7 @@ define( 'BST_CLASSES', [
 	// Base class.
 	// BST_CLASS_NS . '\Base' => BST_CLASS['general'] . 'base.php',
 
-	// Core classes.
+	// General/miscellaneous classes.
 	BST_CLASS_NS . '\Activate'   => BST_CLASS['general'] . 'activate.php',
 	BST_CLASS_NS . '\Deactivate' => BST_CLASS['general'] . 'deactivate.php',
 	BST_CLASS_NS . '\Setup'      => BST_CLASS['general'] . 'setup.php',
@@ -71,7 +71,6 @@ define( 'BST_CLASSES', [
 	// Vendor classes.
 	// Backend/admin classes,
 	// Frontend classes.
-	// General/miscellaneous classes.
 
 ] );
 
