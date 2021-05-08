@@ -26,12 +26,6 @@ class Setup {
 	 */
 	public function __construct() {
 
-		// Theme activation & deactivation.
-		$this->activation();
-
-		// Theme dependencies.
-		$this->dependencies();
-
 		// Swap html 'no-js' class with 'js'.
 		add_action( 'wp_head', [ $this, 'js_detect' ], 0 );
 
@@ -85,22 +79,6 @@ class Setup {
 		// User color scheme classes.
 		add_filter( 'body_class', [ $this, 'color_scheme_classes' ] );
 	}
-
-	/**
-	 * Theme activation & deactivation functions
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	private function activation() {
-
-		// Require theme activation functions.
-		require_once get_theme_file_path( '/includes/classes/class-activate.php' );
-
-		// Require theme deactivation functions.
-		require_once get_theme_file_path( '/includes/classes/class-deactivate.php' );
-	 }
 
 	/**
 	 * JS Replace
@@ -544,19 +522,6 @@ class Setup {
 	 */
 	public function login_styles() {
 		wp_enqueue_style( 'custom-login', get_theme_file_uri( '/assets/css/login.css' ), [], BST_VERSION, 'screen' );
-	}
-
-	/**
-	 * Theme dependencies
-	 *
-	 * @since  1.0.0
-	 * @access private
-	 * @return void
-	 */
-	private function dependencies() {
-		require get_theme_file_path( '/includes/template-functions.php' );
-		require get_theme_file_path( '/includes/template-tags.php' );
-		require get_theme_file_path( '/includes/customizer.php' );
 	}
 
 	/**

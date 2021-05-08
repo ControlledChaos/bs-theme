@@ -142,5 +142,9 @@ function theme_setup() {
 
 	// Theme setup.
 	new Classes\Setup;
+
+	require get_theme_file_path( '/includes/template-functions.php' );
+	require get_theme_file_path( '/includes/template-tags.php' );
+	require get_theme_file_path( '/includes/customizer.php' );
 }
 theme_setup();
