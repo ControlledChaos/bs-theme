@@ -90,6 +90,9 @@ input[type="image"] {
 		svg {
 			width: 1rem;
 			height: 1rem;
+			position: relative;
+			top: 0.05em;
+			vertical-align: baseline;
 			fill: currentColor;
 		}
 	}

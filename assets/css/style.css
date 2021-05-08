@@ -565,6 +565,9 @@ input[type="reset"].menu-toggle svg,
 input[type="image"].menu-toggle svg {
   width: 1rem;
   height: 1rem;
+  position: relative;
+  top: 0.05em;
+  vertical-align: baseline;
   fill: currentColor;
 }
 
