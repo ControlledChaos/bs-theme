@@ -34,6 +34,9 @@ class Head {
 
 		// Swap html 'no-js' class with 'js'.
 		add_action( 'wp_head', [ $this, 'js_detect' ], 0 );
+
+		// Disable emoji script.
+		add_action( 'init', [ $this, 'disable_emojis' ] );
 	}
 
 	/**
@@ -77,5 +80,25 @@ class Head {
 	 */
 	public function js_detect() {
 		echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
+	}
+
+	/**
+	 * Disable emoji script
+	 *
+	 * Emojis will still work in modern browsers. This removes the script
+	 * that makes emojis work in old browser.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function disable_emojis() {
+		remove_action( 'admin_print_styles', 'print_emoji_styles' );
+		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+		remove_action( 'wp_print_styles', 'print_emoji_styles' );
+		remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+		remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+		remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 	}
 }
