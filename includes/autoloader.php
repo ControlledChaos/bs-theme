@@ -23,15 +23,15 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var   array Defines an array of class file paths.
  */
 define( 'BST_CLASS', [
-	'core'     => BST_PATH . 'includes/classes/core/class-',
-	'settings' => BST_PATH . 'includes/classes/settings/class-',
-	'tools'    => BST_PATH . 'includes/classes/tools/class-',
-	'media'    => BST_PATH . 'includes/classes/media/class-',
-	'users'    => BST_PATH . 'includes/classes/users/class-',
-	'vendor'   => BST_PATH . 'includes/classes/vendor/class-',
-	'admin'    => BST_PATH . 'includes/classes/backend/class-',
-	'front'    => BST_PATH . 'includes/classes/frontend/class-',
-	'general'  => BST_PATH . 'includes/classes/class-',
+	'core'     => BST_PATH . '/includes/classes/core/class-',
+	'settings' => BST_PATH . '/includes/classes/settings/class-',
+	'tools'    => BST_PATH . '/includes/classes/tools/class-',
+	'media'    => BST_PATH . '/includes/classes/media/class-',
+	'users'    => BST_PATH . '/includes/classes/users/class-',
+	'vendor'   => BST_PATH . '/includes/classes/vendor/class-',
+	'admin'    => BST_PATH . '/includes/classes/backend/class-',
+	'front'    => BST_PATH . '/includes/classes/frontend/class-',
+	'general'  => BST_PATH . '/includes/classes/class-',
 ] );
 
 /**
@@ -60,6 +60,8 @@ define( 'BST_CLASSES', [
 	// BST_CLASS_NS . '\Base' => BST_CLASS['general'] . 'base.php',
 
 	// Core classes.
+	BST_CLASS_NS . '\Setup' => BST_CLASS['general'] . 'setup.php',
+
 	// Settings classes.
 	// Tools classes.
 	// Media classes.
