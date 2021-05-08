@@ -62,6 +62,10 @@ define( 'BST_URL', $theme_path );
  * and returns true or false depending on the presence and
  * activation of the plugin.
  *
+ * Variables used refer to the companion starter plugin for
+ * this starter theme. Change for your plugin.
+ * @link https://github.com/ControlledChaos/bs-plugin
+ *
  * @example ```if ( BST_COMPANION ) {
  *     // Execute code.
  * }```
