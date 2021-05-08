@@ -54,3 +54,35 @@ define( 'BST_PATH', $theme_path . '/' );
  */
 $theme_path = get_template_directory_uri();
 define( 'BST_URL', $theme_path );
+
+/**
+ * Constant: Companion plugin active
+ *
+ * Looks for a companion plugin as defined in the variables
+ * and returns true or false depending on the presence and
+ * activation of the plugin.
+ *
+ * @example ```if ( BST_COMPANION ) {
+ *     // Execute code.
+ * }```
+ */
+
+// Plugin directory.
+$companion_dir  = 'bs-plugin';
+
+// Core plugin filename.
+$companion_file = 'bs-plugin.php';
+
+// Return false by default.
+$companion = false;
+
+/**
+ * Return true if the plugin exists and is active.
+ * Namespace escaped as it sometimes causes an error.
+ */
+if ( \is_plugin_active( "$companion_dir/$companion_file" ) ) {
+	$companion = true;
+}
+
+// Define the companion plugin constant.
+define( 'BST_COMPANION', $companion );
