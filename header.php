@@ -35,9 +35,9 @@ do_action( 'before_html' ); ?>
 
 <html <?php language_attributes(); ?> class="no-js">
 
-<head id="<?php echo get_bloginfo( 'wpurl' ); ?>" data-template-set="<?php echo get_template(); ?>">
+<head id="<?php echo esc_attr( get_bloginfo( 'url' ) ); ?>" data-template-set="<?php echo esc_attr( get_template() ); ?>">
 
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta charset="<?php esc_attr( bloginfo( 'charset' ) ); ?>">
 	<!--[if IE ]>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<![endif]-->
@@ -46,12 +46,12 @@ do_action( 'before_html' ); ?>
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
 	<?php if ( is_singular() && pings_open() ) {
-		echo sprintf( '<link rel="pingback" href="%s" />', get_bloginfo( 'pingback_url' ) );
+		echo sprintf( '<link rel="pingback" href="%s" />', esc_attr( get_bloginfo( 'pingback_url' ) ) );
 	} ?>
 
-	<link href="<?php echo $canonical; ?>" rel="canonical" />
+	<link href="<?php echo esc_attr( $canonical ); ?>" rel="canonical" />
 
-	<?php if ( is_search() ) { echo '<meta name="robots" content="noindex,nofollow" />'; } ?>
+	<?php if ( is_search() ) { echo esc_attr( '<meta name="robots" content="noindex,nofollow" />' ); } ?>
 
 	<!-- Prefetch font URLs -->
 	<link rel='dns-prefetch' href='//fonts.adobe.com'/>
@@ -73,9 +73,9 @@ Front\tags()->body_open();
 Front\tags()->before_page();
 ?>
 
-<div id="page" class="site" itemscope="itemscope" itemtype="<?php Front\tags()->site_schema(); ?>">
+<div id="page" class="site" itemscope="itemscope" itemtype="<?php esc_attr( Front\tags()->site_schema() ); ?>">
 
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bs-theme' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_attr( esc_html_e( 'Skip to content', 'bs-theme' ) ); ?></a>
 
 	<nav id="site-navigation" class="main-navigation" role="directory" itemscope itemtype="http://schema.org/SiteNavigationElement">
 		<button class="menu-toggle" aria-controls="main-menu" aria-expanded="false">
@@ -101,7 +101,7 @@ Front\tags()->before_page();
 				<?php if ( is_front_page() ) : ?>
 					<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 					<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( get_bloginfo( 'url' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<p class="site-title"><a href="<?php echo esc_attr( esc_url( get_bloginfo( 'url' ) ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php endif;
 
 				$site_description = get_bloginfo( 'description', 'display' );
@@ -124,7 +124,7 @@ Front\tags()->before_page();
 				} else {
 					echo sprintf(
 						'<img src="%1s" alt="" width="2048" height="878" />',
-						get_theme_file_uri( '/assets/images/default-header.jpg' )
+						esc_attr( get_theme_file_uri( '/assets/images/default-header.jpg' ) )
 					);
 				} ?>
 			</figure>
