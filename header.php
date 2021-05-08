@@ -17,6 +17,7 @@ namespace BS_Theme;
 // Alias namespaces.
 use BS_Theme\Classes\Front as Front;
 
+// Conditional canonical link.
 if ( is_home() && ! is_front_page() ) {
     $canonical = get_permalink( get_option( 'page_for_posts' ) );
 } elseif ( is_archive() ) {
@@ -27,33 +28,51 @@ if ( is_home() && ! is_front_page() ) {
 
 ?>
 <!doctype html>
-<?php do_action( 'before_html' ); ?>
+<?php
+
+// Hook for ACF forms & similar.
+do_action( 'before_html' ); ?>
+
 <html <?php language_attributes(); ?> class="no-js">
+
 <head id="<?php echo get_bloginfo( 'wpurl' ); ?>" data-template-set="<?php echo get_template(); ?>">
+
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<!--[if IE ]>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+
 	<?php if ( is_singular() && pings_open() ) {
 		echo sprintf( '<link rel="pingback" href="%s" />', get_bloginfo( 'pingback_url' ) );
 	} ?>
+
 	<link href="<?php echo $canonical; ?>" rel="canonical" />
+
 	<?php if ( is_search() ) { echo '<meta name="robots" content="noindex,nofollow" />'; } ?>
 
 	<!-- Prefetch font URLs -->
 	<link rel='dns-prefetch' href='//fonts.adobe.com'/>
 	<link rel='dns-prefetch' href='//fonts.google.com'/>
 
-	<?php do_action( 'before_wp_head' ); ?>
-	<?php wp_head(); ?>
-	<?php do_action( 'after_wp_head' ); ?>
+	<?php
+	// Hook into the head.
+	do_action( 'before_wp_head' );
+	wp_head();
+	do_action( 'after_wp_head' );
+	?>
+
 </head>
 
 <body <?php body_class(); ?>>
-<?php Front\tags()->body_open(); ?>
-<?php Front\tags()->before_page(); ?>
+
+<?php
+Front\tags()->body_open();
+Front\tags()->before_page();
+?>
+
 <div id="page" class="site" itemscope="itemscope" itemtype="<?php Front\tags()->site_schema(); ?>">
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bs-theme' ); ?></a>
