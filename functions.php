@@ -110,27 +110,31 @@ if ( ! Core\php()->version() && ! is_admin() ) {
 	die( $die );
 }
 
-// Get plugin configuration file.
-require get_parent_theme_file_path( '/includes/config.php' );
-
-// Autoload class files.
-require_once BST_PATH . 'includes/autoloader.php';
-
 /**
  * Get plugins path
  *
  * Used to check for active plugins with the `is_plugin_active` function.
+ * Namespace escaped in example ( \ ) as it sometimes causes an error.
  *
  * @link https://developer.wordpress.org/reference/functions/is_plugin_active/
  *
  * @example The following would check for the Advanced Custom Fields plugin:
  *          ```
- *          if ( is_plugin_active( 'advanced-custom-fields/acf.php' ) ) {
- *          	// Do stuff.
+ *          if ( \is_plugin_active( 'advanced-custom-fields/acf.php' ) ) {
+ *          	// Execute code.
  *           }
  *          ```
  */
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+$get_plugin = ABSPATH . 'wp-admin/includes/plugin.php';
+if ( file_exists( $get_plugin ) ) {
+	include_once( $get_plugin );
+}
+
+// Get plugin configuration file.
+require get_parent_theme_file_path( '/includes/config.php' );
+
+// Autoload class files.
+require_once BST_PATH . 'includes/autoloader.php';
 
 /**
  * Instantiate theme classes
