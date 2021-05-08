@@ -75,14 +75,15 @@
 namespace BS_Theme;
 
 // Alias namespaces.
-use BS_Theme\Classes as General,
-    BS_Theme\Classes\Activate as Activate,
-    BS_Theme\Classes\Core as Core,
-	BS_Theme\Classes\Front as Front,
-	BS_Theme\Classes\Widgets as Widgets,
-	BS_Theme\Classes\Admin as Admin,
-	BS_Theme\Classes\Customize as Customize,
-	BS_Theme\Classes\Vendor as Vendor;
+use
+BS_Theme\Classes as General,
+BS_Theme\Classes\Activate as Activate,
+BS_Theme\Classes\Core as Core,
+BS_Theme\Classes\Front as Front,
+BS_Theme\Classes\Widgets as Widgets,
+BS_Theme\Classes\Admin as Admin,
+BS_Theme\Classes\Customize as Customize,
+BS_Theme\Classes\Vendor as Vendor;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
