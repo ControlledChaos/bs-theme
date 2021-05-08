@@ -32,9 +32,6 @@ class Setup {
 		// Body element classes.
 		add_filter( 'body_class', [ $this, 'body_classes' ] );
 
-		// Register widgets.
-        add_action( 'widgets_init', [ $this, 'widgets' ] );
-
 		// Disable custom colors in the editor.
 		add_action( 'after_setup_theme', [ $this, 'editor_custom_color' ] );
 
@@ -116,6 +113,9 @@ class Setup {
 			'gscreenery',
 			'caption'
 		 ] );
+
+		 // Refresh widgets.
+		 add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/**
 		 * Block editor colors
@@ -375,30 +375,6 @@ class Setup {
 
 		// Print the style block.
 		echo $style;
-	}
-
-	/**
-	 * Register widgets
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function widgets() {
-
-		// Add customizer widget refresh support.
-		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		// Register sidebar widget area.
-		register_sidebar( [
-			'name'          => esc_html__( 'Default Sidebar', 'bs-theme' ),
-			'id'            => 'sidebar-default',
-			'description'   => esc_html__( 'Add widgets here.', 'bs-theme' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h3 class="widget-title">',
-			'after_title'   => '</h3>',
-		] );
 	}
 
 	/**

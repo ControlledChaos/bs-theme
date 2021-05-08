@@ -29,6 +29,7 @@ define( 'BST_CLASS', [
 	'tools'     => BST_PATH . 'includes/classes/tools/class-',
 	'media'     => BST_PATH . 'includes/classes/media/class-',
 	'users'     => BST_PATH . 'includes/classes/users/class-',
+	'widgets'   => BST_PATH . 'includes/classes/widgets/class-',
 	'vendor'    => BST_PATH . 'includes/classes/vendor/class-',
 	'admin'     => BST_PATH . 'includes/classes/backend/class-',
 	'front'     => BST_PATH . 'includes/classes/frontend/class-',
@@ -58,20 +59,13 @@ define( 'BST_CLASS_NS', __NAMESPACE__ . '\Classes' );
  */
 define( 'BST_CLASSES', [
 
-	// Base class.
-	// BST_CLASS_NS . '\Base' => BST_CLASS['general'] . 'base.php',
-
 	// General/miscellaneous classes.
 	BST_CLASS_NS . '\Activate\Activate'   => BST_CLASS['general'] . 'activate.php',
 	BST_CLASS_NS . '\Activate\Deactivate' => BST_CLASS['general'] . 'deactivate.php',
-	BST_CLASS_NS . '\Setup'      => BST_CLASS['general'] . 'setup.php',
+	BST_CLASS_NS . '\Setup' => BST_CLASS['general'] . 'setup.php',
 
-	// Settings classes.
-	// Tools classes.
-	// Media classes.
-	// Users classes.
-	// Vendor classes.
-	// Backend/admin classes.
+	// Widgets classes.
+	BST_CLASS_NS . '\Widgets\Register' => BST_CLASS['widgets'] . 'register.php',
 
 	// Frontend classes.
 	BST_CLASS_NS . '\Front\Head'          => BST_CLASS['front'] . 'head.php',
