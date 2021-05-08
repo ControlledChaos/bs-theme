@@ -107,7 +107,7 @@ if ( ! Classes\php()->version() && ! is_admin() ) {
 require get_parent_theme_file_path( '/includes/config.php' );
 
 // Autoload class files.
-require BST_PATH . 'includes/autoloader.php';
+require_once BST_PATH . 'includes/autoloader.php';
 
 /**
  * Get plugins path
@@ -145,6 +145,8 @@ function theme_setup() {
 
 	require get_theme_file_path( '/includes/template-functions.php' );
 	require get_theme_file_path( '/includes/template-tags.php' );
-	require get_theme_file_path( '/includes/customizer.php' );
+
+	// Customizer.
+	new Classes\Customizer;
 }
 theme_setup();
