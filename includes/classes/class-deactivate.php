@@ -9,6 +9,8 @@
  * @since      1.0.0
  */
 
+namespace BS_Theme\Classes;
+
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -20,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since  1.0.0
  * @access public
  */
-class BS_Theme_Deactivate {
+class Deactivate {
 
     /**
 	 * Constructor magic method
@@ -50,6 +52,3 @@ class BS_Theme_Deactivate {
 
     }
 }
-
-// Run the class.
-new BS_Theme_Deactivate;

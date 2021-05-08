@@ -73,6 +73,8 @@
  */
 
 namespace BS_Theme;
+
+// Alias namespaces.
 use BS_Theme\Classes as Classes;
 
 // Restrict direct access.
@@ -133,6 +135,12 @@ include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
  * @return void
  */
 function theme_setup() {
+
+	// Activation classes.
+	new Classes\Activate;
+	new Classes\Deactivate;
+
+	// Theme setup.
 	new Classes\Setup;
 }
 theme_setup();
