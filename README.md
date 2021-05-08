@@ -2,9 +2,9 @@
 
 A basic starter theme for WordPress and ClassicPress.
 
-![WordPress tested on version 5.2.3](https://img.shields.io/badge/WordPress-5.2.3-0073aa.svg?style=flat-square)
-![ClassicPress tested on version 1.0.1](https://img.shields.io/badge/ClassicPress-1.0.1-03768e.svg?style=flat-square)
-![PHP tested on version 7.3](https://img.shields.io/badge/PHP-tested%207.3-8892bf.svg?style=flat-square)
+![PHP tested on version 7.4.8](https://img.shields.io/badge/PHP%207.4.8-8892bf.svg?style=flat-square)
+![WordPress tested on version 5.7.1](https://img.shields.io/badge/WordPress5.7.1-0073aa.svg?style=flat-square)
+![ClassicPress tested on version 1.2.0](https://img.shields.io/badge/ClassicPress1.2.0-03768e.svg?style=flat-square)
 ![ACF Pro Ready](https://img.shields.io/badge/ACF%20Pro-ready-00d3ae.svg?style=flat-square)
 ![Gutenberg Ready](https://img.shields.io/badge/Gutenberg-ready-00a0d2.svg?style=flat-square)
 
@@ -18,7 +18,7 @@ This is just a starter theme. However, files are namespaced and all functions ar
 
 ## Requirements
 
-* This theme was written in a WordPress 5.0+ environment with no concern for backwards compatibility.
+* This theme was written in a WordPress 5.0+ environment with no concern for backwards compatibility. However, it is currently tested with no issues in ClassicPress 1.2.0.
 * This theme was written on a local server running PHP 7.4
 * The short array syntax ( `[]` rather than `array()` ) requires PHP 5.4+
 * Function files are namespaced and must be called accordingly in template parts.
