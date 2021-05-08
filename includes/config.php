@@ -52,5 +52,5 @@ define( 'BST_PATH', $theme_path . '/' );
  * @since 1.0.0
  * @var   string
  */
-$theme_path = get_stylesheet_uri();
+$theme_path = get_template_directory_uri();
 define( 'BST_URL', $theme_path );
