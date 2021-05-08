@@ -273,7 +273,7 @@ class Setup {
 			'default_image' => [
 				'url'           => '%s/assets/images/default-header.jpg',
 				'thumbnail_url' => '%s/assets/images/default-header.jpg',
-				'description'   => __( 'Default Header Image', 'affp-theme' ),
+				'description'   => __( 'Default Header Image', 'bs-theme' ),
 			],
 		] );
 
@@ -489,7 +489,7 @@ class Setup {
 		// wp_enqueue_style( 'bs-theme-google-fonts', 'add-url-here', [], '', 'screen' );
 
 		/**
-		 * Theme sylesheet
+		 * Theme stylesheet
 		 *
 		 * This enqueues the minified stylesheet compiled from SASS (.scss) files.
 		 * The main stylesheet, in the root directory, only contains the theme header but

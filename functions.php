@@ -83,7 +83,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Get the PHP version class.
-require_once get_parent_theme_file_path( '/includes/classes/class-php-version.php' );
+require_once get_parent_theme_file_path( '/includes/classes/core/class-php-version.php' );
 
 /**
  * PHP version check
