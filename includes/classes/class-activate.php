@@ -2,14 +2,13 @@
 /**
  * Theme activation
  *
- * Do not namespace this file.
- *
- * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @package    BS_Theme
+ * @subpackage Classes
+ * @category   Activation
  * @since      1.0.0
  */
 
-namespace BS_Theme\Classes;
+namespace BS_Theme\Classes\Activate;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

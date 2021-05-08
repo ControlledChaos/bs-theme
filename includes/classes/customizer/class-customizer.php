@@ -7,7 +7,7 @@
  * @category   Customizer
  */
 
-namespace BS_Theme\Classes;
+namespace BS_Theme\Classes\Customize;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {

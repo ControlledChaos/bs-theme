@@ -61,8 +61,8 @@ define( 'BST_CLASSES', [
 	// BST_CLASS_NS . '\Base' => BST_CLASS['general'] . 'base.php',
 
 	// General/miscellaneous classes.
-	BST_CLASS_NS . '\Activate'   => BST_CLASS['general'] . 'activate.php',
-	BST_CLASS_NS . '\Deactivate' => BST_CLASS['general'] . 'deactivate.php',
+	BST_CLASS_NS . '\Activate\Activate'   => BST_CLASS['general'] . 'activate.php',
+	BST_CLASS_NS . '\Activate\Deactivate' => BST_CLASS['general'] . 'deactivate.php',
 	BST_CLASS_NS . '\Setup'      => BST_CLASS['general'] . 'setup.php',
 
 	// Settings classes.
@@ -74,7 +74,7 @@ define( 'BST_CLASSES', [
 	// Frontend classes.
 
 	// Customizer classes.
-	BST_CLASS_NS . '\Customizer' => BST_CLASS['customize'] . 'customizer.php',
+	BST_CLASS_NS . '\Customize\Customizer' => BST_CLASS['customize'] . 'customizer.php',
 
 ] );
 

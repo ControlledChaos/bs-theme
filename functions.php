@@ -75,7 +75,10 @@
 namespace BS_Theme;
 
 // Alias namespaces.
-use BS_Theme\Classes as Classes;
+use BS_Theme\Classes as General,
+    BS_Theme\Classes\Activate as Activate,
+    BS_Theme\Classes\Core as Core,
+	BS_Theme\Classes\Customize as Customize;
 
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -94,10 +97,10 @@ require_once get_parent_theme_file_path( '/includes/classes/core/class-php-versi
  * @since  1.0.0
  * @return void
  */
-if ( ! Classes\php()->version() && ! is_admin() ) {
+if ( ! Core\php()->version() && ! is_admin() ) {
 
 	// Get the conditional message.
-	$die = Classes\php()->frontend_message();
+	$die = Core\php()->frontend_message();
 
 	// Print the die message.
 	die( $die );
@@ -137,8 +140,8 @@ include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 function theme_setup() {
 
 	// Activation classes.
-	new Classes\Activate;
-	new Classes\Deactivate;
+	new Classes\Activate\Activate;
+	new Classes\Activate\Deactivate;
 
 	// Theme setup.
 	new Classes\Setup;
@@ -147,6 +150,6 @@ function theme_setup() {
 	require get_theme_file_path( '/includes/template-tags.php' );
 
 	// Customizer.
-	new Classes\Customizer;
+	new Customize\Customizer;
 }
 theme_setup();
