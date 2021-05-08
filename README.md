@@ -14,7 +14,7 @@ See [BS Plugin](https://github.com/ControlledChaos/bs-plugin) for a basic WordPr
 
 ## Nothing Fancy
 
-This is just a starter theme. However, files are namespaced and all functions are in autoloaded class files.
+This is just a starter theme. However, files are namespaced and all functions are in autoloaded class files. Some sample block editor CSS and colors.
 
 ## Requirements
 
