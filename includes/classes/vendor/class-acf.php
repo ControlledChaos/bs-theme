@@ -2,7 +2,7 @@
 /**
  * Advanced Custom Fields compatability
  *
- * @package    Site_Core
+ * @package    BS_Theme
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0

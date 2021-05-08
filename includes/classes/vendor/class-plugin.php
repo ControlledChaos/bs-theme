@@ -5,7 +5,7 @@
  * Extend this class to load a plugin and
  * add related filters & actions.
  *
- * @package    Site_Core
+ * @package    BS_Theme
  * @subpackage Classes
  * @category   Vendor
  * @since      1.0.0
