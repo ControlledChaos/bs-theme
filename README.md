@@ -25,6 +25,7 @@ This is just a starter theme. However, files are namespaced and all functions ar
 
 ## Extras
 
+* Dark/light theme toggle.
 * Has a sample theme options page ready to begin developing.
 * Has a the info page as an example for getting theme data.
 
