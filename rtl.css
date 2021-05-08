@@ -95,8 +95,13 @@ figure.alignright {
 
 @media screen and (min-width: 37.5em) {
 
-	.main-navigation div > ul > li {
-		margin: 0 0 0 1em;
+	.main-navigation ul li {
+		margin: 0;
+	}
+
+	.main-navigation ul li:not(:last-of-type) {
+		margin: 0;
+		margin-left: 1em;
 	}
 }
 
