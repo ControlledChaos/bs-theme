@@ -2,8 +2,9 @@
 /**
  * Class autoloader
  *
- * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @package    BS_Theme
+ * @subpackage Includes
+ * @category   Core
  * @since      1.0.0
  */
 

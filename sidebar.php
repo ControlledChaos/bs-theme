@@ -2,8 +2,9 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @package    BS_Theme
+ * @subpackage Templates
+ * @category   Asides
  * @since      1.0.0
  */
 

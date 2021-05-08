@@ -4,8 +4,8 @@
  *
  * A basic starter theme for WordPress and ClassicPress.
  *
- * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @package    BS_Theme
+ * @subpackage Functions
  * @author     Controlled Chaos Design <greg@ccdzine.com>
  * @copyright  Copyright (c) Controlled Chaos Design
  * @link       https://github.com/ControlledChaos/bs-theme

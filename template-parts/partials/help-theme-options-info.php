@@ -2,8 +2,9 @@
 /**
  * Content for theme options page More Information help tab
  *
- * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @package    BS_Theme
+ * @subpackage Templates
+ * @category   Admin
  * @since      1.0.0
  */
 

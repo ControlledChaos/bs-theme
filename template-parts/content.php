@@ -2,14 +2,16 @@
 /**
  * Template part for displaying posts
  *
- * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @package    BS_Theme
+ * @subpackage Templates
+ * @category   Content
  * @since      1.0.0
  */
 
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
+
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :
@@ -55,4 +57,5 @@
 	<footer class="entry-footer">
 		<?php BS_Theme\Tags\entry_footer(); ?>
 	</footer>
+
 </article>

@@ -5,8 +5,9 @@
  * This is the template that displays the area of the page that contains both the current comments
  * and the comment form.
  *
- * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @package    BS_Theme
+ * @subpackage Templates
+ * @category   Users
  * @since      1.0.0
  */
 
@@ -63,7 +64,6 @@ if ( post_password_required() ) {
 
 	endif; // Check for have_comments().
 
-	comment_form();
-	?>
+	comment_form(); ?>
 
 </div>

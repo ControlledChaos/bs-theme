@@ -4,11 +4,12 @@
  *
  * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
- * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @package    BS_Theme
+ * @subpackage Templates
+ * @category   Headers
  * @since      1.0.0
  *
- * @todo       Add hooks for nav above or below header.
+ * @todo Add hooks for nav above or below header.
  */
 
 if ( is_home() && ! is_front_page() ) {
@@ -49,6 +50,7 @@ if ( is_home() && ! is_front_page() ) {
 <?php BS_Theme\Tags\body_open(); ?>
 <?php BS_Theme\Tags\before_page(); ?>
 <div id="page" class="site" itemscope="itemscope" itemtype="<?php BS_Theme\Tags\site_schema(); ?>">
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'bs-theme' ); ?></a>
 
 	<nav id="site-navigation" class="main-navigation" role="directory" itemscope itemtype="http://schema.org/SiteNavigationElement">
@@ -65,6 +67,7 @@ if ( is_home() && ! is_front_page() ) {
 	</nav>
 
 	<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization">
+
 		<div class="site-branding">
 			<?php
 			the_custom_logo();
@@ -78,6 +81,7 @@ if ( is_home() && ! is_front_page() ) {
 				?>
 				<p class="site-description"><?php echo $site_description; ?></p>
 			<?php endif; ?>
+
 			<div class="site-header-image" role="presentation">
 				<figure>
 					<?php

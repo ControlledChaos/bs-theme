@@ -2,14 +2,18 @@
 /**
  * The template for displaying all single posts
  *
- * @package    WordPress/ClassicPress
- * @subpackage BS_Theme
+ * @package    BS_Theme
+ * @subpackage Templates
+ * @category   Posts
  * @since      1.0.0
  */
 
-get_header(); ?>
+// Get the default header file.
+get_header();
 
+?>
 	<div id="primary" class="content-area">
+
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
 
 		<?php
@@ -30,7 +34,10 @@ get_header(); ?>
 
 		</main>
 	</div>
-
 <?php
+
+// Get the default sidebar file.
 get_sidebar();
+
+// Get the default footer file.
 get_footer();
