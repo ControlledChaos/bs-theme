@@ -105,7 +105,7 @@ if ( ! Classes\php()->version() && ! is_admin() ) {
 require get_parent_theme_file_path( '/includes/config.php' );
 
 // Autoload class files.
-require BST_PATH . '/includes/autoloader.php';
+require BST_PATH . 'includes/autoloader.php';
 
 /**
  * Get plugins path

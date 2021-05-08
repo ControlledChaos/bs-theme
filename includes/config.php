@@ -41,10 +41,10 @@ define( 'BST_VERSION', '1.0.0' );
  * Constant: Theme file path
  *
  * @since 1.0.0
- * @var   string
+ * @var   string File path with trailing slash.
  */
 $theme_path = get_stylesheet_directory();
-define( 'BST_PATH', $theme_path );
+define( 'BST_PATH', $theme_path . '/' );
 
 /**
  * Constant: Theme file URL
