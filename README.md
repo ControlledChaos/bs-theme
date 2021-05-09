@@ -3,8 +3,8 @@
 A basic starter theme for WordPress and ClassicPress.
 
 ![PHP tested on version 7.4.8](https://img.shields.io/badge/PHP%207.4.8-8892bf.svg?style=flat-square)
-![WordPress tested on version 5.7.1](https://img.shields.io/badge/WordPress5.7.1-0073aa.svg?style=flat-square)
-![ClassicPress tested on version 1.2.0](https://img.shields.io/badge/ClassicPress1.2.0-03768e.svg?style=flat-square)
+![WordPress tested on version 5.7.1](https://img.shields.io/badge/WordPress%205.7.1-0073aa.svg?style=flat-square)
+![ClassicPress tested on version 1.2.0](https://img.shields.io/badge/ClassicPress%201.2.0-03768e.svg?style=flat-square)
 ![ACF Pro Ready](https://img.shields.io/badge/ACF%20Pro-ready-00d3ae.svg?style=flat-square)
 ![Gutenberg Ready](https://img.shields.io/badge/Gutenberg-ready-00a0d2.svg?style=flat-square)
 
@@ -25,7 +25,7 @@ This is just a starter theme. However, files are namespaced and all functions ar
 
 ## Extras
 
-* Dark/light theme toggle.
+* Widget to toggle light and dark themes.
 * Sample theme options page ready to begin developing.
 * Theme info page as an example for getting theme data.
 * Bundle & load plugins by adding to the `includes/vendor` directory and extend the Plugin class.
@@ -55,14 +55,11 @@ Following is a list of strings to find and replace in all theme files.
 4. Constant prefix  
    Find `BST` and replace with the uppercase prefix of your theme.
 
-5. Author  
-   Find `Controlled Chaos Design <greg@ccdzine.com>` and replace with your name and email address or those of your organization.
-
-6. Header image  
+5. Header image  
    Find the default header image file, `default-header.jpg`, in the `assets/images/` directory and replace with your default image.
 
-7. Activation and deactivation  
+6. Activation and deactivation  
    Check the activation and deactivation classes, `includes/class-activate` and `includes/class-deactivate`, for sample methods. Remove or modify the samples as needed.
 
-8. README file  
+7. README file  
    Whether or not your theme will be kept in a version control repository, edit the content of the README file in the theme's root directory or delete it if it is not necessary.
