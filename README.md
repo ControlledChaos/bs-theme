@@ -2,11 +2,13 @@
 
 A basic starter theme for WordPress and ClassicPress.
 
-![PHP tested on version 7.4.8](https://img.shields.io/badge/PHP%207.4.8-8892bf.svg?style=flat-square)
-![WordPress tested on version 5.7.1](https://img.shields.io/badge/WordPress%205.7.1-0073aa.svg?style=flat-square)
-![ClassicPress tested on version 1.2.0](https://img.shields.io/badge/ClassicPress%201.2.0-03768e.svg?style=flat-square)
-![ACF Pro Ready](https://img.shields.io/badge/ACF%20Pro-ready-00d3ae.svg?style=flat-square)
+![PHP tested on version 7.4.8](https://img.shields.io/badge/PHP-7.4.8-8892bf.svg?style=flat-square)
+![WordPress tested on version 5.7.1](https://img.shields.io/badge/WordPress-5.7.1-0073aa.svg?style=flat-square)
+![ClassicPress tested on version 1.2.0](https://img.shields.io/badge/ClassicPress-1.2.0-03768e.svg?style=flat-square)
+![SASS Ready](https://img.shields.io/badge/SASS-ready-bf4080.svg?style=flat-square)
 ![Gutenberg Ready](https://img.shields.io/badge/Gutenberg-ready-00a0d2.svg?style=flat-square)
+![ACF Pro Ready](https://img.shields.io/badge/ACF-ready-00d3ae.svg?style=flat-square)
+![No PHP Composer](https://img.shields.io/badge/Composer-nope-f49a36.svg?style=flat-square)
 
 See [BS Plugin](https://github.com/ControlledChaos/bs-plugin) for a basic WordPress/ClassicPress starter plugin.
 
