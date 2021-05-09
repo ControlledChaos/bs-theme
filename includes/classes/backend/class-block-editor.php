@@ -134,10 +134,10 @@ class Block_Editor {
 	 * Allow custom colors by ID
 	 *
 	 * @since  1.0.0
-	 * @access public
+	 * @access private
 	 * @return array Returns an array of allowed users.
 	 */
-	public function allow_custom_colors() {
+	private function allow_custom_colors() {
 
 		// Get the current user's ID.
 		$user = get_current_user_id();
