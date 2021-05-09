@@ -163,7 +163,7 @@ class Block_Editor {
 	 *
 	 * @since  1.0.0
 	 * @access public
-	 * @return bool Returns true for the color picker.
+	 * @return void
 	 */
 	public function disable_custom_colors() {
 
