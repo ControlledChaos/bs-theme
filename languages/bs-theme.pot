@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: BS Theme\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-08 06:38+0000\n"
+"POT-Creation-Date: 2021-05-09 03:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,12 +16,12 @@ msgstr ""
 "X-Loco-Version: 2.5.2; wp-5.7.1\n"
 "X-Domain: bs-theme"
 
-#: includes/classes/frontend/class-template-tags.php:237
+#: includes/classes/frontend/class-template-tags.php:279
 #, php-format
 msgid " Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: includes/classes/frontend/class-template-tags.php:202
+#: includes/classes/frontend/class-template-tags.php:244
 msgid ", "
 msgstr ""
 
@@ -46,15 +46,15 @@ msgstr ""
 msgid "Active Theme Information"
 msgstr ""
 
-#: includes/classes/widgets/class-register.php:46
-msgid "Add widgets here."
+#: includes/classes/widgets/class-theme-mode.php:34
+msgid "Add a button to toggle light & dark modes."
 msgstr ""
 
 #: footer.php:22
 msgid "All rights reserved"
 msgstr ""
 
-#: sidebar.php:30
+#: sidebar.php:37
 msgid "Archives"
 msgstr ""
 
@@ -84,7 +84,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: sidebar.php:59
+#: sidebar.php:66
 msgid "Comments RSS"
 msgstr ""
 
@@ -109,7 +109,7 @@ msgstr ""
 msgid "Copyright "
 msgstr ""
 
-#: includes/classes/frontend/class-template-tags.php:313
+#: includes/classes/frontend/class-template-tags.php:355
 msgid "Dark Theme"
 msgstr ""
 
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Default Header Image"
 msgstr ""
 
-#: includes/classes/widgets/class-register.php:44
+#: includes/classes/widgets/class-register.php:56
 msgid "Default Sidebar"
 msgstr ""
 
@@ -131,6 +131,11 @@ msgstr ""
 msgid "Display Options"
 msgstr ""
 
+#: includes/classes/widgets/class-register.php:59
+#, php-format
+msgid "Displays to the %s of the main content."
+msgstr ""
+
 #: includes/classes/core/class-php-version.php:131
 msgid "Down for Maintenance"
 msgstr ""
@@ -140,7 +145,7 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: sidebar.php:58
+#: sidebar.php:65
 msgid "Entries RSS"
 msgstr ""
 
@@ -188,21 +193,25 @@ msgstr ""
 msgid "large-video"
 msgstr ""
 
-#: includes/classes/frontend/class-template-tags.php:221
+#: includes/classes/frontend/class-template-tags.php:263
 #, php-format
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: includes/classes/widgets/class-register.php:49
+msgid "left"
 msgstr ""
 
 #: includes/classes/core/class-setup.php:122
 msgid "Light Gray"
 msgstr ""
 
-#: includes/classes/frontend/class-template-tags.php:313
-#: includes/classes/frontend/class-template-tags.php:337
+#: includes/classes/frontend/class-template-tags.php:355
+#: includes/classes/frontend/class-template-tags.php:379
 msgid "Light Theme"
 msgstr ""
 
-#: includes/classes/frontend/class-template-tags.php:207
+#: includes/classes/frontend/class-template-tags.php:249
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
@@ -223,7 +232,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: sidebar.php:44
+#: sidebar.php:51
 msgid "Meta"
 msgstr ""
 
@@ -264,20 +273,24 @@ msgstr ""
 msgid "Pale Gray"
 msgstr ""
 
-#: includes/classes/frontend/class-template-tags.php:180
+#: includes/classes/vendor/class-plugin.php:452
+msgid "plugin to be activated."
+msgstr ""
+
+#: includes/classes/frontend/class-template-tags.php:222
 #, php-format
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
 #. %s: post date.
-#: includes/classes/frontend/class-template-tags.php:160
+#: includes/classes/frontend/class-template-tags.php:202
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: includes/classes/frontend/class-template-tags.php:204
+#: includes/classes/frontend/class-template-tags.php:246
 #, php-format
 msgid "Posted in %1$s"
 msgstr ""
@@ -286,6 +299,10 @@ msgstr ""
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: includes/classes/widgets/class-register.php:51
+msgid "right"
 msgstr ""
 
 #: searchform.php:17 searchform.php:22 searchform.php:25
@@ -327,7 +344,7 @@ msgstr ""
 msgid "Start your info here."
 msgstr ""
 
-#: sidebar.php:56
+#: sidebar.php:63
 msgid "Subscribe"
 msgstr ""
 
@@ -335,7 +352,7 @@ msgstr ""
 msgid "Success Green"
 msgstr ""
 
-#: includes/classes/frontend/class-template-tags.php:210
+#: includes/classes/frontend/class-template-tags.php:252
 #, php-format
 msgid "Tagged %1$s"
 msgstr ""
@@ -377,6 +394,10 @@ msgstr ""
 msgid "Theme Info"
 msgstr ""
 
+#: includes/classes/widgets/class-theme-mode.php:41
+msgid "Theme Mode"
+msgstr ""
+
 #: template-parts/theme-info-page.php:95
 msgid "Theme Name: "
 msgstr ""
@@ -393,12 +414,28 @@ msgstr ""
 msgid "This is a starter/example page. Use it or remove it."
 msgstr ""
 
+#: includes/classes/vendor/class-plugin.php:450
+msgid "This plugin is not allowed by the"
+msgstr ""
+
 #: includes/classes/backend/class-admin-pages.php:123
 msgid "This theme was created by"
 msgstr ""
 
-#: includes/classes/frontend/class-template-tags.php:336
+#: includes/classes/widgets/class-theme-mode.php:63
+msgid "Title text will display above the toggle button (optional)."
+msgstr ""
+
+#: includes/classes/widgets/class-theme-mode.php:61
+msgid "Title:"
+msgstr ""
+
+#: includes/classes/frontend/class-template-tags.php:378
 msgid "Toggle light/dark theme"
+msgstr ""
+
+#: sidebar.php:28
+msgid "Toggle Theme Mode"
 msgstr ""
 
 #: 404.php:57
@@ -425,6 +462,6 @@ msgstr ""
 msgid "xlarge-thumbnail"
 msgstr ""
 
-#: sidebar.php:49
+#: sidebar.php:56
 msgid "Your Profile"
 msgstr ""
