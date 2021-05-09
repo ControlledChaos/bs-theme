@@ -44,11 +44,21 @@ class Register {
 	 */
 	public function widgets() {
 
+		// Sidebar position.
+		if ( is_rtl() ) {
+			$position = __( 'left', 'bs-theme' );
+		} else {
+			$position = __( 'right', 'bs-theme' );
+		}
+
 		// Register sidebar widget area.
 		register_sidebar( [
-			'name'          => esc_html__( 'Default Sidebar', 'bs-theme' ),
+			'name'          => __( 'Default Sidebar', 'bs-theme' ),
 			'id'            => 'sidebar-default',
-			'description'   => esc_html__( 'Add widgets here.', 'bs-theme' ),
+			'description'   => sprintf(
+				__( 'Displays to the %s of the main content.', 'bs-theme' ),
+				$position
+			),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h3 class="widget-title">',
