@@ -96,7 +96,11 @@ class Theme_Mode extends \WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
+		if ( ! empty( $instance['title'] ) ) {
+			$title = $instance['title'];
+		} else {
+			$title = '';
+		}
 		$title = apply_filters( 'bst_theme_mode_title', $title, $instance, $this->id_base );
 
 		echo $args['before_widget'];
