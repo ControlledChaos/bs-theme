@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Theme_Mode extends \WP_Widget{
+class Theme_Mode extends \WP_Widget {
 
 	/**
 	 * Constructor magic method
@@ -94,7 +94,7 @@ class Theme_Mode extends \WP_Widget{
 	 * @param  array $instance Settings for the current Search widget instance.
 	 * @return void
 	 */
-	public function widget( $args, $instance ){
+	public function widget( $args, $instance ) {
 
 		$title = ! empty( $instance['title'] ) ? $instance['title'] : '';
 		$title = apply_filters( 'bst_theme_mode_title', $title, $instance, $this->id_base );
