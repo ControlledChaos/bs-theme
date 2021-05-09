@@ -154,12 +154,14 @@ new Vendor\ACF;
 if ( ! is_admin() ) {
 	new Front\Head;
 	new Front\Template_Tags;
+	new Front\Assets;
 }
 
 // Backend classes.
 if ( is_admin() ) {
-	new Admin\Admin;
 	new Admin\Admin_Pages;
+	new Admin\Assets;
+	new Admin\Block_Editor;
 }
 
 // Customizer classes.

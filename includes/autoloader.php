@@ -70,10 +70,12 @@ define( 'BST_CLASSES', [
 	// Frontend classes.
 	BST_CLASS_NS . '\Front\Head'          => BST_CLASS['front'] . 'head.php',
 	BST_CLASS_NS . '\Front\Template_Tags' => BST_CLASS['front'] . 'template-tags.php',
+	BST_CLASS_NS . '\Front\Assets'        => BST_CLASS['front'] . 'assets.php',
 
 	// Backend classes.
-	BST_CLASS_NS . '\Admin\Admin'       => BST_CLASS['admin'] . 'admin.php',
-	BST_CLASS_NS . '\Admin\Admin_Pages' => BST_CLASS['admin'] . 'admin-pages.php',
+	BST_CLASS_NS . '\Admin\Admin_Pages'  => BST_CLASS['admin'] . 'admin-pages.php',
+	BST_CLASS_NS . '\Admin\Assets'       => BST_CLASS['admin'] . 'assets.php',
+	BST_CLASS_NS . '\Admin\Block_Editor' => BST_CLASS['admin'] . 'block-editor.php',
 
 	// Customizer classes.
 	BST_CLASS_NS . '\Customize\Customizer' => BST_CLASS['customize'] . 'customizer.php',

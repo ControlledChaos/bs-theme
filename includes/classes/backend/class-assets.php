@@ -1,6 +1,9 @@
 <?php
 /**
- * Theme setup
+ * Admin assets
+ *
+ * Methods for enqueueing and printing assets
+ * such as JavaScript and CSS files.
  *
  * @package    BS_Theme
  * @subpackage Classes
@@ -18,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Admin {
+class Assets {
 
 	/**
 	 * Constructor magic method
