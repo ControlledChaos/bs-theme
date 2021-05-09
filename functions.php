@@ -6,11 +6,10 @@
  *
  * @package    BS_Theme
  * @subpackage Functions
- * @author     Controlled Chaos Design <greg@ccdzine.com>
- * @copyright  Copyright (c) Controlled Chaos Design
+ * @since      1.0.0
+ *
  * @link       https://github.com/ControlledChaos/bs-theme
  * @license    http://www.gnu.org/licenses/gpl-3.0.html
- * @since      1.0.0
  */
 
 /**
@@ -52,21 +51,17 @@
  * 4. Constant prefix
  *    Find `BST` and replace with the unique, uppercase prefix of your theme.
  *
- * 5. Author
- *    Find `Controlled Chaos Design <greg@ccdzine.com>` and replace with your name and
- *    email address or those of your organization.
- *
- * 6. Header image
+ * 5. Header image
  *    Replace the default image file `default-header.jpg`.
  *    @see assets/images/
  *
- * 7. Activation and deactivation
+ * 6. Activation and deactivation
  *    Check the activation and deactivation classes for sample methods.
  *    Remove or modify the samples as needed.
  *    @see includes/class-activate
  *    @see includes/class-deactivate
  *
- * 8. README file
+ * 7. README file
  *    Whether or not your theme will be kept in a version control repository,
  *    edit the content of the README file in the theme's root directory or
  *    delete it if it is not necessary.
