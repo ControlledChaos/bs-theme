@@ -1,9 +1,9 @@
 /**
  * This theme toggle script is added here
  * for reference. The script is in use via
- * the `theme_mode` function.
+ * the `theme_mode_script` class method.
  *
- * @see /includes/template-finctions.php
+ * @see /includes/classes/class-template-tags.php
  */
 jQuery( document ).ready( function ($) {
 
