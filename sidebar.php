@@ -23,6 +23,15 @@ use BS_Theme\Classes\Front as Front;
 
 		else : ?>
 
+		<?php the_widget(
+			'BS_Theme\Classes\Widgets\Theme_Mode',
+			[ 'title' => __( 'Toggle Theme Mode', 'bs-theme' ) ],
+			[
+				'before_title' => '<h3>',
+				'after_title'  => '</h3>'
+			]
+			); ?>
+
     	<?php get_search_form(); ?>
 
     	<h3><?php _e( 'Archives', 'bs-theme' ); ?></h3>
@@ -35,7 +44,7 @@ use BS_Theme\Classes\Front as Front;
 			null,
 			[
 				'before_title' => '<h3>',
-				'after_title' => '</h3>'
+				'after_title'  => '</h3>'
 			]
 		); ?>
 
