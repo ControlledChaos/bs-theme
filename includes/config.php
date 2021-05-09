@@ -35,7 +35,8 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @since 1.0.0
  * @var   string The latest theme version.
  */
-define( 'BST_VERSION', '1.0.0' );
+$theme_version = wp_get_theme()->get( 'Version' );
+define( 'BST_VERSION', $theme_version );
 
 /**
  * Constant: Theme file path
