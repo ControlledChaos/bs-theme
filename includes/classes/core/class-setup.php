@@ -88,63 +88,8 @@ class Setup {
 		 // Refresh widgets.
 		 add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/**
-		 * Set default image sizes
-		 *
-		 * Define the dimensions and the crop options.
-		 *
-		 * @since 1.0.0
-		 */
 		// Featured image support.
 		add_theme_support( 'post-thumbnails' );
-
-		// Thumbnail size.
-		update_option( 'thumbnail_size_w', 160 );
-		update_option( 'thumbnail_size_h', 160 );
-		update_option( 'thumbnail_crop', 1 );
-
-		// Medium size.
-		update_option( 'medium_size_w', 320 );
-		update_option( 'medium_size_h', 240 );
-		update_option( 'medium_crop', 1 );
-
-		// Medium-large size.
-		update_option( 'medium_large_size_w', 480 );
-		update_option( 'medium_large_size_h', 360 );
-
-		// Large size.
-		update_option( 'large_size_w', 640 );
-		update_option( 'large_size_h', 480 );
-		update_option( 'large_crop', 1 );
-
-		// Set the post thumbnail size, 16:9 HD Video.
-		set_post_thumbnail_size( 1280, 720, [ 'center', 'center' ] );
-
-		// Add wide image support for the block editor.
-		add_theme_support( 'align-wide' );
-
-		/**
-		 * Add image sizes
-		 *
-		 * Three sizes per aspect ratio so that WordPress
-		 * will use srcset for responsive images.
-		 *
-		 * @since 1.0.0
-		 */
-
-		// 1:1 square.
-		add_image_size( __( 'large-thumbnail', 'bs-theme' ), 240, 240, true );
-		add_image_size( __( 'xlarge-thumbnail', 'bs-theme' ), 320, 320, true );
-
-		// 16:9 HD Video.
-		add_image_size( __( 'large-video', 'bs-theme' ), 1280, 720, true );
-		add_image_size( __( 'medium-video', 'bs-theme' ), 960, 540, true );
-		add_image_size( __( 'small-video', 'bs-theme' ), 640, 360, true );
-
-		// 21:9 Cinemascope.
-		add_image_size( __( 'large-banner', 'bs-theme' ), 1280, 549, true );
-		add_image_size( __( 'medium-banner', 'bs-theme' ), 960, 411, true );
-		add_image_size( __( 'small-banner', 'bs-theme' ), 640, 274, true );
 
 		/**
 		 * Custom header

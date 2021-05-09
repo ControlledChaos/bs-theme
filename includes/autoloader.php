@@ -67,6 +67,9 @@ define( 'BST_CLASSES', [
 	BST_CLASS_NS . '\Widgets\Register'   => BST_CLASS['widgets'] . 'register.php',
 	BST_CLASS_NS . '\Widgets\Theme_Mode' => BST_CLASS['widgets'] . 'theme-mode.php',
 
+	// Media classes.
+	BST_CLASS_NS . '\Media\Images' => BST_CLASS['media'] . 'images.php',
+
 	// Frontend classes.
 	BST_CLASS_NS . '\Front\Head'          => BST_CLASS['front'] . 'head.php',
 	BST_CLASS_NS . '\Front\Template_Tags' => BST_CLASS['front'] . 'template-tags.php',
