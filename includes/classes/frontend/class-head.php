@@ -86,7 +86,7 @@ class Head {
 	 * Disable emoji script
 	 *
 	 * Emojis will still work in modern browsers. This removes the script
-	 * that makes emojis work in old browser.
+	 * that makes emojis work in old browsers.
 	 *
 	 * @since  1.0.0
 	 * @access public
