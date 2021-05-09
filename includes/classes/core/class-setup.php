@@ -397,14 +397,14 @@ class Setup {
 		wp_enqueue_script( 'jquery' );
 
 		// Navigation toggle and dropdown.
-		wp_enqueue_script( 'test-navigation', get_theme_file_uri( '/assets/js/navigation' . $assets->suffix() . '.js' ), [], BST_VERSION, true );
+		wp_enqueue_script( 'bst-navigation', get_theme_file_uri( '/assets/js/navigation' . $assets->suffix() . '.js' ), [], BST_VERSION, true );
 
 		// Skip link focus, for accessibility.
-		wp_enqueue_script( 'bs-theme-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix' . $assets->suffix() . '.js' ), [], BST_VERSION, true );
+		wp_enqueue_script( 'bst-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix' . $assets->suffix() . '.js' ), [], BST_VERSION, true );
 
 		// FitVids for responsive video embeds.
-		wp_enqueue_script( 'bs-theme-fitvids', get_theme_file_uri( '/assets/js/jquery.fitvids' . $assets->suffix() . '.js' ), [ 'jquery' ], BST_VERSION, true );
-		wp_add_inline_script( 'bs-theme-fitvids', 'jQuery(document).ready(function($){ $( ".entry-content" ).fitVids(); });', true );
+		wp_enqueue_script( 'bst-fitvids', get_theme_file_uri( '/assets/js/jquery.fitvids' . $assets->suffix() . '.js' ), [ 'jquery' ], BST_VERSION, true );
+		wp_add_inline_script( 'bst-fitvids', 'jQuery(document).ready(function($){ $( ".entry-content" ).fitVids(); });', true );
 
 		// Comments scripts.
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -425,7 +425,7 @@ class Setup {
 		$assets = new Core\Assets;
 
 		// Google fonts.
-		// wp_enqueue_style( 'bs-theme-google-fonts', 'add-url-here', [], 'BST_VERSION, 'screen' );
+		// wp_enqueue_style( 'bst-google-fonts', 'add-url-here', [], 'BST_VERSION, 'screen' );
 
 		/**
 		 * Theme stylesheet
@@ -436,10 +436,15 @@ class Setup {
 		 */
 		wp_enqueue_style( 'bst-theme', get_theme_file_uri( '/assets/css/style' . $assets->suffix() . '.css' ), [], BST_VERSION, 'all' );
 
+		// Right-to-left languages.
+		if ( is_rtl() ) {
+			wp_enqueue_style( 'bst-theme-rtl', get_theme_file_uri( 'assets/css/rtl' . $assets->suffix() . '.css' ), [ 'bst-theme' ], BST_VERSION, 'all' );
+		}
+
 		// Block styles.
 		if ( function_exists( 'has_blocks' ) ) {
 			if ( has_blocks() ) {
-				wp_enqueue_style( 'bst-blocks', get_theme_file_uri( '/assets/css/blocks' . $assets->suffix() . '.css' ), [ 'bst-theme' ], BST_VERSION );
+				wp_enqueue_style( 'bst-blocks', get_theme_file_uri( '/assets/css/blocks' . $assets->suffix() . '.css' ), [ 'bst-theme' ], BST_VERSION, 'all' );
 			}
 		}
 
