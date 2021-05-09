@@ -81,7 +81,7 @@ class Block_Editor {
 		 * Block editor colors
 		 *
 		 * Match the following HEX codes with SASS color variables.
-		 * @see assets/css/_variables.scss
+		 * @see assets/css/modules/_colors.scss
 		 *
 		 * @since 1.0.0
 		 */
