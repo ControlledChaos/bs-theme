@@ -23,6 +23,11 @@ body {
   padding-right: 0;
 }
 
+.main-navigation ul ul {
+  left: unset;
+  right: -999em;
+}
+
 .main-navigation ul ul ul {
   left: unset;
   right: -999em;
@@ -31,7 +36,7 @@ body {
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
   left: unset;
-  right: 0;
+  right: 100%;
 }
 
 .main-navigation li:hover > ul,

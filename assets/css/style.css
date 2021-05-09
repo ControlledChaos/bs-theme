@@ -705,7 +705,11 @@ h2 + .search-form {
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
-  left: 0;
+  left: 100%;
+}
+
+.main-navigation ul ul li {
+  line-height: 1.25em;
 }
 
 .main-navigation ul ul li a {

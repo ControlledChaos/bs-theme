@@ -3,11 +3,15 @@
 ///
 
 .main-navigation {
+
 	ul {
 		padding-left: unset;
 		padding-right: 0;
 
 		ul {
+			left: unset;
+			right: -999em;
+
 			ul {
 				left: unset;
 				right: -999em;
@@ -16,7 +20,7 @@
 			li:hover > ul,
 			li.focus > ul {
 				left: unset;
-				right: 0;
+				right: 100%;
 			}
 		}
 	}
