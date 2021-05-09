@@ -438,7 +438,7 @@ class Setup {
 
 		// Right-to-left languages.
 		if ( is_rtl() ) {
-			wp_enqueue_style( 'bst-theme-rtl', get_theme_file_uri( 'assets/css/rtl' . $assets->suffix() . '.css' ), [ 'bst-theme' ], BST_VERSION, 'all' );
+			wp_enqueue_style( 'bst-theme-rtl', get_theme_file_uri( 'assets/css/style-rtl' . $assets->suffix() . '.css' ), [ 'bst-theme' ], BST_VERSION, 'all' );
 		}
 
 		// Block styles.
