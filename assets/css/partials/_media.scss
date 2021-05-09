@@ -1,7 +1,8 @@
-/**
- * Images
- */
- img {
+///
+/// Images & media styles
+///
+
+img {
 	font-size: 75%; /* alt text */
 }
 
@@ -140,14 +141,4 @@ article .gallery {
 	vertical-align: middle;
 	max-width: 48px;
 	margin-right: 0.5em;
-}
-
-/* When CSS Grid is not supported */
-@supports not ( ( display: grid ) ) {
-	/* Styles */
-}
-
-/* When CSS Flexbox is not supported */
-@supports not ( ( display: flex ) or ( display: flexbox ) ) {
-	/* Styles */
 }

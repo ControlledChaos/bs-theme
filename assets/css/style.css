@@ -1,6 +1,3 @@
-/**
- * Browser reset
- */
 html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, button, input, select, textarea, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -255,7 +252,6 @@ b, strong, optgroup {
   font-weight: bold;
 }
 
-/* .clearfix class for clearing floats */
 .clearfix {
   clear: both;
   display: block;
@@ -264,28 +260,10 @@ b, strong, optgroup {
   zoom: 1;
 }
 
-/**
- * SASS/SCSS variables
- *
- * The following variables are used in other .scss files.
- * Make sure that this files is called early in style,scss.
- *
- * @link https://sass-lang.com/documentation/variables
- */
-/**
- * Colors
- *
- * Some variables use colors set by args in the functions file.
- *
- * @see functions.php/setup
- */
-/**
- * Typography
- */
 body {
-  background: #ffffff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   line-height: 1.5;
+  background: #ffffff;
   color: #333333;
 }
 
@@ -343,11 +321,6 @@ a {
 
 a:visited {
   color: #551a8b;
-}
-
-#secondary ul,
-#secondary ol {
-  padding-left: 1em;
 }
 
 /* Text meant only for screen readers. */
@@ -447,14 +420,6 @@ main article {
   clear: both;
 }
 
-.rtl .site-content .content-area {
-  margin-right: auto;
-  margin-left: 2em;
-}
-
-/**
- * Forms
- */
 form * + * {
   margin-top: 1em;
 }
@@ -672,9 +637,6 @@ h2 + .search-form {
   border-color: #888888;
 }
 
-/**
- * Header
- */
 .site-title {
   margin: 0;
   /* Match <p> tag to <h1> tag on front page */
@@ -709,14 +671,6 @@ h2 + .search-form {
   max-width: 80px;
 }
 
-.rtl .site-branding img {
-  margin-right: auto;
-  margin-left: 1em;
-}
-
-/**
- * Navigation
- */
 .main-navigation {
   clear: both;
   display: block;
@@ -838,9 +792,6 @@ h2 + .search-form {
   }
 }
 
-/**
- * Posts and pages
- */
 .sticky {
   display: block;
 }
@@ -874,21 +825,19 @@ h2 + .search-form {
   margin-right: 1em;
 }
 
-/**
- * Widgets
- */
+#secondary ul,
+#secondary ol {
+  padding-left: 1em;
+}
+
 .widget {
   margin: 0 0 1.5em;
-  /* Make sure select elements fit in widgets. */
 }
 
 .widget select {
   max-width: 100%;
 }
 
-/**
- * Images
- */
 img {
   font-size: 75%;
   /* alt text */
@@ -1016,11 +965,6 @@ article .gallery .gallery-item img {
   margin-right: 0.5em;
 }
 
-/* When CSS Grid is not supported */
-/* When CSS Flexbox is not supported */
-/**
- * Comments
- */
 .comment-content a {
   word-wrap: break-word;
 }
@@ -1033,14 +977,7 @@ article .gallery .gallery-item img {
   vertical-align: middle;
 }
 
-/**
- * Footer
- */
 .copyright-text {
   font-size: 0.825em;
   text-align: center;
 }
-
-/**
- * Styles for when JavaScript is disabled
- */

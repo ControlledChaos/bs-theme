@@ -1,6 +1,7 @@
-/**
- * Header
- */
+///
+/// Site header styles
+///
+
 .site-title {
 	margin: 0;
 
@@ -31,14 +32,5 @@
 	img {
 		margin-right: 1em;
 		max-width: 80px;
-	}
-}
-
-.rtl {
-	.site-branding {
-		img {
-			margin-right: auto;
-			margin-left: 1em;
-		}
 	}
 }

@@ -1,6 +1,7 @@
-/**
- * Browser reset
- */
+///
+/// Browser reset
+///
+
  html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, a, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, button, input, select, textarea, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; outline: 0; vertical-align: baseline; background: transparent; }
  article, aside, details, div, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary { display: block; }
  audio, canvas, progress, video { display: inline-block; vertical-align: baseline; }
@@ -51,5 +52,4 @@
  pre { overflow: auto; white-space: pre;	white-space: pre-wrap; white-space: pre-line; word-wrap: break-word; }
  pre, code, kbd, samp { font-family: 'Courier New', Courier, monospace; }
  b, strong, optgroup { font-weight: bold; }
- /* .clearfix class for clearing floats */
  .clearfix { clear: both; display: block; height: 0; overflow: hidden; zoom: 1; }

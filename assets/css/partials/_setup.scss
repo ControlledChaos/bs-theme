@@ -1,10 +1,14 @@
-/**
- * Typography
- */
+///
+/// Set up basic theme styles
+///
+/// These styles are general & miscellaneous both.
+/// Mostly it gets the ball rolling.
+///
+
 body {
-	background: $white;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 	line-height: 1.5;
+	background: $white;
 	color: $text;
 
 	&.dark-mode {
@@ -64,11 +68,6 @@ a:visited {
 	color: $visited;
 }
 
-#secondary ul,
-#secondary ol {
-	padding-left: 1em;
-}
-
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	border: 0;
@@ -104,6 +103,5 @@ a:visited {
 	text-decoration: none;
 	top: 5px;
 	width: auto;
-	z-index: 100000;
-	/* Above WP toolbar. */
+	z-index: 100000; /* Above WP toolbar. */
 }

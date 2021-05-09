@@ -1,3 +1,7 @@
+///
+/// Site layout styles
+///
+
 .site {
 	max-width: 1280px;
 	margin: 0 auto;
@@ -54,15 +58,4 @@ main article {
 .site-content:after,
 .site-footer:after {
 	clear: both;
-}
-
-.rtl {
-
-	.site-content {
-
-		.content-area {
-			margin-right: auto;
-			margin-left: 2em;
-		}
-	}
 }
