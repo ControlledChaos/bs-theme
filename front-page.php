@@ -4,7 +4,7 @@
  *
  * @package    BS_Theme
  * @subpackage Templates
- * @category   Posts
+ * @category   Front Page
  * @since      1.0.0
  */
 
