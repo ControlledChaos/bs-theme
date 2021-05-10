@@ -34,8 +34,11 @@ get_header();
 	</div>
 <?php
 
-// Get the default sidebar file.
-get_sidebar();
+// Get the default sidebar file if not the No Sidebar template.
+if ( ! is_page_template( 'page-templates/no-sidebar.php' ) ) {
+	get_sidebar();
+}
+
 ?>
 </div><!-- #content -->
 <?php
