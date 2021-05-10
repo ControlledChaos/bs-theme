@@ -23,6 +23,7 @@ See [BS Plugin](https://github.com/ControlledChaos/bs-plugin) for a basic WordPr
 
 ## Build Details & Extras
 
+* Header, navigation, and footer loaded via hook so that they may be unhooked.
 * Widget to toggle light and dark themes.
 * Sample theme options page ready to begin developing.
 * Theme info page as an example for getting theme data.
