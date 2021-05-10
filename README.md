@@ -31,6 +31,7 @@ This is just a starter theme. However, files are namespaced and all functions ar
 * Sample theme options page ready to begin developing.
 * Theme info page as an example for getting theme data.
 * Bundle & load plugins by adding to the `includes/vendor` directory and extend the Plugin class.
+* Right-to-left (RTL) stylesheets are provided, and existing left-right styles are reversed.
 
 ## Advanced Custom Fields
 
