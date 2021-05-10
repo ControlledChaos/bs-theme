@@ -139,6 +139,16 @@ class Template_Tags {
 		do_action( 'BS_Theme\after_header' );
 	}
 
+	// Fires before `BS_Theme\footer`.
+	public function before_footer() {
+		do_action( 'BS_Theme\before_footer' );
+	}
+
+	// Fires after `BS_Theme\footer`.
+	public function after_footer() {
+		do_action( 'BS_Theme\after_footer' );
+	}
+
 	// Fires after `#page` and before `wp_footer`.
 	public function after_page() {
 		do_action( 'BS_Theme\after_page' );
