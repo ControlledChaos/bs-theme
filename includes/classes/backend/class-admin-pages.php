@@ -65,7 +65,7 @@ class Admin_Pages {
 	 * @return void
      */
     public function theme_options_output() {
-        require get_parent_theme_file_path( '/template-parts/theme-options-page.php' );
+        require get_parent_theme_file_path( '/template-parts/admin/theme-options-page.php' );
 	}
 
 	/**
@@ -167,7 +167,7 @@ class Admin_Pages {
      */
     public function theme_info_output() {
 
-		$output = get_theme_file_path( '/template-parts/theme-info-page.php' );
+		$output = get_theme_file_path( '/template-parts/admin/theme-info-page.php' );
         if ( file_exists( $output ) ) {
 			include $output;
 		} else { ?>

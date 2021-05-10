@@ -96,7 +96,7 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: template-parts/content.php:44
+#: template-parts/content/content.php:44
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
@@ -140,7 +140,7 @@ msgstr ""
 msgid "Down for Maintenance"
 msgstr ""
 
-#: template-parts/content-page.php:49
+#: template-parts/content/content-page.php:49
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
@@ -175,7 +175,7 @@ msgid ""
 "below or a search?"
 msgstr ""
 
-#: template-parts/content-none.php:46
+#: template-parts/content/content-none.php:46
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
@@ -256,7 +256,7 @@ msgstr ""
 msgid "Not provided in the stylesheet header"
 msgstr ""
 
-#: template-parts/content-none.php:20
+#: template-parts/content/content-none.php:20
 msgid "Nothing Found"
 msgstr ""
 
@@ -265,7 +265,7 @@ msgstr ""
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
-#: template-parts/content-page.php:37 template-parts/content.php:55
+#: template-parts/content/content-page.php:37 template-parts/content/content.php:55
 msgid "Pages:"
 msgstr ""
 
@@ -295,7 +295,7 @@ msgstr ""
 msgid "Posted in %1$s"
 msgstr ""
 
-#: template-parts/content-none.php:28
+#: template-parts/content/content-none.php:28
 #, php-format
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
@@ -334,7 +334,7 @@ msgstr ""
 msgid "Social Menu"
 msgstr ""
 
-#: template-parts/content-none.php:40
+#: template-parts/content/content-none.php:40
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
