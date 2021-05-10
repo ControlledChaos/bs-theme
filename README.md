@@ -19,7 +19,7 @@ See [BS Plugin](https://github.com/ControlledChaos/bs-plugin) for a basic WordPr
 * This theme was written in a WordPress 5.0+ environment with no concern for backwards compatibility. However, it is currently tested with no issues in ClassicPress 1.2.0.
 * This theme was written on a local server running PHP 7.4
 * The short array syntax ( `[]` rather than `array()` ) requires PHP 5.4+
-* Function files are namespaced and must be called accordingly in template parts.
+* Class files are namespaced and must be called accordingly in template parts.
 
 ## Build Details & Extras
 
