@@ -92,3 +92,31 @@ if ( \is_plugin_active( "$companion_dir/$companion_file" ) ) {
 
 // Define the companion plugin constant.
 define( 'BST_COMPANION', $companion );
+
+/**
+ * Check for block editor
+ *
+ * @since  1.0.0
+ * @access public
+ * @global integer $wp_version
+ * @return boolean Returns false if ClassicPress or
+ *                 if WordPress is less than 5.0.
+ *                 Default is true.
+ */
+function bst_has_blocks() {
+
+	// Get WordPress version.
+	global $wp_version;
+
+	//Simple check for ClassicPress.
+	if ( function_exists( 'classicpress_version' ) ) {
+		return false;
+
+	// Compare WordPress version to less than 5.0 (introduction of blocks).
+	} elseif ( version_compare( $wp_version,'4.9.9' ) <= 0 ) {
+		return false;
+	}
+
+	// Default is true.
+	return true;
+}
