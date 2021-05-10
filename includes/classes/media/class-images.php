@@ -74,7 +74,7 @@ class Images {
 
 		// 1:1 square.
 		add_image_size( 'large-thumbnail', 240, 240, true );
-		add_image_size( 'xlarge-thumbnail', 320, 320, true );
+		add_image_size( 'x-large-thumbnail', 320, 320, true );
 
 		// 16:9 HD Video.
 		add_image_size( 'large-video', 1280, 720, true );
