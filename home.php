@@ -1,6 +1,6 @@
 <?php
 /**
- * The main blog template file
+ * The blog page template file
  *
  * @package    BS_Theme
  * @subpackage Templates
