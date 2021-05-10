@@ -108,7 +108,7 @@ function bst_has_blocks() {
 	// Get WordPress version.
 	global $wp_version;
 
-	//Simple check for ClassicPress.
+	// Simple check for ClassicPress.
 	if ( function_exists( 'classicpress_version' ) ) {
 		return false;
 
