@@ -81,7 +81,7 @@ class Template_Tags {
 	 */
 	public function body_open() {
 		do_action( 'wp_body_open' );
-		do_action( 'bst_body_open' );
+		do_action( 'BS_Theme\body_open' );
 	}
 
 	/**
@@ -101,12 +101,12 @@ class Template_Tags {
 
 	// Fires after opening `body` and before `#page`.
 	public function before_page() {
-		do_action( 'before_page' );
+		do_action( 'BS_Theme\before_page' );
 	}
 
 	// Fires after `#page` and before `wp_footer`.
 	public function after_page() {
-		do_action( 'after_page' );
+		do_action( 'BS_Theme\after_page' );
 	}
 
 	/**
