@@ -14,8 +14,6 @@ namespace BS_Theme;
 use BS_Theme\Classes\Front as Front;
 
 ?>
-	</div><!-- #content -->
-
 	<?php Front\tags()->footer(); ?>
 
 </div><!-- #page -->

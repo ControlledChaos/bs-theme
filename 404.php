@@ -19,6 +19,7 @@ use BS_Theme\Classes\Front as Front;
 get_header();
 
 ?>
+<div id="content" class="site-content">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
 
@@ -66,6 +67,7 @@ get_header();
 
 		</main>
 	</div>
+</div><!-- #content -->
 <?php
 
 // Get the default footer file.

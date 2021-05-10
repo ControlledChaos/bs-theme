@@ -49,5 +49,3 @@ Front\tags()->before_page();
 	<?php Front\tags()->before_header(); ?>
 	<?php Front\tags()->header(); ?>
 	<?php Front\tags()->after_header(); ?>
-
-	<div id="content" class="site-content">
