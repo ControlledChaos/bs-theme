@@ -37,6 +37,9 @@ class Head {
 
 		// Disable emoji script.
 		add_action( 'init', [ $this, 'disable_emojis' ] );
+
+		// Load the `<head>` section.
+		add_action( 'BS_Theme\head', [ $this, 'head' ] );
 	}
 
 	/**
@@ -100,5 +103,16 @@ class Head {
 		remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 		remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
 		remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	}
+
+	/**
+	 * Load the `<head>` section
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function head() {
+		include get_theme_file_path( '/template-parts/head.php' );
 	}
 }

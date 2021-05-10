@@ -61,6 +61,17 @@ class Template_Tags {
 	public function __construct() {}
 
 	/**
+	 * Load the `<head>` section
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function head() {
+		do_action( 'BS_Theme\head' );
+	}
+
+	/**
 	 * Additional hook for scripts & styles
 	 *
 	 * Triggered after the opening `<body>` tag.

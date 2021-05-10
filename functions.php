@@ -87,7 +87,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Get the PHP version class.
-require_once \get_parent_theme_file_path( '/includes/classes/core/class-php-version.php' );
+require_once get_parent_theme_file_path( '/includes/classes/core/class-php-version.php' );
 
 /**
  * PHP version check
@@ -128,7 +128,7 @@ if ( file_exists( $get_plugin ) ) {
 }
 
 // Get plugin configuration file.
-require \get_parent_theme_file_path( '/includes/config.php' );
+require get_parent_theme_file_path( '/includes/config.php' );
 
 // Autoload class files.
 require_once BST_PATH . 'includes/autoloader.php';
