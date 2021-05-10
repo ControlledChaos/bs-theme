@@ -9,6 +9,7 @@ A basic starter theme for WordPress and ClassicPress.
 ![Gutenberg Ready](https://img.shields.io/badge/Gutenberg-ready-00a0d2.svg?style=flat-square)
 ![ACF Pro Ready](https://img.shields.io/badge/ACF-ready-00d3ae.svg?style=flat-square)
 ![No PHP Composer](https://img.shields.io/badge/Composer-nope-f49a36.svg?style=flat-square)
+![Never AMP](https://img.shields.io/badge/AMP-Hell%20no!-005af0.svg?style=flat-square)
 
 See [BS Plugin](https://github.com/ControlledChaos/bs-plugin) for a basic WordPress/ClassicPress starter plugin.
 
