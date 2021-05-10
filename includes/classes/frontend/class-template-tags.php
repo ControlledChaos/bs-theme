@@ -70,7 +70,7 @@ class Template_Tags {
 	 */
 	public function body_open() {
 		do_action( 'wp_body_open' );
-		do_action( 'bs_body_open' );
+		do_action( 'bst_body_open' );
 	}
 
 	/**
