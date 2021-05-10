@@ -4,7 +4,7 @@
  *
  * @package    BS_Theme
  * @subpackage Templates
- * @category   Headers
+ * @category   Navigation
  * @since      1.0.0
  */
 
