@@ -39,7 +39,7 @@ The theme is ready to bundle a copy of Advanced Custom Fields basic or Pro. Simp
 If the `includes/vendor/acf` directory is not used as the root directory of the plugin then change the directory name, and core filename in the ACF class file properties:  
 `@see includes/classes/vendor/class-acf.php`.
 
-There is an `before_html` hook before the opening `<html>` tag for ACF frontend forms.
+There is a `before_html` hook before the opening `<html>` tag for ACF frontend forms.
 
 An ACF JSON directory is ready to use, filters added in the ACF class.
 
