@@ -1,6 +1,6 @@
 <?php
 /**
- * The default head section of any page.
+ * The default head section of any page
  *
  * @package    BS_Theme
  * @subpackage Templates
