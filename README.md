@@ -25,7 +25,7 @@ This is just a starter theme. However, files are namespaced and all functions ar
 * The short array syntax ( `[]` rather than `array()` ) requires PHP 5.4+
 * Function files are namespaced and must be called accordingly in template parts.
 
-## Extras
+## Build Details & Extras
 
 * Widget to toggle light and dark themes.
 * Sample theme options page ready to begin developing.
