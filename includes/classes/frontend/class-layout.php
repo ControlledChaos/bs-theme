@@ -36,6 +36,9 @@ class Layout {
 
 		// Add the default header.
 		add_action( 'BS_Theme\header', [ $this, 'default_header' ] );
+
+		// Add the default header.
+		add_action( 'BS_Theme\footer', [ $this, 'default_footer' ] );
 	}
 
 	/**
@@ -58,5 +61,16 @@ class Layout {
 	 */
 	public function default_header() {
 		include get_theme_file_path( '/template-parts/header/default-header.php' );
+	}
+
+	/**
+	 * Load default footer
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function default_footer() {
+		include get_theme_file_path( '/template-parts/footer/default-footer.php' );
 	}
 }

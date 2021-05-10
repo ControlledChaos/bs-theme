@@ -96,6 +96,17 @@ class Template_Tags {
 	}
 
 	/**
+	 * Load the page footer
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function footer() {
+		do_action( 'BS_Theme\footer' );
+	}
+
+	/**
 	 * Open template tags
 	 *
 	 * Following are template tags which may be used
