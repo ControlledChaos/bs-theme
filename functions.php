@@ -157,6 +157,7 @@ if ( ! is_admin() ) {
 	new Front\Head;
 	new Front\Template_Tags;
 	new Front\Assets;
+	new Front\Layout;
 }
 
 // Backend classes.

@@ -74,6 +74,7 @@ define( 'BST_CLASSES', [
 	BST_CLASS_NS . '\Front\Head'          => BST_CLASS['front'] . 'head.php',
 	BST_CLASS_NS . '\Front\Template_Tags' => BST_CLASS['front'] . 'template-tags.php',
 	BST_CLASS_NS . '\Front\Assets'        => BST_CLASS['front'] . 'assets.php',
+	BST_CLASS_NS . '\Front\Layout'        => BST_CLASS['front'] . 'layout.php',
 
 	// Backend classes.
 	BST_CLASS_NS . '\Admin\Admin_Pages'  => BST_CLASS['admin'] . 'admin-pages.php',

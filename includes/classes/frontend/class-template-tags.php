@@ -85,12 +85,26 @@ class Template_Tags {
 	}
 
 	/**
-	 * Open template tags.
+	 * Load the page header
 	 *
-	 * Following are template tags for further development
-	 * by the theme author, child themes, or plugins.
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function header() {
+		do_action( 'BS_Theme\header' );
+	}
+
+	/**
+	 * Open template tags
 	 *
-	 * These are primarily provided as examples.
+	 * Following are template tags which may be used
+	 * by this theme and are provided for further
+	 * development by the theme author, child themes,
+	 * or plugins.
+	 *
+	 * These are named generically since template part
+	 * of various types may be loaded.
 	 *
 	 * @todo Possibly add more open tags but perhaps not,
 	 *       as this is a starter theme.
@@ -102,6 +116,16 @@ class Template_Tags {
 	// Fires after opening `body` and before `#page`.
 	public function before_page() {
 		do_action( 'BS_Theme\before_page' );
+	}
+
+	// Fires before `BS_Theme\header`.
+	public function before_header() {
+		do_action( 'BS_Theme\before_header' );
+	}
+
+	// Fires after `BS_Theme\header`.
+	public function after_header() {
+		do_action( 'BS_Theme\after_header' );
 	}
 
 	// Fires after `#page` and before `wp_footer`.
