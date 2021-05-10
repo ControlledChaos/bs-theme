@@ -36,7 +36,7 @@ This is just a starter theme. However, files are namespaced and all functions ar
 
 The theme is ready to bundle a copy of Advanced Custom Fields basic or Pro. Simply add the contents of the plugin folder to the `includes/vendor/acf` directory and Advanced Custom Fields is automatically loaded, if the plugin is not active via the plugins interface.
 
-If the `includes/vendor/acf` directory is not used as the root directory of the plugin then change the directory name, and core filename, if changed, in the ACF class file properties:  
+If the `includes/vendor/acf` directory is not used as the root directory of the plugin then change the directory name, and core filename in the ACF class file properties:  
 `@see includes/classes/vendor/class-acf.php`.
 
 An ACF JSON directory is ready to use, filters added in the ACF class.
