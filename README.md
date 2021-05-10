@@ -14,10 +14,6 @@ See [BS Plugin](https://github.com/ControlledChaos/bs-plugin) for a basic WordPr
 
 ![BS Theme Screenshot](https://raw.githubusercontent.com/ControlledChaos/bs-theme/master/screenshot.jpg)
 
-## Nothing Fancy
-
-This is just a starter theme. However, files are namespaced and all functions are in autoloaded class files. Some sample block editor CSS and colors.
-
 ## Requirements
 
 * This theme was written in a WordPress 5.0+ environment with no concern for backwards compatibility. However, it is currently tested with no issues in ClassicPress 1.2.0.
