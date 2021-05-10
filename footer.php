@@ -13,9 +13,9 @@ namespace BS_Theme;
 // Alias namespaces.
 use BS_Theme\Classes\Front as Front;
 
-?>
-	<?php Front\tags()->footer(); ?>
+Front\tags()->footer();
 
+?>
 </div><!-- #page -->
 
 <?php Front\tags()->after_page(); ?>
