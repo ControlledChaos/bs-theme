@@ -265,7 +265,7 @@ class Plugin {
 	 * @since  1.0.0
 	 * @access public
 	 * @return boolean Returns true if either version of the
-	 *                 installed plugin is acive.
+	 *                 installed plugin is active.
 	 */
 	public function is_active() {
 
