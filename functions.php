@@ -150,7 +150,7 @@ $bst_widgets = new Widgets\Register;
 $bst_media   = new Media\Images;
 
 // Vendor (plugin) classes.
-$bst_acf = new Vendor\ACF;
+$bst_acf = new Vendor\Theme_ACF;
 
 // Frontend classes.
 if ( ! is_admin() ) {

@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die;
 }
 
-class ACF extends Plugin {
+class Theme_ACF extends Plugin {
 
 	/**
 	 * Installed plugin directory
