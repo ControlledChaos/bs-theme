@@ -32,7 +32,7 @@ get_header();
 
 			<?php while ( have_posts() ) :
 				the_post();
-				get_template_part( 'template-parts/content/content', get_post_type() );
+				get_template_part( 'template-parts/content/content', get_post_type() . $bst_acf->suffix() );
 
 			endwhile;
 
@@ -40,7 +40,7 @@ get_header();
 
 		else :
 
-			get_template_part( 'template-parts/content/content', 'none' );
+			get_template_part( 'template-parts/content/content', 'none' . $bst_acf->suffix() );
 
 		endif;
 		?>

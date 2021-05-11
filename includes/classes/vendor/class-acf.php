@@ -176,4 +176,28 @@ class ACF extends Plugin {
 		$paths[] = BST_PATH . 'includes/settings/acf-json';
 		return $paths;
 	}
+
+	/**
+	 * ACF file suffix
+	 *
+	 * Returns `-acf` if ACF is active.
+	 * Used to look for template parts with that suffix.
+	 *
+	 * @example `front-page-acf.php`
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  array $paths
+	 * @return string Returns the suffix or empty.
+	 */
+	public function suffix( $suffix = '' ) {
+
+		// If ACF is active.
+		if ( $this->is_active() ) {
+			$suffix = '-acf';
+		}
+
+		// Return the suffix.
+		return $suffix;
+	}
 }
