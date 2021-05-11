@@ -141,35 +141,35 @@ require_once BST_PATH . 'includes/autoloader.php';
  */
 
 // Activation classes.
-new Classes\Activate\Activate;
-new Classes\Activate\Deactivate;
+$bst_activate   = new Classes\Activate\Activate;
+$bst_deactivate = new Classes\Activate\Deactivate;
 
 // Theme setup.
-new Core\Setup;
-new Widgets\Register;
-new Media\Images;
+$bst_core    = new Core\Setup;
+$bst_widgets = new Widgets\Register;
+$bst_media   = new Media\Images;
 
 // Vendor (plugin) classes.
-new Vendor\ACF;
+$bst_acf = new Vendor\ACF;
 
 // Frontend classes.
 if ( ! is_admin() ) {
-	new Front\Head;
-	new Front\Template_Tags;
-	new Front\Assets;
-	new Front\Layout;
+	$bst_head   = new Front\Head;
+	$bst_tags   = new Front\Template_Tags;
+	$bst_assets = new Front\Assets;
+	$bst_layout = new Front\Layout;
 }
 
 // Backend classes.
 if ( is_admin() ) {
-	new Admin\Admin_Pages;
-	new Admin\Assets;
+	$bst_admin_pages  = new Admin\Admin_Pages;
+	$bst_admin_assets = new Admin\Assets;
 	if ( bst_has_blocks() ) {
-		new Admin\Block_Editor;
+		$bst_blocks = new Admin\Block_Editor;
 	}
 }
 
 // Customizer classes.
 if ( is_customize_preview() ) {
-	new Customize\Customizer;
+	$bst_customize = new Customize\Customizer;
 }
