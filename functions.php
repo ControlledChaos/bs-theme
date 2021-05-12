@@ -26,7 +26,7 @@
  * GNU General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with BS Theme. If not, see {URI to Plugin License}.
+ * along with BS Theme. If not, see {URI to Theme License}.
  */
 
 /**
@@ -34,7 +34,7 @@
  *
  * Following is a list of strings to find and replace in all theme files.
  *
- * 1. Plugin name
+ * 1. Theme namespace
  *    Find `BS_Theme` and replace with your theme name, include
  *    underscores between words. This will change the namespace and the package
  *    name in file headers.
