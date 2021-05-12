@@ -3,7 +3,7 @@
  * Check PHP version
  *
  * Operations contingent on the version of PHP used
- * on the plugin's server, notably disable functionality
+ * on the theme's server, notably disable functionality
  * if the minimum version is not met.
  *
  * @package    BS_Theme

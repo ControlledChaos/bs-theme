@@ -48,7 +48,7 @@ define( 'BST_CLASS_NS', __NAMESPACE__ . '\Classes' );
 /**
  * Array of classes to register
  *
- * When you add new classes to your version of this plugin you may
+ * When you add new classes to your version of this theme you may
  * add them to the following array rather than requiring the file
  * elsewhere. Be sure to include the precise namespace.
  *

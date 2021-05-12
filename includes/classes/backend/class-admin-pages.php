@@ -98,7 +98,7 @@ class Admin_Pages {
 	}
 
 	/**
-     * Get convert plugin help tab content
+     * Get theme options help tab content
 	 *
 	 * @since  1.0.0
 	 * @access public

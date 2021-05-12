@@ -127,7 +127,7 @@ if ( file_exists( $get_plugin ) ) {
 	include_once( $get_plugin );
 }
 
-// Get plugin configuration file.
+// Get theme configuration file.
 require get_parent_theme_file_path( '/includes/config.php' );
 
 // Autoload class files.
