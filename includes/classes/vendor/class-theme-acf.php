@@ -88,8 +88,10 @@ class Theme_ACF extends Plugin {
 		 * Remove some of the JSON directory filters in ACFE.
 		 * Set new directory for saving & loading ACF field groups.
 		 */
-		add_filter( 'acf/settings/save_json', [ $this, 'save_acf_json' ] );
-		add_filter( 'acf/settings/load_json', [ $this, 'load_acf_json' ] );
+		if ( ! BST_COMPANION ) {
+			add_filter( 'acf/settings/save_json', [ $this, 'save_acf_json' ] );
+			add_filter( 'acf/settings/load_json', [ $this, 'load_acf_json' ] );
+		}
 
 		// Filter assets URL.
 		if ( ! $this->is_active() ) {
