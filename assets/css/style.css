@@ -364,9 +364,6 @@ a:visited {
 }
 
 .site {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2em;
   background-color: inherit;
 }
 
@@ -374,6 +371,9 @@ a:visited {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2em;
 }
 
 .site-content .content-area {
@@ -394,30 +394,16 @@ main article {
   min-width: 240px;
 }
 
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-  content: "";
-  display: table;
-  table-layout: fixed;
-}
-
-.clear:after,
-.entry-content:after,
-.comment-content:after,
-.site-header:after,
-.site-content:after,
-.site-footer:after {
-  clear: both;
+@media screen and (max-width: 768px) {
+  .site-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .site-content .content-area {
+    margin-right: unset;
+  }
 }
 
 form * + * {
@@ -662,8 +648,9 @@ h2 + .search-form {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  max-width: 100%;
-  padding: 1em 0 0;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1em 2em 0;
 }
 
 .site-branding img {
@@ -675,7 +662,9 @@ h2 + .search-form {
   clear: both;
   display: block;
   width: 100%;
-  margin-top: 1em;
+  max-width: 1280px;
+  margin: 1em auto 0;
+  padding: 0 2em;
 }
 
 .main-navigation ul {
@@ -979,6 +968,13 @@ article .gallery .gallery-item img {
 
 .comment-author .avatar {
   vertical-align: middle;
+}
+
+.footer-content {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2em;
 }
 
 .copyright-text {
