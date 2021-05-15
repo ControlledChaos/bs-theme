@@ -177,17 +177,24 @@ class Setup {
 	 */
 	public function body_classes( $classes ) {
 
+		$classes[] = '';
+
 		// Adds a class of hfeed to non-singular pages.
 		if ( ! is_singular() ) {
-			$classes[] = 'hfeed';
+			$classes[] .= 'hfeed';
 		}
+
+		// Add class for the static front page.
+		if ( 'page' == get_option( 'show_on_front' ) ) {
+			$classes[] .= 'static-front';
+		 }
 
 		// Adds a class of no-sidebar when there is no default sidebar present.
 		if (
 			! is_active_sidebar( 'sidebar-default' ) ||
 			is_page_template( [ 'page-templates/no-sidebar.php' ] )
 		) {
-			$classes[] = 'no-sidebar';
+			$classes[] .= 'no-sidebar';
 		}
 
 		// Return the modified array of body classes.
