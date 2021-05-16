@@ -15,6 +15,9 @@ namespace BS_Theme;
 // Alias namespaces.
 use BS_Theme\Classes\Front as Front;
 
+// Access widgets to check if they're registered.
+global $wp_widget_factory;
+
 // Get the default header file.
 get_header();
 
@@ -34,8 +37,9 @@ get_header();
 					<?php
 					get_search_form();
 
-					the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+					if ( isset( $wp_widget_factory->widgets['WP_Widget_Recent_Posts'] ) ) {
+						the_widget( 'WP_Widget_Recent_Posts' );
+					} ?>
 
 					<div class="widget widget_categories">
 						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'bs-theme' ); ?></h2>
@@ -57,10 +61,14 @@ get_header();
 						'<p>%1s</p>',
 						esc_html__( 'Try looking in the monthly archives.', 'bs-theme' )
 					);
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
 
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
+					if ( isset( $wp_widget_factory->widgets['WP_Widget_Archives'] ) ) {
+						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+					}
+
+					if ( isset( $wp_widget_factory->widgets['WP_Widget_Tag_Cloud'] ) ) {
+						the_widget( 'WP_Widget_Tag_Cloud' );
+					} ?>
 
 				</div>
 			</section>
