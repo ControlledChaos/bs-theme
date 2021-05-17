@@ -185,7 +185,7 @@ class Setup {
 		}
 
 		// Add class for the static front page.
-		if ( 'page' == get_option( 'show_on_front' ) ) {
+		if ( is_front_page() && 'page' == get_option( 'show_on_front' ) ) {
 			$classes[] .= 'static-front';
 		 }
 
