@@ -46,6 +46,8 @@ Front\tags()->before_page();
 
 <div id="page" class="site" itemscope="itemscope" itemtype="<?php esc_attr( Front\tags()->site_schema() ); ?>">
 
-	<?php Front\tags()->before_header(); ?>
-	<?php Front\tags()->header(); ?>
-	<?php Front\tags()->after_header(); ?>
+	<div class="site-header-wrap">
+		<?php Front\tags()->before_header(); ?>
+		<?php Front\tags()->header(); ?>
+		<?php Front\tags()->after_header(); ?>
+	</div>
