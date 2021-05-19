@@ -927,10 +927,10 @@ body.no-sidebar figure.alignfull {
   display: block;
 }
 
-.wp-caption.wp-caption-text {
-  margin-top: 0.25em;
-  font-size: 0.85em;
-  line-height: 1.3;
+.wp-caption .wp-caption-text {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  font-weight: 700;
   text-align: center;
 }
 

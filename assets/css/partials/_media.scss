@@ -100,14 +100,14 @@ body.no-sidebar {
 
 .wp-caption {
 
-	& img {
+	img {
 		display: block;
 	}
 
-	&.wp-caption-text {
-		margin-top: 0.25em;
-		font-size: 0.85em;
-		line-height: 1.3;
+	.wp-caption-text {
+		margin-top: 0.5em;
+		font-size: 0.9em;
+		font-weight: 700;
 		text-align: center;
 	}
 }
@@ -122,14 +122,14 @@ article .gallery {
 	margin-top: 1em;
 	list-style: none; /* for galleries as list elements */
 
-	& .gallery-item {
+	.gallery-item {
 
-		& img {
+		img {
 			border-color: transparent !important;
 		}
 	}
 
-	& .gallery-caption {}
+	.gallery-caption {}
 }
 
 .avatar {
