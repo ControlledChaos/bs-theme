@@ -438,6 +438,56 @@ class Template_Tags {
 		// Print the toggle button.
 		echo $button;
 	}
+
+	/**
+	 * Get header image alt attribute
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string Returns the text of the alt attribute.
+	 */
+	public function get_header_image_alt() {
+
+		$attachment_id = 0;
+
+		if ( is_random_header_image() && $header_url = get_header_image() ) {
+
+			// For a random header search for a match against all headers.
+			foreach ( get_uploaded_header_images() as $header ) {
+
+				if ( $header['url'] == $header_url ) {
+					$attachment_id = $header['attachment_id'];
+					break;
+				}
+			}
+
+		// For static headers, less intensive approach.
+		} elseif ( $data = get_custom_header() ) {
+			$attachment_id = $data->attachment_id;
+		}
+
+		// If an attachment ID is found.
+		if ( $attachment_id ) {
+
+			$alt = trim( strip_tags( get_post_meta( $attachment_id, '_wp_attachment_image_alt', true ) ) );
+
+			// Fallback to caption (excerpt).
+			if ( ! $alt ) {
+				$alt = trim( strip_tags( get_post_field( 'post_excerpt', $attachment_id ) ) );
+			}
+
+			// Fallback to title.
+			if ( ! $alt ) {
+				$alt = trim( strip_tags( get_post_field( 'post_title', $attachment_id ) ) );
+			}
+
+		// Return an empty string if no alt could be found.
+		} else {
+			$alt = '';
+		}
+
+		return $alt;
+	}
 }
 
 /**
