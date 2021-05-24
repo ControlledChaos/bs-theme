@@ -135,20 +135,28 @@ select {
 
 option {}
 
-*::-webkit-input-placeholder,
-*:-moz-placeholder,
-*::-moz-placeholder,
-*:-ms-input-placeholder,
 *::-webkit-input-placeholder {
-	color: $light_gray !important;
+	color: $light_gray;
 }
 
-*::-webkit-input-placeholder,
-*:-moz-placeholder,
-*::-moz-placeholder,
-*:-ms-input-placeholder,
+*::-o-placeholder {
+	color: $light_gray;
+}
+
+*:-moz-placeholder {
+	color: $light_gray;
+}
+
+*::-moz-placeholder {
+	color: $light_gray;
+}
+
+*:-ms-input-placeholder {
+	color: $light_gray;
+}
+
 *::placeholder {
-	color: $light_gray !important;
+	color: $light_gray;
 }
 
 /* Search form */
