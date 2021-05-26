@@ -41,6 +41,9 @@ class Setup {
 		// Remove WooCommerce styles.
 		add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
+		// Login styles.
+		add_action( 'login_enqueue_scripts', [ $this, 'login_styles' ] );
+
 		// User color scheme classes.
 		add_filter( 'body_class', [ $this, 'color_scheme_classes' ] );
 	}
@@ -246,6 +249,21 @@ class Setup {
 
 		// Print the style block.
 		echo $style;
+	}
+
+	/**
+	 * Login styles
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function login_styles() {
+
+		// Instantiate the Assets class.
+		$assets = new Assets;
+
+		wp_enqueue_style( 'sprt-login', get_theme_file_uri( '/assets/css/login' . $assets->suffix() . '.css' ), [], BST_VERSION, 'screen' );
 	}
 
 	/**
