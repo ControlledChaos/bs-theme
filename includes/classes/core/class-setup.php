@@ -47,6 +47,9 @@ class Setup {
 		// Login title.
 		add_filter( 'login_headertext', [ $this, 'login_title' ] );
 
+		// Login URL.
+		add_filter( 'login_headerurl', [ $this, 'login_url' ] );
+
 		// User color scheme classes.
 		add_filter( 'body_class', [ $this, 'color_scheme_classes' ] );
 	}
@@ -278,6 +281,17 @@ class Setup {
 	 */
 	public function login_title() {
 		return get_bloginfo( 'name' );
+	}
+
+	/**
+	 * Login URL
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string Returns the URL.
+	 */
+	public function login_url() {
+		return site_url( '/' );
 	}
 
 	/**
