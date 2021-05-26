@@ -44,6 +44,9 @@ class Setup {
 		// Login styles.
 		add_action( 'login_enqueue_scripts', [ $this, 'login_styles' ] );
 
+		// Login title.
+		add_filter( 'login_headertext', [ $this, 'login_title' ] );
+
 		// User color scheme classes.
 		add_filter( 'body_class', [ $this, 'color_scheme_classes' ] );
 	}
@@ -264,6 +267,17 @@ class Setup {
 		$assets = new Assets;
 
 		wp_enqueue_style( 'sprt-login', get_theme_file_uri( '/assets/css/login' . $assets->suffix() . '.css' ), [], BST_VERSION, 'screen' );
+	}
+
+	/**
+	 * Login title
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return string Returns the title text.
+	 */
+	public function login_title() {
+		return get_bloginfo( 'name' );
 	}
 
 	/**
