@@ -107,6 +107,17 @@ class Template_Tags {
 	}
 
 	/**
+	 * Load the search form
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function searchform() {
+		do_action( 'BS_Theme\searchform' );
+	}
+
+	/**
 	 * Load the page footer
 	 *
 	 * @since  1.0.0
@@ -158,6 +169,16 @@ class Template_Tags {
 	// Fires after `BS_Theme\sidebar`.
 	public function after_sidebar() {
 		do_action( 'BS_Theme\after_sidebar' );
+	}
+
+	// Fires before `BS_Theme\searchform`.
+	public function before_searchform() {
+		do_action( 'BS_Theme\before_searchform' );
+	}
+
+	// Fires after `BS_Theme\searchform`.
+	public function after_searchform() {
+		do_action( 'BS_Theme\after_searchform' );
 	}
 
 	// Fires before `BS_Theme\footer`.

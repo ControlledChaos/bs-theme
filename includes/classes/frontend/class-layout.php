@@ -40,6 +40,9 @@ class Layout {
 		// Add the default sidebar.
 		add_action( 'BS_Theme\sidebar', [ $this, 'page_sidebar' ] );
 
+		// Add the default search form.
+		add_action( 'BS_Theme\searchform', [ $this, 'default_searchform' ] );
+
 		// Add the default header.
 		add_action( 'BS_Theme\footer', [ $this, 'page_footer' ] );
 	}
@@ -88,6 +91,17 @@ class Layout {
 	 */
 	public function page_sidebar() {
 		get_template_part( 'template-parts/aside/sidebar' );
+	}
+
+	/**
+	 * Load default search form
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function default_searchform() {
+		get_template_part( 'template-parts/forms/searchform' );
 	}
 
 	/**
