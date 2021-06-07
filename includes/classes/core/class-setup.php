@@ -41,10 +41,6 @@ class Setup {
 		// Remove WooCommerce styles.
 		add_filter( 'woocommerce_enqueue_styles', '__return_false' );
 
-		// Toolbar styles.
-		add_action( 'wp_enqueue_scripts', [ $this, 'toolbar_styles' ] );
-		add_action( 'admin_enqueue_scripts', [ $this, 'toolbar_styles' ], 99 );
-
 		// Login styles.
 		add_action( 'login_enqueue_scripts', [ $this, 'login_styles' ] );
 
@@ -259,25 +255,6 @@ class Setup {
 
 		// Print the style block.
 		echo $style;
-	}
-
-	/**
-	 * Toolbar styles
-	 *
-	 * Enqueues if user is logged in and user toolbar is showing.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function toolbar_styles() {
-
-		// Instantiate the Assets class.
-		$assets = new Assets;
-
-		if ( is_user_logged_in() && is_admin_bar_showing() ) {
-			wp_enqueue_style( 'bst-toolbar', get_theme_file_uri( '/assets/css/toolbar' . $assets->suffix() . '.css' ), [], BST_VERSION, 'screen' );
-		}
 	}
 
 	/**
