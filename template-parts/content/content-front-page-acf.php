@@ -17,14 +17,7 @@ use BS_Theme\Classes\Front as Front;
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 
 	<header class="entry-header">
-		<?php
-		if ( is_front_page() ) {
-
-			// Front page uses h1 in the page header so h2 here.
-			the_title( '<h2 class="entry-title">', '</h2>' );
-		} else {
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		} ?>
+		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header>
 
 	<?php Front\tags()->post_thumbnail(); ?>
