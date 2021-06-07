@@ -488,6 +488,61 @@ class Template_Tags {
 
 		return $alt;
 	}
+
+	/**
+	 * Post navigation
+	 *
+	 * Next & previous navigation of singular post types.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	 public function post_navigation() {
+
+		$prev = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
+		$next = get_adjacent_post( false, '', false );
+
+		if ( ! $next && ! $prev ) {
+			return;
+		}
+
+		global $post;
+
+		$post_id  = get_post_type( $post->ID );
+		$get_type = get_post_type_object( $post_id );
+		$type     = $get_type->labels->singular_name;
+
+		// Post navigation labels.
+		$prev_text = sprintf(
+			'%s %s',
+			__( 'Previous', 'spr-two' ),
+			$type
+		);
+
+		$next_text = sprintf(
+			'%s %s',
+			__( 'Next', 'spr-two' ),
+			$type
+		);
+
+		// Post navigation links.
+		$next_url = get_permalink( $next );
+		$prev_url = get_permalink( $prev );
+
+		?>
+		<nav class="post-navigation">
+
+			<?php if ( $prev ) : ?>
+			<a class="button nav-previous" href="<?php echo $prev_url; ?>"><?php echo $prev_text; ?></a>
+			<?php endif; ?>
+
+			<?php if ( $next ) : ?>
+			<a class="button nav-next" href="<?php echo $next_url; ?>"><?php echo $next_text; ?></a>
+			<?php endif; ?>
+		</nav>
+		<?php
+	}
 }
 
 /**

@@ -63,3 +63,7 @@ use BS_Theme\Classes\Front as Front;
 	</footer>
 
 </article>
+
+<?php if ( is_singular() ) {
+	echo Front\tags()->post_navigation();
+} ?>
