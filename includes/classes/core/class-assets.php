@@ -36,28 +36,7 @@ final class Assets {
 	 * @access public
 	 * @return self
 	 */
-	public function __construct() {
-
-		// Toolbar styles.
-		add_action( 'wp_enqueue_scripts', [ $this, 'toolbar_styles' ] );
-		add_action( 'admin_enqueue_scripts', [ $this, 'toolbar_styles' ], 99 );
-	}
-
-	/**
-	 * Toolbar styles
-	 *
-	 * Enqueues if user is logged in and user toolbar is showing.
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return void
-	 */
-	public function toolbar_styles() {
-
-		if ( is_user_logged_in() && is_admin_bar_showing() ) {
-			wp_enqueue_style( 'bst-toolbar', get_theme_file_uri( '/assets/css/toolbar' . $this->suffix() . '.css' ), [], BST_VERSION, 'screen' );
-		}
-	}
+	public function __construct() {}
 
 	/**
 	 * Plugin version
