@@ -576,11 +576,11 @@ class Template_Tags {
 		<nav class="post-navigation">
 
 			<?php if ( $prev ) : ?>
-			<a class="button nav-previous" href="<?php echo $prev_url; ?>"><?php echo $prev_text; ?></a>
+			<a class="button nav-previous" href="<?php echo $prev_url; ?>" title="<?php echo get_the_title( $prev ); ?>"><?php echo $prev_text; ?></a>
 			<?php endif; ?>
 
 			<?php if ( $next ) : ?>
-			<a class="button nav-next" href="<?php echo $next_url; ?>"><?php echo $next_text; ?></a>
+			<a class="button nav-next" href="<?php echo $next_url; ?>" title="<?php echo get_the_title( $next ); ?>"><?php echo $next_text; ?></a>
 			<?php endif; ?>
 		</nav>
 		<?php
