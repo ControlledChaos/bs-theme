@@ -67,6 +67,34 @@ class Assets {
 		// Instantiate the Assets class.
 		$assets = new Core\Assets;
 
-		wp_enqueue_style( 'bst-admin', get_theme_file_uri( '/assets/css/admin' . $assets->suffix() . '.css' ), [], BST_VERSION, 'all' );
+		wp_enqueue_style( 'bst-admin', get_theme_file_uri( '/assets/css/admin' . $this->suffix() . '.css' ), [], BST_VERSION, 'all' );
+	}
+
+	/**
+	 * File suffix
+	 *
+	 * Adds the `.min` filename suffix if
+	 * the system is not in debug mode.
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @param  string $suffix The string returned
+	 * @return string Returns the `.min` suffix or
+	 *                an empty string.
+	 */
+	public function suffix() {
+
+		// If in one of the debug modes do not minify.
+		if (
+			( defined( 'WP_DEBUG' ) && WP_DEBUG ) ||
+			( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG )
+		) {
+			$suffix = '';
+		} else {
+			$suffix = '.min';
+		}
+
+		// Return the suffix or not.
+		return $suffix;
 	}
 }

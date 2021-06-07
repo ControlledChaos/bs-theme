@@ -41,6 +41,9 @@ final class Assets {
 		// Toolbar styles.
 		add_action( 'wp_enqueue_scripts', [ $this, 'toolbar_styles' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'toolbar_styles' ], 99 );
+
+		// Login styles.
+		add_action( 'login_enqueue_scripts', [ $this, 'login_styles' ] );
 	}
 
 	/**
@@ -57,6 +60,18 @@ final class Assets {
 		if ( is_user_logged_in() && is_admin_bar_showing() ) {
 			wp_enqueue_style( 'bst-toolbar', get_theme_file_uri( '/assets/css/toolbar' . $this->suffix() . '.css' ), [], BST_VERSION, 'screen' );
 		}
+	}
+
+	/**
+	 * Login styles
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function login_styles() {
+
+		wp_enqueue_style( 'bst-login', get_theme_file_uri( '/assets/css/login' . $this->suffix() . '.css' ), [], BST_VERSION, 'screen' );
 	}
 
 	/**
