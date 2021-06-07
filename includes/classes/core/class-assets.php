@@ -71,7 +71,7 @@ final class Assets {
 	 */
 	public function login_styles() {
 
-		wp_enqueue_style( 'bst-login', get_theme_file_uri( '/assets/css/login' . $this->suffix() . '.css' ), [], BST_VERSION, 'screen' );
+		wp_enqueue_style( 'bst-login', get_theme_file_uri( '/assets/css/login' . $this->suffix() . '.css' ), [ 'login' ], BST_VERSION, 'screen' );
 	}
 
 	/**
