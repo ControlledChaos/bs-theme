@@ -269,7 +269,7 @@ class Setup {
 		// Instantiate the Assets class.
 		$assets = new Assets;
 
-		wp_enqueue_style( 'sprt-login', get_theme_file_uri( '/assets/css/login' . $assets->suffix() . '.css' ), [], BST_VERSION, 'screen' );
+		wp_enqueue_style( 'bst-login', get_theme_file_uri( '/assets/css/login' . $assets->suffix() . '.css' ), [], BST_VERSION, 'screen' );
 	}
 
 	/**
