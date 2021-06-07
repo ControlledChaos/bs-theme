@@ -37,6 +37,9 @@ class Layout {
 		// Add the default header.
 		add_action( 'BS_Theme\header', [ $this, 'page_header' ] );
 
+		// Add the default sidebar.
+		add_action( 'BS_Theme\sidebar', [ $this, 'page_sidebar' ] );
+
 		// Add the default header.
 		add_action( 'BS_Theme\footer', [ $this, 'page_footer' ] );
 	}
@@ -74,6 +77,17 @@ class Layout {
 		} else {
 			get_template_part( 'template-parts/header/header-default' );
 		}
+	}
+
+	/**
+	 * Load default sidebar
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function page_sidebar() {
+		get_template_part( 'template-parts/aside/sidebar' );
 	}
 
 	/**

@@ -96,6 +96,17 @@ class Template_Tags {
 	}
 
 	/**
+	 * Load the page sidebar
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function sidebar() {
+		do_action( 'BS_Theme\sidebar' );
+	}
+
+	/**
 	 * Load the page footer
 	 *
 	 * @since  1.0.0
@@ -137,6 +148,16 @@ class Template_Tags {
 	// Fires after `BS_Theme\header`.
 	public function after_header() {
 		do_action( 'BS_Theme\after_header' );
+	}
+
+	// Fires before `BS_Theme\sidebar`.
+	public function before_sidebar() {
+		do_action( 'BS_Theme\before_sidebar' );
+	}
+
+	// Fires after `BS_Theme\sidebar`.
+	public function after_sidebar() {
+		do_action( 'BS_Theme\after_sidebar' );
 	}
 
 	// Fires before `BS_Theme\footer`.
