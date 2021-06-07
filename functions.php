@@ -145,9 +145,10 @@ $bst_activate   = new Classes\Activate\Activate;
 $bst_deactivate = new Classes\Activate\Deactivate;
 
 // Theme setup.
-$bst_core    = new Core\Setup;
-$bst_widgets = new Widgets\Register;
-$bst_media   = new Media\Images;
+$bst_core_setup   = new Core\Setup;
+$bst_core_assets  = new Core\Assets;
+$bst_core_widgets = new Widgets\Register;
+$bst_core_media   = new Media\Images;
 
 // Vendor (plugin) classes.
 $bst_acf = new Vendor\Theme_ACF;
