@@ -39,17 +39,6 @@ final class Assets {
 	public function __construct() {}
 
 	/**
-	 * Plugin version
-	 *
-	 * @since  1.0.0
-	 * @access public
-	 * @return string Returns the version number.
-	 */
-	public function version() {
-		return $this->version;
-	}
-
-	/**
 	 * File suffix
 	 *
 	 * Adds the `.min` filename suffix if
