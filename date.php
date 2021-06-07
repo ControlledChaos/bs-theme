@@ -31,7 +31,7 @@ get_header();
 
 			<?php while ( have_posts() ) :
 				the_post();
-				get_template_part( 'template-parts/content/content', get_post_type() . $bst_acf->suffix() );
+				Front\tags()->content_template();
 
 			endwhile;
 
@@ -39,7 +39,7 @@ get_header();
 
 		else :
 
-			get_template_part( 'template-parts/content/content', 'none' . $bst_acf->suffix() );
+			Front\tags()->content_template();
 
 		endif;
 		?>

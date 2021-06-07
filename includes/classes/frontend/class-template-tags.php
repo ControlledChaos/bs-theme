@@ -15,6 +15,9 @@
 
 namespace BS_Theme\Classes\Front;
 
+// Alias namespaces.
+use BS_Theme\Classes\Vendor as Vendor;
+
 // Restrict direct access.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -270,6 +273,62 @@ class Template_Tags {
 
 		// Return the logo markup or null.
 		return $html;
+	}
+
+	/**
+	 * Content part
+	 *
+	 * Get the template part for content by
+	 * post type and with ACF filename suffix
+	 * if ACF is active.
+	 */
+	public function content_template() {
+
+		// Instantiate ACF class to get the suffix.
+		$acf = new Vendor\Theme_ACF;
+
+		// Post query arguments to look for published posts.
+		$args = apply_filters( 'bst_content_template_query', [
+			'post_status' => [ 'publish' ],
+		] );
+
+		// New query, namespace escaped with backslash.
+		$query = new \WP_Query( $args );
+
+		// If the query has at least one post.
+		if ( $query->have_posts() ) {
+
+			// Static front page template.
+			if ( 'page' == get_option( 'show_on_front' ) && is_front_page() ) {
+				$template = 'content-front-page' . $acf->suffix();
+
+			// Look for `content-{$post-type}.php` template.
+			} else {
+				$template = 'content-' . get_post_type() . $acf->suffix();
+			}
+
+		// If the query has no posts.
+		} else {
+			$template = 'content-none' . $acf->suffix();
+		}
+
+		// Look for a specific template as applied above.
+		$locate = locate_template( 'template-parts/content/' . $template . '.php' );
+
+		// Use the specific template if found.
+		if ( $locate ) {
+			$template = $template;
+
+		// Default to generic template ( always for post type: post ).
+		} else {
+			$template = 'content' . $acf->suffix();
+		}
+
+		// Apply a filter for unforeseen conditions.
+		$template = apply_filters( 'bst_content_template', $template );
+
+		// Get the content template part.
+		return get_template_part( 'template-parts/content/' . $template );
 	}
 
 	/**

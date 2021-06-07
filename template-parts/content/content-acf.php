@@ -35,7 +35,9 @@ use BS_Theme\Classes\Front as Front;
 		<?php endif; ?>
 	</header>
 
-	<?php  Front\tags()->post_thumbnail(); ?>
+	<?php if ( is_singular() ) {
+		Front\tags()->post_thumbnail();
+	} ?>
 
 	<div class="entry-content" itemprop="articleBody">
 		<?php
