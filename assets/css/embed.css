@@ -280,18 +280,18 @@ b, strong, optgroup {
 
 .wp-embed a,
 .wp-embed .wp-embed-heading a {
-  color: #0000ee;
+  color: #555555;
 }
 
 .wp-embed a:visited,
 .wp-embed .wp-embed-heading a:visited {
-  color: #551a8b;
+  color: #555555;
 }
 
 .wp-embed a:hover, .wp-embed a:focus,
 .wp-embed .wp-embed-heading a:hover,
 .wp-embed .wp-embed-heading a:focus {
-  color: #2c2cff;
+  color: #747474;
 }
 
 .wp-embed .wp-embed-share-dialog-open .dashicons {

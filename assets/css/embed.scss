@@ -23,15 +23,15 @@
 
     a,
     .wp-embed-heading a {
-        color: $link;
+        color: $medium_gray;
 
         &:visited {
-            color: $visited;
+            color: $medium_gray;
         }
 
         &:hover,
         &:focus {
-            color: lighten( $color: $link, $amount: 12% );
+            color: lighten( $color: $medium_gray, $amount: 12% );
         }
     }
 
