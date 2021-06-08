@@ -29,9 +29,9 @@ namespace BS_Theme;
 
 	<?php if ( is_search() ) { echo esc_attr( '<meta name="robots" content="noindex,nofollow" />' ); } ?>
 
-	<!-- Prefetch font URLs -->
-	<link rel="dns-prefetch" href="//fonts.adobe.com" />
-	<link rel="dns-prefetch" href="//fonts.google.com" />
+	<link rel="preconnect" href="//fonts.adobe.com" />
+	<link rel="preconnect" href="//fonts.google.com" />
+	<link rel="preconnect" href="//fonts.gstatic.com">
 
 	<?php
 	// Hook into the head.
