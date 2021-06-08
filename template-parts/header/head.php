@@ -27,11 +27,11 @@ namespace BS_Theme;
 
 	<link href="<?php echo esc_attr( $canonical ); ?>" rel="canonical" />
 
-	<?php if ( is_search() ) { echo esc_attr( '<meta name="robots" content="noindex,nofollow" />' ); } ?>
+	<?php if ( is_search() ) { echo '<meta name="robots" content="noindex,nofollow" />'; } ?>
 
 	<link rel="preconnect" href="//fonts.adobe.com" />
 	<link rel="preconnect" href="//fonts.google.com" />
-	<link rel="preconnect" href="//fonts.gstatic.com">
+	<link rel="preconnect" href="//fonts.gstatic.com" />
 
 	<?php
 	// Hook into the head.
