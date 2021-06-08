@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme options page output
+ * Theme options page template
  *
  * @package    BS_Theme
  * @subpackage Templates
@@ -28,11 +28,10 @@ $description = sprintf(
 	__( 'This is a starter/example page. Use it or remove it.', 'bs-theme' )
 );
 
-// Begin page output.
 ?>
 
 <div class="wrap bs-theme-options-page">
 	<?php echo $title; ?>
 	<?php echo $description; ?>
 	<hr />
-</div><!-- End .wrap -->
+</div>

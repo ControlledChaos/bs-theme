@@ -17,42 +17,48 @@ use BS_Theme\Classes\Front as Front;
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> role="article">
 
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php
+
+		if ( is_singular() ) :
+			the_title( '<h1 class="entry-title">', '</h1>' );
+		else :
+			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		endif;
+		?>
 	</header>
 
-	<?php Front\tags()->post_thumbnail(); ?>
+	<?php if ( is_singular() ) {
+		if (
+			! is_page_template( 'page-templates/no-featured.php' ) ||
+			! is_page_template( 'page-templates/no-sidebar-no-featured.php' )
+		) {
+			Front\tags()->post_thumbnail();
+		}
+	} ?>
 
 	<div class="entry-content" itemprop="articleBody">
+
 		<?php
+
 		the_content();
 
 		wp_link_pages( [
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bs-theme' ),
 			'after'  => '</div>',
 		] );
+
 		?>
+
 	</div>
 
-	<?php if ( get_edit_post_link() ) : ?>
-		<footer class="entry-footer">
-			<?php
-			edit_post_link(
-				sprintf(
-					wp_kses(
-						__( 'Edit <span class="screen-reader-text">%s</span>', 'bs-theme' ),
-						[
-							'span' => [
-								'class' => [],
-							],
-						]
-					),
-					get_the_title()
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-			?>
-		</footer>
-	<?php endif; ?>
+	<?php if ( is_single() ) :
+
+	?>
+	<footer class="entry-footer">
+		<?php  Front\tags()->entry_footer(); ?>
+	</footer>
+	<?php
+
+	endif; ?>
 
 </article>

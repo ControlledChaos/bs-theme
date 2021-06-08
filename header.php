@@ -1,15 +1,14 @@
 <?php
 /**
- * The header for our theme
+ * Page header template
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
+ * This is the template that displays all of the <head>
+ * section and everything up until <div id="content">
  *
  * @package    BS_Theme
  * @subpackage Templates
  * @category   Headers
  * @since      1.0.0
- *
- * @todo Add hooks for nav above or below header.
  */
 
 namespace BS_Theme;

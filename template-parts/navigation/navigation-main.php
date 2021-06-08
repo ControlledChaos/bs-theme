@@ -1,6 +1,6 @@
 <?php
 /**
- * The default, main navigation
+ * Default, main navigation template
  *
  * @package    BS_Theme
  * @subpackage Templates

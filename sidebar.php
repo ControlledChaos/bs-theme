@@ -1,6 +1,6 @@
 <?php
 /**
- * The standard sidebar template file
+ * Default sidebar template
  *
  * @package    BS_Theme
  * @subpackage Templates

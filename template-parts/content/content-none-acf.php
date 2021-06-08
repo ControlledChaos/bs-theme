@@ -1,6 +1,8 @@
 <?php
 /**
- * ACF template part for displaying a message that posts cannot be found
+ * ACF content template for no posts in blog or archive
+ *
+ * Used if the Advanced Custom Fields plugin is active.
  *
  * @package    BS_Theme
  * @subpackage Templates

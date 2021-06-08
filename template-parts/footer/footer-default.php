@@ -1,6 +1,6 @@
 <?php
 /**
- * The default header of any page
+ * Default footer content template
  *
  * @package    BS_Theme
  * @subpackage Templates

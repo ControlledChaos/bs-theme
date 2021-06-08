@@ -1,6 +1,6 @@
 <?php
 /**
- * Theme info page
+ * Theme info page template
  *
  * @package    BS_Theme
  * @subpackage Templates
@@ -82,19 +82,21 @@ if ( $get_theme_tags ) {
 	$tags = $not_provided;
 }
 
-// Begin page output.
-
 ?>
 <div class="wrap theme-info-page">
+
 	<h1><?php _e( 'Active Theme Information', 'bs-theme' ); ?></h1>
+
 	<p class="description"><?php echo $get_theme_desc; ?></p>
-	<hr />
+
 	<main>
+
 		<h2><?php _e( 'Theme Details', 'bs-theme' ); ?></h2>
+
 		<ul>
 			<li><strong><?php esc_html_e( 'Theme Name: ', 'bs-theme' ); ?></strong><?php echo $get_theme_name; ?></li>
 			<?php if ( $get_template ) : ?>
-				<li><strong><?php _e( 'Template: ', 'bs-theme' ); ?></strong><?php echo $parent_name; ?></li>
+			<li><strong><?php _e( 'Template: ', 'bs-theme' ); ?></strong><?php echo $parent_name; ?></li>
 			<?php endif; ?>
 			<li><strong><?php esc_html_e( 'Theme URI: ', 'bs-theme' ); ?></strong><?php echo $theme_uri; ?></li>
 			<li><strong><?php esc_html_e( 'Author: ', 'bs-theme' ); ?></strong><?php echo $author; ?></li>
@@ -104,8 +106,14 @@ if ( $get_theme_tags ) {
 			<li><strong><?php esc_html_e( 'Text Domain: ', 'bs-theme' ); ?></strong><?php echo $domain; ?></li>
 			<li><strong><?php esc_html_e( 'Tags: ', 'bs-theme' ); ?></strong><?php echo implode( ', ', $tags ); ?></li>
 		</ul>
-		<?php if ( $screenshot_src ) : ?>
+
+		<?php
+		if ( $screenshot_src ) :
+
+		?>
 			<a href="<?php echo $get_theme_uri; ?>" target="_blank" rel="nofollow"><img src="<?php echo esc_url( $screenshot_src ); ?>" style="max-width: 640px;" /></a>
-		<?php endif; ?>
+		<?php
+
+		endif; ?>
 	</main>
-</div><!-- .wrap -->
+</div>

@@ -1,6 +1,6 @@
 <?php
 /**
- * The front page header
+ * Front page header content template
  *
  * @package    BS_Theme
  * @subpackage Templates

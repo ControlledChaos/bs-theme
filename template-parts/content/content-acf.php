@@ -1,6 +1,8 @@
 <?php
 /**
- * ACF template part for displaying posts
+ * Default ACF post content template
+ *
+ * Used if the Advanced Custom Fields plugin is active.
  *
  * @package    BS_Theme
  * @subpackage Templates
@@ -18,21 +20,24 @@ use BS_Theme\Classes\Front as Front;
 
 	<header class="entry-header">
 		<?php
+
 		if ( is_singular() ) :
 			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 
-		if ( 'post' === get_post_type() ) :
+		if ( is_single() ) : ?>
+
+		<div class="entry-meta">
+			<?php
+				Front\tags()->posted_on();
+				Front\tags()->posted_by();
 			?>
-			<div class="entry-meta">
-				<?php
-				 Front\tags()->posted_on();
-				 Front\tags()->posted_by();
-				?>
-			</div>
+		</div>
+
 		<?php endif; ?>
+
 	</header>
 
 	<?php if ( is_singular() ) {
@@ -40,7 +45,9 @@ use BS_Theme\Classes\Front as Front;
 	} ?>
 
 	<div class="entry-content" itemprop="articleBody">
+
 		<?php
+
 		the_content( sprintf(
 			wp_kses(
 				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'bs-theme' ),
@@ -57,7 +64,9 @@ use BS_Theme\Classes\Front as Front;
 			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'bs-theme' ),
 			'after'  => '</div>',
 		] );
+
 		?>
+
 	</div>
 
 	<footer class="entry-footer">
@@ -66,6 +75,6 @@ use BS_Theme\Classes\Front as Front;
 
 </article>
 
-<?php if ( is_singular() ) {
+<?php if ( is_single() ) {
 	echo Front\tags()->post_navigation();
 } ?>

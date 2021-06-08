@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the footer
+ * Page footer template
  *
  * @package    BS_Theme
  * @subpackage Templates

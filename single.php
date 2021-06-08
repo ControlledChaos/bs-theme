@@ -13,38 +13,29 @@ namespace BS_Theme;
 // Alias namespaces.
 use BS_Theme\Classes\Front as Front;
 
-// Get the default header file.
 get_header();
 
 ?>
 <div id="content" class="site-content">
 	<div id="primary" class="content-area">
-
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
 
 		<?php
-		while ( have_posts() ) :
-			the_post();
 
+		while ( have_posts() ) : the_post();
 			Front\tags()->content_template();
 
-			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 			endif;
+		endwhile;
 
-		endwhile; // End of the loop.
 		?>
 
 		</main>
 	</div>
+	<?php get_sidebar(); ?>
+</div>
 <?php
 
-// Get the default sidebar file.
-get_sidebar();
-?>
-</div><!-- #content -->
-<?php
-
-// Get the default footer file.
 get_footer();

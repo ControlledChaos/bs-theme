@@ -1,6 +1,7 @@
 <?php
 /**
- * Template part for displaying a message that posts cannot be found
+ * Content template for no posts in blog, archives
+ * or in search results
  *
  * @package    BS_Theme
  * @subpackage Templates

@@ -1,8 +1,8 @@
 <?php
 /**
- * 404 page
+ * 404 error template
  *
- * The template for displaying 404 pages (not found),
+ * Used if the requested permalink is not found (404 error).
  *
  * @package    BS_Theme
  * @subpackage Templates
@@ -18,7 +18,6 @@ use BS_Theme\Classes\Front as Front;
 // Access widgets to check if they're registered.
 global $wp_widget_factory;
 
-// Get the default header file.
 get_header();
 
 ?>
@@ -27,11 +26,13 @@ get_header();
 		<main id="main" class="site-main" itemscope itemprop="mainContentOfPage">
 
 			<section class="error-404 not-found">
+
 				<header class="page-header">
 					<h1 class="page-title"><?php esc_html_e( 'That page can\'t be found.', 'bs-theme' ); ?></h1>
 				</header>
 
 				<div class="page-content">
+
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'bs-theme' ); ?></p>
 
 					<?php
@@ -42,7 +43,9 @@ get_header();
 					} ?>
 
 					<div class="widget widget_categories">
+
 						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'bs-theme' ); ?></h2>
+
 						<ul>
 							<?php
 							wp_list_categories( [
@@ -55,8 +58,8 @@ get_header();
 							?>
 						</ul>
 					</div>
-
 					<?php
+
 					$archive_content = sprintf(
 						'<p>%1s</p>',
 						esc_html__( 'Try looking in the monthly archives.', 'bs-theme' )
@@ -68,15 +71,14 @@ get_header();
 
 					if ( isset( $wp_widget_factory->widgets['WP_Widget_Tag_Cloud'] ) ) {
 						the_widget( 'WP_Widget_Tag_Cloud' );
-					} ?>
+					}
 
+					?>
 				</div>
 			</section>
-
 		</main>
 	</div>
-</div><!-- #content -->
+</div>
 <?php
 
-// Get the default footer file.
 get_footer();

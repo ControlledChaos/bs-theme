@@ -1,10 +1,14 @@
 <?php
 /**
- * The template for displaying a static front page
+ * No Sidebar, No Featured Image template for posts & pages
+ *
+ * Template Name: No Sidebar, No Featured Image
+ * Template Post Type: post, page
+ * Description: Does not load the primary sidebar or the featured image.
  *
  * @package    BS_Theme
  * @subpackage Templates
- * @category   Front Page
+ * @category   Posts
  * @since      1.0.0
  */
 
@@ -30,11 +34,6 @@ get_header();
 
 		</main>
 	</div>
-	<?php
-	if ( ! is_page_template( 'page-templates/no-sidebar.php' ) ) {
-		get_sidebar();
-	}
-	?>
 </div>
 <?php
 
