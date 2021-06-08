@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
+ * Post type: page template
  *
  * @package    BS_Theme
  * @subpackage Templates

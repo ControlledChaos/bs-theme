@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying a static front page
+ * Site front page template
  *
  * @package    BS_Theme
  * @subpackage Templates

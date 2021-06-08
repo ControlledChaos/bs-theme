@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts
+ * Default post template
  *
  * @package    BS_Theme
  * @subpackage Templates
