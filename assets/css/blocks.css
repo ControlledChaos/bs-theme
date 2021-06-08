@@ -15,15 +15,15 @@
 }
 
 .has-bst-error-background-color {
-  background-color: #dc3232;
+  background-color: #dd0000;
 }
 
 .has-bst-warning-background-color {
-  background-color: #ffb900;
+  background-color: #f8ce30;
 }
 
 .has-bst-success-background-color {
-  background-color: #46b450;
+  background-color: #4b9960;
 }
 
 .has-bst-text-color {
@@ -43,13 +43,13 @@
 }
 
 .has-bst-error-color {
-  color: #dc3232;
+  color: #dd0000;
 }
 
 .has-bst-warning-color {
-  color: #ffb900;
+  color: #f8ce30;
 }
 
 .has-bst-success-color {
-  color: #46b450;
+  color: #4b9960;
 }

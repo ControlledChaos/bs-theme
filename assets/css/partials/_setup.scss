@@ -12,26 +12,22 @@ html {
 body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 	line-height: 1.5;
-	background: $white;
-	color: $text;
+	background: $body_bg;
+	color: $text_color;
 
 	&.dark-mode {
-		background: $dark_bg;
-		color: $white;
+		background: $body_bg_dark;
+		color: $text_color_dark;
 
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6,
-		p,
-		ul,
-		ol,
-		li,
-		a,
-		a:visited {
-			color: $white;
+		a {
+			color: $link_color_dark;
+
+			&:hover,
+			&.hover,
+			&:focus,
+			&.focus {
+				color: $link_action_color_dark;
+			}
 		}
 
 		#wpadminbar,
@@ -65,11 +61,14 @@ ol {
 }
 
 a {
-	color: $link;
-}
+	color: $link_color;
 
-a:visited {
-	color: $visited;
+	&:hover,
+	&.hover,
+	&:focus,
+	&.focus {
+		color: $link_action_color;
+	}
 }
 
 /* Text meant only for screen readers. */

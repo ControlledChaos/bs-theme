@@ -19,19 +19,19 @@
 			background: none;
 			font-size: unset;
 			font-weight: inherit;
-			color: $text;
+			color: $text_color;
 
 			&:hover,
 			&.hover,
 			&:focus,
 			&.focus {
-				color: $text;
+				color: $text_color;
 			}
 		}
 	}
 
 	a {
-		color: $link;
+		color: $link_color;
 		text-decoration: none;
 		transition: all .15s;
 		-webkit-transition: all .15s;

@@ -3,11 +3,11 @@
 ///
 
 @function nav_svg_color() {
-	@return '%23' + str-slice( '#{$text}', 2, -1 );
+	@return '%23' + str-slice( '#{$text_color}', 2, -1 );
 }
 
 @function nav_svg_action_color() {
-	@return '%23' + str-slice( '#{$text}', 2, -1 );
+	@return '%23' + str-slice( '#{$text_color}', 2, -1 );
 }
 
 .main-navigation {

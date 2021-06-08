@@ -9,7 +9,7 @@ form * + * {
 fieldset {
 	margin-top: 1em;
 	padding: 1em 1.5em;
-	border: solid 1px $pale_gray;
+	border: solid 1px $form_border_color;
 }
 
 legend {
@@ -26,11 +26,11 @@ button {
 	max-width: 640px;
 	padding: 1rem;
 	font: inherit;
-	background: $white;
-	border: solid 1px $pale_gray;
+	background: $form_background_color;
+	border: solid 1px $form_border_color;
 
 	&:focus {
-		border-color: $light_gray;
+		border-color: $form_action_border_color;
 	}
 }
 
@@ -62,6 +62,7 @@ input[type="checkbox"] {
 }
 
 button,
+.button,
 button[type="submit"],
 input[type="submit"],
 input[type="button"],
@@ -70,6 +71,9 @@ input[type="image"] {
 	width: auto;
 	cursor: pointer;
 	font-weight: bold;
+	background-color: $button_background_color;
+	border-color: $button_border_color;
+	color: $button_text_color;
 
 	svg {
 		width: 24px;
@@ -79,8 +83,12 @@ input[type="image"] {
 	}
 
 	&:hover,
-	&:focus {
-		background: $pale_gray;
+	&.hover,
+	&:focus,
+	&.focus {
+		background-color: $button_action_background_color;
+		border-color: $button_action_border_color;
+		color: $button_action_text_color;
 	}
 
 	&.menu-toggle {
@@ -193,12 +201,12 @@ h2 + .search-form {
 	textarea,
 	select,
 	button {
-		background: $dark_gray;
-		border-color: $medium_gray;
-		color: $white;
+		background: $form_background_color_dark;
+		border-color: $form_border_color_dark;
+		color: $form_text_color_dark;
 
 		&:focus {
-			border-color: $light_gray;
+			border-color: $form_action_text_color_dark;
 		}
 	}
 
@@ -208,11 +216,41 @@ h2 + .search-form {
 	input[type="button"],
 	input[type="reset"],
 	input[type="image"] {
+		background-color: $button_background_color_dark;
+		border-color: $button_border_color_dark;
+		color: $button_text_color_dark;
 
 		&:hover,
-		&:focus {
-			background: $medium_gray;
-			border-color: $light_gray;
+		&.hover,
+		&:focus,
+		&.focus {
+			background-color: $button_action_background_color_dark;
+			border-color: $button_action_border_color_dark;
+			color: $button_action_text_color_dark;
 		}
+	}
+
+	*::-webkit-input-placeholder {
+		color: $form_placeholder_color_dark;
+	}
+
+	*::-o-placeholder {
+		color: $form_placeholder_color_dark;
+	}
+
+	*:-moz-placeholder {
+		color: $form_placeholder_color_dark;
+	}
+
+	*::-moz-placeholder {
+		color: $form_placeholder_color_dark;
+	}
+
+	*:-ms-input-placeholder {
+		color: $form_placeholder_color_dark;
+	}
+
+	*::placeholder {
+		color: $form_placeholder_color_dark;
 	}
 }
