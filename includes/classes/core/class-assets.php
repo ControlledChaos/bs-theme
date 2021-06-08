@@ -44,6 +44,9 @@ final class Assets {
 
 		// Login styles.
 		add_action( 'login_enqueue_scripts', [ $this, 'login_styles' ] );
+
+		// Embedded content styles.
+		add_action( 'bst_embed_head', [ $this, 'embed_styles' ] );
 	}
 
 	/**
@@ -72,6 +75,18 @@ final class Assets {
 	public function login_styles() {
 
 		wp_enqueue_style( 'bst-login', get_theme_file_uri( '/assets/css/login' . $this->suffix() . '.css' ), [ 'login' ], BST_VERSION, 'screen' );
+	}
+
+	/**
+	 * Embedded content styles
+	 *
+	 * @since  1.0.0
+	 * @access public
+	 * @return void
+	 */
+	public function embed_styles() {
+
+		wp_enqueue_style( 'bst-embed', get_theme_file_uri( '/assets/css/embed' . $this->suffix() . '.css' ), [], BST_VERSION, 'screen' );
 	}
 
 	/**
