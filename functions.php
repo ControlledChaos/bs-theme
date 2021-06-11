@@ -34,34 +34,37 @@
  *
  * Following is a list of strings to find and replace in all theme files.
  *
- * 1. Theme namespace
- *    Find `BS_Theme` and replace with your theme name, include
+ * 1. Theme Name
+ *    Find `BS Theme` and replace with your theme name
+ *
+ * 2. Theme namespace
+ *    Find `BS_Theme` and replace with your theme namespace, include
  *    underscores between words. This will change the namespace and the package
  *    name in file headers.
  *
- * 2. Text domain
+ * 3. Text domain
  *    Find `bs-theme` and replace with the text domain of your theme.
  *
- * 3. Theme prefix
+ * 4. Theme prefix
  *    Find `bst` and replace with the unique, lowercase theme prefix.
  *    This prefix is used for applied filters, stylesheet IDs, and
  *    admin page URIs, so the prefix may be followed by an underscore
  *    or a dash. Search for `bst_` and `bst-` to find the difference.
  *
- * 4. Constant prefix
+ * 5. Constant prefix
  *    Find `BST` and replace with the unique, uppercase prefix of your theme.
  *
- * 5. Header image
+ * 6. Header image
  *    Replace the default image file `default-header.jpg`.
  *    @see assets/images/
  *
- * 6. Activation and deactivation
+ * 7. Activation and deactivation
  *    Check the activation and deactivation classes for sample methods.
  *    Remove or modify the samples as needed.
  *    @see includes/class-activate
  *    @see includes/class-deactivate
  *
- * 7. README file
+ * 8. README file
  *    Whether or not your theme will be kept in a version control repository,
  *    edit the content of the README file in the theme's root directory or
  *    delete it if it is not necessary.
