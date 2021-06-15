@@ -94,6 +94,23 @@
 		button,
 		.button {
 			display: inline-block;
+			width: auto;
+			padding: 1rem;
+			cursor: pointer;
+			font-weight: bold;
+			text-decoration: none;
+			background-color: $button_background_color;
+			border: solid 1px $button_border_color;
+			color: $button_text_color;
+
+			&:hover,
+			&.hover,
+			&:focus,
+			&.focus {
+				background-color: $button_action_background_color;
+				border-color: $button_action_border_color;
+				color: $button_action_text_color;
+			}
 
 			&:before,
 			&:after {
